@@ -40,15 +40,15 @@
                                     <!--- <i class="bi bi-heart"></i> --->
                                 </div>
                                 <div class="course-rating">
-                                    <div class="course-admin">
+                                    <div class="course-star">
                                         <span>#item.name#</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="course-content">
                                 <div class="course-meta">
-                                    <span><i class="bi bi-book"></i> 22 Lesson</span>
-                                    <span><i class="bi bi-clock"></i> #item.duration#</span>
+                                    <span><i class="bi bi-book"></i> TUTORIAL</span>
+                                    <span><i class="bi bi-clock"></i> DEMO</span>
                                 </div>
                                 <div class="course-title">
                                     <h4><a href="##">#item.name#</a></h4>
