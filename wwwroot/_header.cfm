@@ -12,55 +12,15 @@
 				<div class="col-lg-10">
 					<div class="header-menu">
 						<ul>
-							<li><a href="#">Home <i class="bi bi-plus"></i></a>
+							<li><a href="#">Tutorials <i class="bi bi-plus"></i></a>
 								<div class="sub-menu">
 									<ul>
-										<li><a href="index.html">Home </a></li>
-										<li><a href="landing.html">Home Landing</a></li>
-										<li><a href="video.html">Home Video</a></li>
+										<li><a href="blog.html">1. Number Guessing</a></li>
+										<li><a href="blog-details.html">2. Hangman</a></li>
 									</ul>
 								</div>
 							</li>
-							<li><a href="#">Courses <i class="bi bi-plus"></i></a>
-								<div class="sub-menu">
-									<ul>
-										<li><a href="course.html">Courses</a></li>
-										<li><a href="course-detials.html">Courses Details</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="#">Team <i class="bi bi-plus"></i></a>
-								<div class="sub-menu">
-									<ul>
-										<li><a href="team.html">Team</a></li>
-										<li><a href="team-detials.html">Team Details</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="#">Pages <i class="bi bi-plus"></i></a>
-								<div class="sub-menu">
-									<ul>
-										<li><a href="team.html">Team</a></li>
-										<li><a href="team-detials.html">Team Details</a></li>
-										<li><a href="project-grid.html">Gallery</a></li>
-										<li><a href="projects-details.html">Gallery Details</a></li>
-										<li><a href="faq.html">Faq Page</a></li>
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="error.html">Error Page</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="#">Blog <i class="bi bi-plus"></i></a>
-								<div class="sub-menu">
-									<ul>
-										<li><a href="blog.html">Blog</a></li>
-										<li><a href="blog-details.html">Blog Details</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="contact.html">Contacts</a></li>
-							<li><a class="handbag" href="#"><i class="bi bi-cart-fill"></i></a></li>
-							<li><a class="user" href="#"><i class="bi bi-person-fill"></i></a></li>
+							<li><a href="contact.html">Support</a></li>
 						</ul>
 						<div class="main-btn">
 							<a href="about.html" class="nest-btn">
@@ -68,7 +28,7 @@
 								<span class="nest-btn__shape"></span>
 								<span class="nest-btn__shape"></span>
 								<span class="nest-btn__shape"></span>
-								<span class="nest-btn__text">Get Started</span>
+								<span class="nest-btn__text">Get Full Course</span>
 							</a>
 						</div>
 					</div>
