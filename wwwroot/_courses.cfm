@@ -10,19 +10,16 @@
 						<div class="section-title-shape">
 							<img src="estudy/assets/images/resource/section-shape.png" alt="">
 						</div>
-						<div class="section-sub-title">
-							<h4>Browse Categories</h4>
-						</div>
 						<div class="section-main-title">
-							<h2>Top Courses Caterories</h2>
+							<h2>Learn to Code</h2>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-12">
                     <ul class="course-menu d-flex justify-content-center wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
-                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".bas" class="">Basic</a></li>
-                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".int" class="">Intermediate</a></li>
-                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".adv" class="">Advanced</a></li>
+                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".Bas" class="">Basic</a></li>
+                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".Int" class="">Intermediate</a></li>
+                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".Adv" class="">Advanced</a></li>
                     </ul>
                 </div>
 			</div>
