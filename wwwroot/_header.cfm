@@ -1,15 +1,15 @@
 	<!--==================================================-->
 	<!-- Start Header Area -->
 	<!--==================================================-->
-	<header class="header-area bratcome" id="sticky-header">
+	<header class="header-area bratcome mt-3" id="sticky-header">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-lg-8">
+				<div class="col-lg-9">
 					<div class="logo">
 						&nbsp;
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<div class="col-lg-3 float-end text-right">
 					<div class="header-menu">
 						<div class="main-btn">
 							<a href="about.html" class="nest-btn">
