@@ -1,0 +1,29 @@
+[
+    {   
+            "id"    : 1
+        , "name"    : "Number Guessing"
+        , "level"   : "Basic"
+        , "course"  : "Fun Games"
+        , "author"  : "JC"
+        , "duration": "60 mins"
+        , "avatar"  : "/learn/avatars/jc.png"
+        , "Demo"    : "/learn/demos/1_number_guessing"
+        , "cover"   : "/learn/covers/1_number_guessing.png"
+        , "guide"   : "/learn/guides/1_number_guessing"
+    },
+
+    {   
+            "id"    : 2
+        , "name"    : "The Hangman"
+        , "level"   : "Basic"
+        , "course"  : "Fun Games"
+        , "author"  : "JC"
+        , "duration": "90 mins"
+        , "avatar"  : "/learn/avatars/jc.png"
+        , "Demo"    : "/learn/demos/2_the_hangman"
+        , "cover"   : "/learn/covers/2_the_hangman.png"
+        , "guide"   : "/learn/guides/2_the_hangman"
+    }
+
+
+]

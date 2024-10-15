@@ -1,3 +1,6 @@
+<cffile action="read" file="#expandpath('data.json')#" variable="data">
+<cfset items = deserializeJSON(data)>
+
 <!DOCTYPE HTML>
 <html lang="en-US">
 

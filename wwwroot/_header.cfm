@@ -11,24 +11,13 @@
 				</div>
 				<div class="col-lg-10">
 					<div class="header-menu">
-						<ul>
-							<li><a href="#">Tutorials <i class="bi bi-plus"></i></a>
-								<div class="sub-menu">
-									<ul>
-										<li><a href="blog.html">1. Number Guessing</a></li>
-										<li><a href="blog-details.html">2. Hangman</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="contact.html">Support</a></li>
-						</ul>
 						<div class="main-btn">
 							<a href="about.html" class="nest-btn">
 								<span class="nest-btn__shape"></span>
 								<span class="nest-btn__shape"></span>
 								<span class="nest-btn__shape"></span>
 								<span class="nest-btn__shape"></span>
-								<span class="nest-btn__text">Get Full Course</span>
+								<span class="nest-btn__text">View Course</span>
 							</a>
 						</div>
 					</div>
