@@ -34,8 +34,8 @@
                     <div class="col-lg-4 col-md-6 mix ios des">
                         <div class="course-single-box wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
                             <div class="course-thumb">
-                                <img src="estudy/assets/images/course/course1.png" alt="">
-                                <img src="estudy/assets/images/course/course1.png" alt="">
+                                <img src="#item.cover#" alt="#item.name#">
+                                <img src="#item.cover#" alt="#item.name#">
                                 <div class="course-icon">
                                     <i class="bi bi-heart"></i>
                                 </div>

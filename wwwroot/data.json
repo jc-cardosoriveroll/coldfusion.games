@@ -8,7 +8,7 @@
         , "duration": "60 mins"
         , "avatar"  : "/learn/avatars/jc.png"
         , "Demo"    : "/learn/demos/1_number_guessing"
-        , "cover"   : "/learn/covers/1_number_guessing.png"
+        , "cover"   : "/learn/covers/1_number_guessing.jpg"
         , "guide"   : "/learn/guides/1_number_guessing"
     },
 
@@ -21,7 +21,7 @@
         , "duration": "90 mins"
         , "avatar"  : "/learn/avatars/jc.png"
         , "Demo"    : "/learn/demos/2_the_hangman"
-        , "cover"   : "/learn/covers/2_the_hangman.png"
+        , "cover"   : "/learn/covers/2_the_hangman.jpg"
         , "guide"   : "/learn/guides/2_the_hangman"
     }
 
