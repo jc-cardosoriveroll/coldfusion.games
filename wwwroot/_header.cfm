@@ -4,14 +4,12 @@
 	<header class="header-area bratcome" id="sticky-header">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-lg-10">
-					<!---
+				<div class="col-lg-8">
 					<div class="logo">
 						<a href="index.html"><img src="estudy/assets/images/logo.png" alt=""></a>
 					</div>
-					--->
 				</div>
-				<div class="col-lg-2">
+				<div class="col-lg-4">
 					<div class="header-menu">
 						<div class="main-btn">
 							<a href="about.html" class="nest-btn">
