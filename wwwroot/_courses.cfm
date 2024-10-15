@@ -49,12 +49,7 @@
                                         </div>
                                     </div>
                                     <div class="course-star">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <span>(29)</span>
+                                        <span>#item.name#</span>
                                     </div>
                                 </div>
                             </div>
