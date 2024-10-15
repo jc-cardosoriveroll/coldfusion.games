@@ -37,7 +37,7 @@
                                 <img src="#item.cover#" alt="#item.name#">
                                 <img src="#item.cover#" alt="#item.name#">
                                 <div class="course-icon">
-                                    <i class="bi bi-heart"></i>
+                                    <!--- <i class="bi bi-heart"></i> --->
                                 </div>
                                 <div class="course-rating">
                                     <div class="course-admin">
