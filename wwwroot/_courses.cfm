@@ -7,9 +7,6 @@
 			<div class="row align-items-center">
 				<div class="col-lg-6 col-md-12">
 					<div class="section-title wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
-						<div class="section-title-shape">
-							<img src="estudy/assets/images/resource/section-shape.png" alt="">
-						</div>
 						<div class="section-main-title">
 							<h2>Learn to Code</h2>
 						</div>
