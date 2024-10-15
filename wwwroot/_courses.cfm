@@ -39,8 +39,11 @@
                                 <div class="course-icon">
                                     <!--- <i class="bi bi-heart"></i> --->
                                 </div>
+                                <div class="course-admin">
+                                    &nbsp;
+                                </div>
                                 <div class="course-rating">
-                                    <div class="course-star">
+                                    <div class="course-star float-end text-right">
                                         <span>#item.name#</span>
                                     </div>
                                 </div>
@@ -49,9 +52,6 @@
                                 <div class="course-meta">
                                     <span><i class="bi bi-book"></i> TUTORIAL</span>
                                     <span><i class="bi bi-clock"></i> DEMO</span>
-                                </div>
-                                <div class="course-title">
-                                    <h4><a href="##">#item.name#</a></h4>
                                 </div>
                             </div>
                         </div>
