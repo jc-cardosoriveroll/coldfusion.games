@@ -8,14 +8,8 @@
 				<div class="brand_list owl-carousel">
 					<div class="col-lg-12">
 						<div class="brand-itmes">
-							<div class="brand-thumb inner text-white">
-								Adobe
-							</div>
-							<div class="brand-thumb inner text-white">
-								Coldfusion
-							</div>
 							<div class="brand-thumb inner2 text-white">
-								Udemy
+								Adobe | Coldfusion | Udemy
 							</div>
 						</div>
 					</div>
