@@ -20,10 +20,9 @@
 				</div>
 				<div class="col-lg-6 col-md-12">
                     <ul class="course-menu d-flex justify-content-center wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
-                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".ios" class="">Engineering</a></li>
-                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".and" class=""> Data science</a></li>
-                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".mar" class="">Graphic Design</a></li>
-                        <li><a href="##!" data-mixitup-control="" data-filter=".des">Business</a></li>
+                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".bas" class="">Basic</a></li>
+                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".int" class="">Intermediate</a></li>
+                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".adv" class="">Advanced</a></li>
                     </ul>
                 </div>
 			</div>
@@ -31,7 +30,7 @@
                 <!--- Loop Courses --->
                 <cfloop from="1" to="#arraylen(items)#" index="c">
                     <cfset item = items[c]>
-                    <div class="col-lg-4 col-md-6 mix ios des">
+                    <div class="col-lg-4 col-md-6 mix #left(item.level,3)#">
                         <div class="course-single-box wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
                             <div class="course-thumb">
                                 <img src="#item.cover#" alt="#item.name#">
