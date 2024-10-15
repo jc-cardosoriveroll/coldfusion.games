@@ -41,14 +41,6 @@
                                 </div>
                                 <div class="course-rating">
                                     <div class="course-admin">
-                                        <div class="course-shape">
-                                            <img src="estudy/assets/images/course/shape1.png" alt="">
-                                        </div>
-                                        <div class="course-shape-title">
-                                            <h4>#item.author#</h4>
-                                        </div>
-                                    </div>
-                                    <div class="course-star">
                                         <span>#item.name#</span>
                                     </div>
                                 </div>
