@@ -6,7 +6,7 @@
 			<div class="row align-items-center">
 				<div class="col-lg-8">
 					<div class="logo">
-						<a href="index.html"><img src="estudy/assets/images/logo.png" alt=""></a>
+						&nbsp;
 					</div>
 				</div>
 				<div class="col-lg-4">
@@ -17,7 +17,7 @@
 								<span class="nest-btn__shape"></span>
 								<span class="nest-btn__shape"></span>
 								<span class="nest-btn__shape"></span>
-								<span class="nest-btn__text">View Course</span>
+								<span class="nest-btn__text">Enroll</span>
 							</a>
 						</div>
 					</div>
