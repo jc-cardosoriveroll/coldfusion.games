@@ -1,0 +1,17 @@
+on: push
+name: Deploy website 
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: get code 
+      uses: actions/checkout@v3 
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: CARDOSO.srvr.media3.us
+        protocol: ftps
+        username: coldfusiongam
+        password: ${{ secrets.FTP_PASSWORD }}
+        state-name: .coldfusiongames.json
