@@ -36,12 +36,6 @@
                             <div class="course-thumb">
                                 <img src="#item.cover#" alt="#item.name#">
                                 <img src="#item.cover#" alt="#item.name#">
-                                <div class="course-icon">
-                                    <!--- <i class="bi bi-heart"></i> --->
-                                </div>
-                                <div class="course-admin">
-                                    &nbsp;
-                                </div>
                                 <div class="course-rating">
                                     <div class="course-star float-end text-right">
                                         <span>#item.name#</span>
