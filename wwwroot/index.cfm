@@ -8,8 +8,10 @@
 
 <body>
     <cfinclude template="_loader.cfm">
+    <!---
     <cfinclude template="_header.cfm">
     <cfinclude template="_bread.cfm">
+    --->
     <cfinclude template="_courses.cfm">
     <cfinclude template="_brands.cfm">
     <!---
