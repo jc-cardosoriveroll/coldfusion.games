@@ -23,7 +23,7 @@
 	<!-- transitions CSS -->
 	<link rel="stylesheet" href="estudy/assets/css/owl.transitions.css" type="text/css" media="all">
 	<!-- venobox CSS -->
-	<link rel="stylesheet" href="venobox/venobox.css" type="text/css" media="all">
+	<link rel="stylesheet" href="estudy/venobox/venobox.css" type="text/css" media="all">
 	<!-- bootstrap icons -->
 	<link rel="stylesheet" href="estudy/assets/css/bootstrap-icons.css" type="text/css" media="all">
 	<!-- Main Style CSS -->
