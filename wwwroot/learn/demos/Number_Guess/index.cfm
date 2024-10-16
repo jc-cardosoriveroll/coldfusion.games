@@ -26,46 +26,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Number Guessing</title>
-    <meta charset="UTF-8">
-    <!--- Bootstrap/Jquery framework --->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css?uuid=#createUUID()#">
-  </head>
-  <body>
-    <div class="container">
-        <div class="card">>
-            <div class="card-body">
-                <div class="card-window">
-                    <!------ MAIN ----->
-                    <cfif not(isdefined("session.game"))>
-                        <!--- Logic to start game --->
-                        <h1>New Game</h1>
-                        <br><a href="index.cfm?difficulty=1" class="btn btn-success">EASY (0-9)</a>
-                        <br><a href="index.cfm?difficulty=2" class="btn btn-warning">MEDIUM (0-99)</a>
-                        <br><a href="index.cfm?difficulty=3" class="btn btn-danger">DIFFICULT (0-999)</a>
-                    <cfelse>
-                        <!--- Logic to Guess --->
-                        <h1>Guess!</h1>
+        <title>Number Guess</title>
+        <meta charset="UTF-8">
+        <!--- Bootstrap/Jquery framework --->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css?uuid=#createUUID()#">
+    </head>
+    <body>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-window">
+                <!------ MAIN ----->
+                <cfif not(isdefined("session.game"))>
+                    <!--- Logic to start game --->
+                    <h1>New Game</h1>
+                    <br><a href="index.cfm?difficulty=1" class="btn btn-success">EASY (0-9)</a>
+                    <br><a href="index.cfm?difficulty=2" class="btn btn-warning">MEDIUM (0-99)</a>
+                    <br><a href="index.cfm?difficulty=3" class="btn btn-danger">DIFFICULT (0-999)</a>
+                <cfelse>
+                    <!--- Logic to Guess --->
+                    <h1>Guess!</h1>
 
-                        <cfif isdefined("session.game.currentState")>
-                            <h3>#session.game.currentState#</h3>
-                        </cfif>
-
-                        <ul>
-                        <cfloop from="0" to="#session.game.maxNumber#" index="n">
-                            <cfif arrayfind(session.game.history,n)>
-                                <li>#n#</li>
-                            <cfelse>
-                                <li><a href="index.cfm?guess=#n#&uuid=#createUUID()#">#n#</a></li>
-                            </cfif>
-                        </cfloop>
-                        </ul>
-                        <hr>
-                        <a href="index.cfm?newGame">New Game</a> <cfif not(session.game.isDone)> | <a href="index.cfm?giveUp">Give Up</a></cfif>
-
+                    <cfif isdefined("session.game.currentState")>
+                        <h3>#session.game.currentState#</h3>
                     </cfif>
-                </div>
+
+                    <ul>
+                    <cfloop from="0" to="#session.game.maxNumber#" index="n">
+                        <cfif arrayfind(session.game.history,n)>
+                            <li>#n#</li>
+                        <cfelse>
+                            <li><a href="index.cfm?guess=#n#&uuid=#createUUID()#">#n#</a></li>
+                        </cfif>
+                    </cfloop>
+                    </ul>
+                    <hr>
+                    <a href="index.cfm?newGame">New Game</a> <cfif not(session.game.isDone)> | <a href="index.cfm?giveUp">Give Up</a></cfif>
+
+                </cfif>
             </div>
         </div>
     </div>
