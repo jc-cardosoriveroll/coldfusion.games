@@ -3,9 +3,9 @@
             "id"    : 1
         , "name"    : "Number Guessing"
         , "level"   : "Easy"
-        , "demo"    : "/learn/demos/number_guessing"
-        , "cover"   : "/learn/covers/number_guessing.jpg"
-        , "guide"   : "/learn/guides/number_guessing.html"
+        , "demo"    : "/learn/demos/number_guess"
+        , "cover"   : "/learn/covers/number_gues.jpg"
+        , "guide"   : "/learn/guides/number_gues.html"
         , "udemy"   : "https://udemy.com"
     },
 
