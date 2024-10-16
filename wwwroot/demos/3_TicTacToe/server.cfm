@@ -1,5 +1,4 @@
 <cfset wsPublish("websockets","Yooouu dude!")>
-<cfdump var="#test#">
 
 
 <cfscript>
