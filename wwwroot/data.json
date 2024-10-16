@@ -3,20 +3,20 @@
             "id"    : 1
         , "name"    : "Number Guessing"
         , "level"   : "Easy"
-        , "course"  : "Fun Games"
         , "demo"    : "/learn/demos/number_guessing"
         , "cover"   : "/learn/covers/number_guessing.jpg"
         , "guide"   : "/learn/guides/number_guessing.html"
+        , "udemy"   : "https://udemy.com"
     },
 
     {   
             "id"    : 2
         , "name"    : "The Hangman"
         , "level"   : "Easy"
-        , "course"  : "Fun Games"
         , "demo"    : "/learn/demos/the_hangman"
         , "cover"   : "/learn/covers/the_hangman.jpg"
         , "guide"   : "/learn/guides/the_hangman.html"
+        , "udemy"   : "https://udemy.com"
     }
 
 
