@@ -53,21 +53,17 @@
                         <h3>#session.game.currentState#</h3>
                     </cfif>
 
-                    <div class="row">
-                        <ul>
-                        <cfloop from="0" to="#session.game.maxNumber#" index="n">
-                            <div class="col-1">
-                                <cfif arrayfind(session.game.history,n)>
-                                    <li>#n#</li>
-                                <cfelse>
-                                    <li><a href="index.cfm?guess=#n#&uuid=#createUUID()#">#n#</a></li>
-                                </cfif>
-                            </div>
-                        </cfloop>
-                        </ul>
-                    </div>
+                    <ul>
+                    <cfloop from="0" to="#session.game.maxNumber#" index="n">
+                        <cfif arrayfind(session.game.history,n)>
+                            <li>#n#</li>
+                        <cfelse>
+                            <li><a href="index.cfm?guess=#n#&uuid=#createUUID()#">#n#</a></li>
+                        </cfif>
+                    </cfloop>
+                    </ul>
                     <hr>
-                    <a href="index.cfm?newGame">New Game</a> | <cfif not(session.game.isDone)><a href="index.cfm?giveUp">Give Up</a></cfif>
+                    <a href="index.cfm?newGame">New Game</a> <cfif not(session.game.isDone)> | <a href="index.cfm?giveUp">Give Up</a></cfif>
 
                 </cfif>
             </div>
