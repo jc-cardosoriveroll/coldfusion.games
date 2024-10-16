@@ -43,6 +43,9 @@ li {
     margin-right: 10px; 
   }
 
+body {
+    background-color: #f0f0f0;
+}
 
 /* card container in center screen */
 .card {
@@ -73,7 +76,7 @@ li {
     border: 1px solid #000;
     border-radius: 10px; /* Optional: Rounded corners */
     overflow: hidden;
-    background-color: #f0f0f0; /* Optional: Background color */
+    background-color: #ffffff; /* Optional: Background color */
     justify-content: center;
     align-items: center;
     text-align: center;
