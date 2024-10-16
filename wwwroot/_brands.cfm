@@ -9,7 +9,7 @@
 					<div class="col-lg-12">
 						<div class="brand-itmes">
 							<div class="brand-thumb inner2 text-white">
-								Adobe | Coldfusion | Udemy
+								Adobe | Coldfusion | Udemy | Contact
 							</div>
 						</div>
 					</div>

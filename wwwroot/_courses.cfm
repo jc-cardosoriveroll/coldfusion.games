@@ -37,8 +37,8 @@
                             </div>
                             <div class="course-content">
                                 <div class="course-meta">
-                                    <span><i class="bi bi-book"></i> TUTORIAL</span>
-                                    <span><i class="bi bi-clock"></i> DEMO</span>
+                                    <span><i class="bi bi-book"></i> <a href="javascript:view(#item.id#);">TUTORIAL</a></span>
+                                    <span><i class="bi bi-clock"></i>  <a href="javascript:view(#item.id#);">DEMO</a></span>
                                 </div>
                             </div>
                         </div>

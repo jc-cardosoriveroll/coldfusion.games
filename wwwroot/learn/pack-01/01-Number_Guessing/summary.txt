@@ -1,0 +1,32 @@
+What you will learn 
+---------------------
+- Application Framework
+- Data Persistence (session vars)
+- Functions in Components (isolation)
+- Object Concept (game)
+- Complex Data (structures/arrays)
+- Parameter Passing (url)
+- Basic Loops (over Arrays)
+- Conditional Statements (ifs)
+- Scopes (local,arguments)
+- Comments & Dumps
+
+Steps in tutorial
+-----------------
+1) Show the end product
+2) Display one slide of architecture
+3) Show the required tools (VSCode,Box)
+4) Create the project (in VS/workspace)
+5) Create Application CFC (from Nadel)
+6) Update Application for Game CFC, Error Dump & Client Cookies
+7) Create Game.cfc and scaffold for newGame & evalGame
+8) Create Index.cfm with Boiler Jquery/Bootstrap
+9) Update Index.cfm to choose between Difficulty/Playing
+10) Establish event for difficulty Selection
+11) Establish event for playing Game
+12) Render Content in Index.cfm
+13) Add New Game & Give Up Functions
+14) Add Garbage Collector
+15) Finish & Test
+
+Chapters (TBD as steps)

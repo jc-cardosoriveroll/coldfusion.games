@@ -73,3 +73,11 @@
 
 	<!-- scroll js -->
 	<script src="estudy/assets/js/script.js"></script>
+
+	
+	<script>
+		function view(id)
+		{
+			alert(id);
+		}
+	</script>

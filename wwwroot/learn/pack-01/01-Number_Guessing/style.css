@@ -1,0 +1,19 @@
+.history 
+{
+    background-color: white;
+    font-color: grey;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.option 
+{
+    background-color: white;
+    font-color: blue;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-weight: bold;
+}
