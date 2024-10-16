@@ -28,7 +28,7 @@
 			</form>
 		</section>
 	</main>
-	<script src="./assets/app.js"></script>
+	<script src="assets/app.js"></script>
 	<cfwebsocket name      = "ws"
 				 onMessage = "SimpleChat.onMessage"
 				 onOpen    = "SimpleChat.onOpen"
