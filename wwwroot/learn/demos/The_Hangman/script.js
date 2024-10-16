@@ -19,7 +19,7 @@ $(document).ready(function() {
             /* ----------------------------------------------- */
 
             /* always good practice to debug in console */
-            //console.log(data);
+            console.log(data);
 
             var game = $.parseJSON(data);
 
