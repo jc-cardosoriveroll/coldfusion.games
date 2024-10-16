@@ -39,13 +39,13 @@
 	<script src="estudy/assets/js/imagesloaded.pkgd.min.js"></script>
 
 	<!-- venobox js -->
-	<script src="venobox/venobox.js"></script>
+	<script src="estudy/venobox/venobox.js"></script>
 
 	<!--  animated-text js -->
 	<script src="estudy/assets/js/animated-text.js"></script>
 
 	<!-- venobox min js -->
-	<script src="venobox/venobox.min.js"></script>
+	<script src="estudy/venobox/venobox.min.js"></script>
 
 	<!-- isotope js -->
 	<script src="estudy/assets/js/isotope.pkgd.min.js"></script>
