@@ -78,12 +78,14 @@
 	<script>
 		function view(id)
 		{
+			switch(expression) {
 			<cfloop from="1" to="#arraylen(items)#" index="c">
                 <cfset item = items[c]>
-				<cfif item.id eq id>
+				case #item.id#:
 					alert("#item.name#");					
-				</cfif>
+				break;
 			</cfloop>
+			}
 		}
 	</script>
 	</cfoutput>
