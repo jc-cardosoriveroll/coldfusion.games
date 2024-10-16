@@ -32,6 +32,6 @@
 	<cfwebsocket name      = "ws"
 				 onMessage = "SimpleChat.onMessage"
 				 onOpen    = "SimpleChat.onOpen"
-				 secure    = "#cgi.server_port_secure#">
+				 secure    = "false">
 </body>
 </html>
