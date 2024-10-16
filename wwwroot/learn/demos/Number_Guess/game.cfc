@@ -16,10 +16,10 @@
         <!--- Randomize Number --->
         <cfswitch expression="#arguments.difficulty#">
             <cfcase value="2">
-                <cfset local.game["maxNumber"] = 99>
+                <cfset local.game["maxNumber"] = 49>
             </cfcase>
             <cfcase value="3">
-                <cfset local.game["maxNumber"] = 999>
+                <cfset local.game["maxNumber"] = 99>
             </cfcase>
             <cfdefaultcase>
                 <cfset local.game["maxNumber"] = 9>
