@@ -12,9 +12,9 @@
             "id"    : 2
         , "name"    : "Hangman"
         , "level"   : "Easy"
-        , "demo"    : "/demos/1_Hangman"
-        , "cover"   : "/covers/1_Hangman.jpg"
-        , "guide"   : "/guides/1_Hangman.html"
+        , "demo"    : "/demos/2_Hangman"
+        , "cover"   : "/covers/2_Hangman.jpg"
+        , "guide"   : "/guides/2_Hangman.html"
         , "udemy"   : "https://udemy.com"
     },
     {   
