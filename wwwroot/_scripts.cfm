@@ -80,8 +80,7 @@
 		{
 			switch(id) {
 			<cfloop from="1" to="#arraylen(items)#" index="c">
-                <cfset item = items[c]>
-				case #item.id#:
+				case #items[c].id#:
 					alert("#item.name#");					
 				break;
 			</cfloop>
