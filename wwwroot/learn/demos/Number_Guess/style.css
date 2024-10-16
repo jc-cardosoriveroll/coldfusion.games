@@ -68,5 +68,6 @@
   }
 
   .love {
-    text-align: right;
+    text-align: center;
+    font-style: italic;
   }
