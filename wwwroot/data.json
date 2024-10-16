@@ -3,27 +3,27 @@
             "id"    : 1
         , "name"    : "Number Guessing"
         , "level"   : "Easy"
-        , "demo"    : "/demos/number_guess"
-        , "cover"   : "/covers/number_guess.jpg"
+        , "demo"    : "/demos/1_NumberGuess"
+        , "cover"   : "/covers/1_NumberGuess.jpg"
         , "guide"   : "/guides/number_guess.html"
         , "udemy"   : "https://udemy.com"
     },
     {   
             "id"    : 2
-        , "name"    : "The Hangman"
+        , "name"    : "Hangman"
         , "level"   : "Easy"
-        , "demo"    : "/demos/the_hangman"
-        , "cover"   : "/covers/the_hangman.jpg"
-        , "guide"   : "/guides/the_hangman.html"
+        , "demo"    : "/demos/1_Hangman"
+        , "cover"   : "/covers/1_Hangman.jpg"
+        , "guide"   : "/guides/1_Hangman.html"
         , "udemy"   : "https://udemy.com"
     },
     {   
             "id"    : 3
         , "name"    : "Tic Tac Toe"
         , "level"   : "Medium"
-        , "demo"    : "/demos/tic_tac_toe"
-        , "cover"   : "/covers/tic_tac_toe.jpg"
-        , "guide"   : "/guides/tic_tac_toe.html"
+        , "demo"    : "/demos/3_TicTacToe"
+        , "cover"   : "/covers/3_TicTacToe.jpg"
+        , "guide"   : "/guides/3_TicTacToe.html"
         , "udemy"   : "https://udemy.com"
     }
 
