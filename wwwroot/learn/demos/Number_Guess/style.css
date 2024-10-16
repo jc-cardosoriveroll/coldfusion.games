@@ -19,8 +19,6 @@ li {
     border-radius: 10px; /* Optional: Rounded corners */
     overflow: hidden; /* Prevent content from overflowing */
     position: absolute;
-    justify-content: center;
-    align-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -42,5 +40,7 @@ li {
     border-radius: 10px; /* Optional: Rounded corners */
     overflow: hidden;
     background-color: #f0f0f0; /* Optional: Background color */
+    justify-content: center;
+    align-items: center;
   }
 
