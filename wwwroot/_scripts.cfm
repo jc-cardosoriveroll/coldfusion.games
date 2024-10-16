@@ -74,10 +74,16 @@
 	<!-- scroll js -->
 	<script src="estudy/assets/js/script.js"></script>
 
-	
+	<cfoutput>
 	<script>
 		function view(id)
 		{
-			alert(id);
+			<cfloop from="1" to="#arraylen(items)#" index="c">
+                <cfset item = items[c]>
+				<cfif item.id eq id>
+					alert("#item.name#");					
+				</cfif>
+			</cfloop>
 		}
 	</script>
+	</cfoutput>
