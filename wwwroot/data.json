@@ -16,5 +16,15 @@
         , "cover"   : "/learn/covers/the_hangman.jpg"
         , "guide"   : "/learn/guides/the_hangman.html"
         , "udemy"   : "https://udemy.com"
+    },
+    {   
+            "id"    : 3
+        , "name"    : "Tic Tac Toe"
+        , "level"   : "Medium"
+        , "demo"    : "/learn/demos/tic_tac_toe"
+        , "cover"   : "/learn/covers/tic_tac_toe.jpg"
+        , "guide"   : "/learn/guides/tic_tac_toe.html"
+        , "udemy"   : "https://udemy.com"
     }
+
 ]
