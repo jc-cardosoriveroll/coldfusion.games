@@ -72,7 +72,7 @@
 
                 </cfif>
             </div>
-            Built with &#2764; by JC - Learn more @Udemy Coldfusion course.
+            Built with &##2764; by JC - Learn more @Udemy Coldfusion course.
         </div>
     </div>
 
