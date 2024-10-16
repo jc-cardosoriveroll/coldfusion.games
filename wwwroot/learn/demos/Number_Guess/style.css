@@ -13,6 +13,13 @@
     font-weight : bold;
 }
 
+.bingo {
+    color: red;
+    font-weight : bolder;
+    background-color: yellow;
+}
+
+
 .card {
     width: 500px; /* Adjust width as needed */
     height: 500px; /* Adjust height as needed */
