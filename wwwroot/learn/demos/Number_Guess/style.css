@@ -1,16 +1,12 @@
+.history {
+    color: gray;
+    font-weight: lighter;
+}
 
-/* Option number List */
-ul {
-    list-style: none;
-  }
-
-/* Option number list item */
-li {
-    display: inline-block;
-    font-size: 18px;
-    font-weight: bold;
-  }
-
+.active {
+    color: #000;
+    font-weight : bold;
+}
 
 .card {
     width: 500px; /* Adjust width as needed */

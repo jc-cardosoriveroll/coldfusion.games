@@ -40,9 +40,9 @@
                 <cfif not(isdefined("session.game"))>
                     <!--- Logic to start game --->
                     <h1>New Game</h1>
-                    <br><a href="index.cfm?difficulty=1" class="btn btn-success">EASY (0-9)</a>
-                    <br><a href="index.cfm?difficulty=2" class="btn btn-warning">MEDIUM (0-99)</a>
-                    <br><a href="index.cfm?difficulty=3" class="btn btn-danger">DIFFICULT (0-999)</a>
+                    <br><a href="index.cfm?difficulty=1" class="btn btn-success w100">EASY (0-9)</a>
+                    <br><a href="index.cfm?difficulty=2" class="btn btn-warning w100">MEDIUM (0-99)</a>
+                    <br><a href="index.cfm?difficulty=3" class="btn btn-danger w100">DIFFICULT (0-999)</a>
                 <cfelse>
                     <!--- Logic to Guess --->
                     <h1>Guess!</h1>
@@ -51,15 +51,18 @@
                         <h3>#session.game.currentState#</h3>
                     </cfif>
 
-                    <ul>
+                    <div class="row">
                     <cfloop from="0" to="#session.game.maxNumber#" index="n">
-                        <cfif arrayfind(session.game.history,n)>
-                            <li>#n#</li>
-                        <cfelse>
-                            <li><a href="index.cfm?guess=#n#&uuid=#createUUID()#">#n#</a></li>
-                        </cfif>
+                        <div class="col">
+                            <cfif arrayfind(session.game.history,n)>
+                                <li class="history">#n#</li>
+                            <cfelse>
+                                <li class="active"><a href="index.cfm?guess=#n#&uuid=#createUUID()#">#n#</a></li>
+                            </cfif>
+                        </div>
                     </cfloop>
-                    </ul>
+                    </div>
+
                     <hr>
                     <a href="index.cfm?newGame">New Game</a> <cfif not(session.game.isDone)> | <a href="index.cfm?giveUp">Give Up</a></cfif>
 
