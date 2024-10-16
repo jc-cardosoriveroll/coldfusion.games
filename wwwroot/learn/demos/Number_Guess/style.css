@@ -20,8 +20,8 @@
 
 
 .card {
-    width: 300px; /* Adjust width as needed */
-    height: 300px; /* Adjust height as needed */
+    width: 500px; /* Adjust width as needed */
+    height: 500px; /* Adjust height as needed */
     border: 1px solid #ccc;
     border-radius: 10px; /* Optional: Rounded corners */
     overflow: hidden; /* Prevent content from overflowing */
@@ -31,10 +31,10 @@
     transform: translate(-50%, -50%);
   }
   
-  
+
   .card-body {
     position: relative;
-    padding: 20px; /* Adjust padding as needed */
+    padding: 2px; /* Adjust padding as needed */
   }
   
   .card-window {
