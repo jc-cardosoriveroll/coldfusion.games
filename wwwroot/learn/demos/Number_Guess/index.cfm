@@ -73,7 +73,7 @@
                 </cfif>
             </div>
         </div>
-        <span class="love">Built with &hearts; by JC. Learn more in our Coldfusion Courses.</span>
+        <span class="love">Built with &hearts; by JC. Learn more in our <a href="https://www.udemy.com/course/desarrollo-apps-en-adobe-coldfusion/">Coldfusion Courses.</a></span>
     </div>
 
     <!--- Bootstrap/Jquery Framework --->
