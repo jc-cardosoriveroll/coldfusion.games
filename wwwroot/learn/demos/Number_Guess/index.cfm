@@ -33,37 +33,44 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <cfif not(isdefined("session.game"))>
-        <!--- Logic to start game --->
-        <h1>New Game</h1>
-        <ul>
-            <li><a href="index.cfm?difficulty=1">EASY (0-9)</a></li>
-            <li><a href="index.cfm?difficulty=2">MEDIUM (0-99)</a></li>
-            <li><a href="index.cfm?difficulty=3">DIFFICULT (0-999)</a></li>
-        </ul>
-    <cfelse>
-        <!--- Logic to Guess --->
-        <h1>Guess!</h1>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-window">
+                <!------ MAIN ----->
+                <cfif not(isdefined("session.game"))>
+                    <!--- Logic to start game --->
+                    <h1>New Game</h1>
+                    <ul>
+                        <li><a href="index.cfm?difficulty=1">EASY (0-9)</a></li>
+                        <li><a href="index.cfm?difficulty=2">MEDIUM (0-99)</a></li>
+                        <li><a href="index.cfm?difficulty=3">DIFFICULT (0-999)</a></li>
+                    </ul>
+                <cfelse>
+                    <!--- Logic to Guess --->
+                    <h1>Guess!</h1>
 
-        <cfif isdefined("session.game.currentState")>
-            <h3>#session.game.currentState#</h3>
-        </cfif>
-
-        <div class="row">
-            <cfloop from="0" to="#session.game.maxNumber#" index="n">
-                <div class="col-1">
-                    <cfif arrayfind(session.game.history,n)>
-                        <span class="history">#n#</span>
-                    <cfelse>
-                        <span class="option"><a href="index.cfm?guess=#n#&uuid=#createUUID()#">#n#</a></span>
+                    <cfif isdefined("session.game.currentState")>
+                        <h3>#session.game.currentState#</h3>
                     </cfif>
-                </div>
-            </cfloop>
-        </div>
-        <hr>
-        <a href="index.cfm?newGame">New Game</a> | <cfif not(session.game.isDone)><a href="index.cfm?giveUp">Give Up</a></cfif>
 
-    </cfif>
+                    <div class="row">
+                        <cfloop from="0" to="#session.game.maxNumber#" index="n">
+                            <div class="col-1">
+                                <cfif arrayfind(session.game.history,n)>
+                                    <span class="history">#n#</span>
+                                <cfelse>
+                                    <span class="option"><a href="index.cfm?guess=#n#&uuid=#createUUID()#">#n#</a></span>
+                                </cfif>
+                            </div>
+                        </cfloop>
+                    </div>
+                    <hr>
+                    <a href="index.cfm?newGame">New Game</a> | <cfif not(session.game.isDone)><a href="index.cfm?giveUp">Give Up</a></cfif>
+
+                </cfif>
+            </div>
+        </div>
+    </div>
 
     <!--- Bootstrap/Jquery Framework --->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
