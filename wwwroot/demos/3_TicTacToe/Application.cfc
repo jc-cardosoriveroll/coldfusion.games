@@ -7,7 +7,7 @@ component {
 
     // websockets
     this.wschannels = [
-        { name:"websockets",  cfclistener: "listener" }
+        { name:" game",  cfclistener: "listener" }
     ];
 
     public boolean function onApplicationStart(){

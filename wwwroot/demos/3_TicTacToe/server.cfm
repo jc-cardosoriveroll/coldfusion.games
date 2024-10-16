@@ -1,5 +1,11 @@
-<cfset wsPublish("websockets","Yooouu dude!")>
+<cfparam name="url.send" default="">
+<cfif len(url.send)>
+	<cfset wsPublish("game",url.send)>
+</cfif>
 
+<!---
+https://github.com/GiancarloGomez/ColdFusion-Realtime-With-WebSockets/blob/master/Application.cfc
+--->
 
 <cfscript>
 	// get our stats
