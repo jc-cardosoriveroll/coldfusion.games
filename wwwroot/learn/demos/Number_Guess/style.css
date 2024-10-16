@@ -1,3 +1,14 @@
+/* center content */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px; /* Adjust height as needed */
+    width: 500px; /* Adjust width as needed */
+    border: 1px solid black;
+}
+
+
 /* Option number List */
 ul {
     list-style: none;
