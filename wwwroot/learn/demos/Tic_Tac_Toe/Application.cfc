@@ -7,10 +7,7 @@ component {
 
     // websockets
     this.wschannels = [
-        { name:"demo", cfclistener:"listeners.ChannelListener" },
-        { name:"websockets", cfclistener:"listeners.ChannelListener" },
-        { name:"chat", cfclistener:"listeners.ChatListener" },
-        { name:"dashboard" }
+        { name:"websockets" }
     ];
 
     public boolean function onApplicationStart(){
@@ -35,19 +32,4 @@ component {
         return true;
     }
 
-    /**
-    * Demo User Authentication - very simple
-    * Here you would do real work
-    */
-    public boolean function onWSAuthenticate(string username, string password, struct connectionInfo) {
-        var usersAllowed    = ["JC","Maria","Mailang","Jonah","Gia","Molly","Lilly"];
-        var authenticated   = arrayFindNoCase(usersAllowed,arguments.username);
-        if (authenticated){
-            arguments.connectionInfo.authenticated = true;
-            arguments.connectionInfo.username = arguments.username;
-        } else {
-            connectionInfo.authenticated = false;
-        }
-        return authenticated;
-    }
 }
