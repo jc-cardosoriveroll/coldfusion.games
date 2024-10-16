@@ -1,5 +1,5 @@
 function openWindow(url) {
-    const newWindow = window.open(url, "_blank");
+    const newWindow = window.open(url, "_blank", "noopener noreferrer");
   
     // Remove all control elements from the new window
     newWindow.document.body.innerHTML = "";
