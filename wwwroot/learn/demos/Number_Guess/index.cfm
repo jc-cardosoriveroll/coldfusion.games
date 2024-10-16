@@ -72,8 +72,8 @@
 
                 </cfif>
             </div>
-            Built with &##2764; by JC - Learn more @Udemy Coldfusion course.
         </div>
+        <span class="love">Built with &##2764; by JC - Learn more @Udemy Coldfusion course.</span>
     </div>
 
     <!--- Bootstrap/Jquery Framework --->
