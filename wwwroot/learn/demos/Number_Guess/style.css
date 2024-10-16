@@ -1,3 +1,8 @@
+span {
+    width: 50px;
+    text-align: center;
+}
+
 .history {
     color: gray;
     font-weight: lighter;
