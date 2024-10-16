@@ -4,9 +4,9 @@
         , "name"    : "Number Guessing"
         , "level"   : "Easy"
         , "course"  : "Fun Games"
-        , "demo"    : "/learn/pack-1/1-number_guessing"
-        , "cover"   : "/learn/covers/1-number_guessing.jpg"
-        , "guide"   : "/learn/guides/1-number_guessing.html"
+        , "demo"    : "/learn/demos/number_guessing"
+        , "cover"   : "/learn/covers/number_guessing.jpg"
+        , "guide"   : "/learn/guides/number_guessing.html"
     },
 
     {   
@@ -14,9 +14,9 @@
         , "name"    : "The Hangman"
         , "level"   : "Easy"
         , "course"  : "Fun Games"
-        , "demo"    : "/learn/pack-1/2-the_hangman"
-        , "cover"   : "/learn/covers/2-the_hangman.jpg"
-        , "guide"   : "/learn/guides/2-the_hangman.html"
+        , "demo"    : "/learn/demos/the_hangman"
+        , "cover"   : "/learn/covers/the_hangman.jpg"
+        , "guide"   : "/learn/guides/the_hangman.html"
     }
 
 
