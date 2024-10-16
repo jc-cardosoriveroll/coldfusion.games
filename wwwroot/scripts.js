@@ -1,16 +1,12 @@
-$(document).ready(function(){
-    $(".link").click(function(){
-      var url = $(this).attr("data-url"); // Get the URL from the button's data-url attribute
-      $.ajax({
-        url: url,
-        success: function(data) {
-          $("#modalContent").html(data); // Replace the modal content with the fetched data
-          $("#myModal").css("display", "block");
-        }
-      });
-    });
+function openWindow(url) {
+    const newWindow = window.open(url, "_blank");
   
-    $(".close").click(function(){
-      $("#myModal").css("display", "none");
-    });
-  });
+    // Remove all control elements from the new window
+    newWindow.document.body.innerHTML = "";
+    newWindow.document.documentElement.style.margin = "0";
+    newWindow.document.documentElement.style.padding = "0";
+  
+    // Set the window's size and position (optional)
+    newWindow.resizeTo(400, 300);
+    newWindow.moveTo(100, 100);
+  }
