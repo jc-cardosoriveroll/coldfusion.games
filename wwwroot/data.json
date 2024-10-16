@@ -4,8 +4,8 @@
         , "name"    : "Number Guessing"
         , "level"   : "Easy"
         , "demo"    : "/learn/demos/number_guess"
-        , "cover"   : "/learn/covers/number_gues.jpg"
-        , "guide"   : "/learn/guides/number_gues.html"
+        , "cover"   : "/learn/covers/number_guess.jpg"
+        , "guide"   : "/learn/guides/number_guess.html"
         , "udemy"   : "https://udemy.com"
     },
     {   
