@@ -132,10 +132,11 @@
             <cfset this.data.gameOver = true>
             <cfset this.data.wonOrLost = "LOST">
         <cfelse>
-            <!--- check win (need to loop because letters can repeat) --->
+            <!--- check win (need to loop because letters can repeat)--->
             <cfset local.won = true>
-            <cfloop from="1" to="#this.data.word#" index="w">
-                <cfif not(arrayfindnocase(this.data.hits,w))>
+            <cfloop from="1" to="#len(this.data.word)#" index="w">
+                <cfset local.letter = mid(this.data.word,w,1)>
+                <cfif not(arrayfindnocase(this.data.hits,local.letter))>
                     <cfset local.won = false>
                 </cfif>
             </cfloop>
