@@ -1,4 +1,4 @@
-span {
+.unit {
     width: 50px;
     text-align: center;
 }
@@ -28,7 +28,7 @@ span {
 
   .card-body {
     position: relative;
-    padding: 2px; /* Adjust padding as needed */
+    padding: 0px; /* Adjust padding as needed */
   }
   
   .card-window {

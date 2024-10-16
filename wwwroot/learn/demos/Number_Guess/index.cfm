@@ -53,7 +53,7 @@
 
                     <div class="row">
                     <cfloop from="0" to="#session.game.maxNumber#" index="n">
-                        <div class="col text-center">
+                        <div class="unit">
                             <cfif arrayfind(session.game.history,n)>
                                 <span class="history">#n#</li>
                             <cfelse>
