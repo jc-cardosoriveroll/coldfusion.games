@@ -48,7 +48,9 @@
                     <h1>Guess!</h1>
 
                     <cfif isdefined("session.game.currentState")>
-                        <h3>#session.game.currentState#</h3>
+                        <div class="hint">
+                            <h3>#session.game.currentState#</h3>
+                        </div>
                     </cfif>
 
                     <div class="row">

@@ -1,25 +1,34 @@
+/* container that shows all numbers */
 .unit {
     width: 50px;
     text-align: center;
 }
 
+/* numbers that have been picked and are wrong */
 .history {
     color: gray;
     font-weight: lighter;
 }
 
+/* numbers that have not been picked and are eligible */
 .active {
     color: #000;
     font-weight : bold;
 }
 
+/* number that was selected (after finding it) */
 .bingo {
     color: red;
     font-weight : bolder;
     background-color: yellow;
 }
 
+/* label with hints of higher/lower */
+.hint {
+    text-align: center;
+}
 
+/* card container in center screen */
 .card {
     width: 500px; /* Adjust width as needed */
     height: 500px; /* Adjust height as needed */
@@ -32,12 +41,13 @@
     transform: translate(-50%, -50%);
   }
   
-
+  /* body layout inside card */
   .card-body {
     position: relative;
     padding: 0px; /* Adjust padding as needed */
   }
   
+  /* absolute centering */
   .card-window {
     position: absolute;
     top: 0;
