@@ -46,7 +46,7 @@ li {
 
 /* card container in center screen */
 .card {
-    width: 500px; /* Adjust width as needed */
+    width: 600px; /* Adjust width as needed */
     height: 400px; /* Adjust height as needed */
     border: 1px solid #ccc;
     border-radius: 10px; /* Optional: Rounded corners */
