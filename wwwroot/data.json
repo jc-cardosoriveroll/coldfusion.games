@@ -8,7 +8,6 @@
         , "guide"   : "/learn/guides/number_gues.html"
         , "udemy"   : "https://udemy.com"
     },
-
     {   
             "id"    : 2
         , "name"    : "The Hangman"
@@ -18,6 +17,4 @@
         , "guide"   : "/learn/guides/the_hangman.html"
         , "udemy"   : "https://udemy.com"
     }
-
-
 ]
