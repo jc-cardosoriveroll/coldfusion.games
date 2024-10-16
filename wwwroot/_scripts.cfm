@@ -74,17 +74,5 @@
 	<!-- scroll js -->
 	<script src="estudy/assets/js/script.js"></script>
 
-	<cfoutput>
-	<script>
-		function view(id)
-		{
-			switch(id) {
-			<cfloop from="1" to="#arraylen(items)#" index="c">
-				case #items[c].id#:
-					alert("#item.name#");					
-				break;
-			</cfloop>
-			}
-		}
-	</script>
-	</cfoutput>
+	<!-- custom js -->
+	<script src="scripts.js"></script>

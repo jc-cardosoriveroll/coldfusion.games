@@ -32,6 +32,9 @@
 	<link rel="stylesheet" href="estudy/assets/css/dropdown.css" type="text/css" media="all">
 	<!-- responsive CSS -->
 	<link rel="stylesheet" href="estudy/assets/css/responsive.css" type="text/css" media="all">
+	<!-- custom CSS -->
+	<link rel="stylesheet" href="style.css" type="text/css" media="all">
 	<!-- modernizr js -->
 	<script src="estudy/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+
 </head>

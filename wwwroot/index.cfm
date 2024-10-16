@@ -18,6 +18,7 @@
     <cfinclude template="_sidebar.cfm">
     <cfinclude template="_footer.cfm">
     --->
+    <cfinclude template="_modal.cfm">
     <cfinclude template="_scripts.cfm">
 </body>
 
