@@ -6,7 +6,8 @@ ul {
 /* Option number list item */
 li {
     display: inline-block;
-    margin-right: 5px; 
+    font-size: 18px;
+    font-weight: bold;
   }
 
 
@@ -39,3 +40,4 @@ li {
     overflow: hidden;
     background-color: #f0f0f0; /* Optional: Background color */
   }
+

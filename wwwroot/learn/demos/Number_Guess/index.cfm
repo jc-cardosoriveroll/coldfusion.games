@@ -40,11 +40,9 @@
                 <cfif not(isdefined("session.game"))>
                     <!--- Logic to start game --->
                     <h1>New Game</h1>
-                    <ul>
-                        <li><a href="index.cfm?difficulty=1">EASY (0-9)</a></li>
-                        <li><a href="index.cfm?difficulty=2">MEDIUM (0-99)</a></li>
-                        <li><a href="index.cfm?difficulty=3">DIFFICULT (0-999)</a></li>
-                    </ul>
+                    <br><a href="index.cfm?difficulty=1" class="btn btn-success">EASY (0-9)</a>
+                    <br><a href="index.cfm?difficulty=2" class="btn btn-warning">MEDIUM (0-99)</a>
+                    <br><a href="index.cfm?difficulty=3" class="btn btn-danger">DIFFICULT (0-999)</a>
                 <cfelse>
                     <!--- Logic to Guess --->
                     <h1>Guess!</h1>
