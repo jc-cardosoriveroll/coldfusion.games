@@ -73,6 +73,3 @@
 
 	<!-- scroll js -->
 	<script src="estudy/assets/js/script.js"></script>
-
-	<!-- custom js -->
-	<script src="scripts.js"></script>

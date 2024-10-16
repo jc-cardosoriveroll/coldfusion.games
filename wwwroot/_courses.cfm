@@ -14,9 +14,9 @@
 				</div>
 				<div class="col-lg-6 col-md-12">
                     <ul class="course-menu d-flex justify-content-center wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
-                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".Bas" class="">Basic</a></li>
-                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".Int" class="">Intermediate</a></li>
-                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".Adv" class="">Advanced</a></li>
+                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".Easy" class="">Easy</a></li>
+                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".Medium" class="">Medium</a></li>
+                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".Hard" class="">Hard</a></li>
                     </ul>
                 </div>
 			</div>
@@ -24,7 +24,7 @@
                 <!--- Loop Courses --->
                 <cfloop from="1" to="#arraylen(items)#" index="c">
                     <cfset item = items[c]>
-                    <div class="col-lg-4 col-md-6 mix #left(item.level,3)#">
+                    <div class="col-lg-4 col-md-6 mix #item.level#">
                         <div class="course-single-box wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
                             <div class="course-thumb">
                                 <img src="#item.cover#" alt="#item.name#">
@@ -37,8 +37,8 @@
                             </div>
                             <div class="course-content">
                                 <div class="course-meta">
-                                    <span><i class="bi bi-book"></i>   <a href="javascript:openWindow('#item.guide#');">TUTORIAL</a></span>
-                                    <span><i class="bi bi-clock"></i>  <a href="javascript:openWindow('#item.demo#');">DEMO</a></span>
+                                    <span><i class="bi bi-book"></i>   <a href="#item.guide#" target="_blank">TUTORIAL</a></span>
+                                    <span><i class="bi bi-clock"></i>  <a href="#item.demo#" target="_blank">DEMO</a></span>
                                 </div>
                             </div>
                         </div>

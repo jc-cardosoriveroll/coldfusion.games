@@ -2,7 +2,7 @@
     {   
             "id"    : 1
         , "name"    : "Number Guessing"
-        , "level"   : "Basic"
+        , "level"   : "Easy"
         , "course"  : "Fun Games"
         , "demo"    : "/learn/pack-1/1-number_guessing"
         , "cover"   : "/learn/covers/1-number_guessing.jpg"
@@ -12,7 +12,7 @@
     {   
             "id"    : 2
         , "name"    : "The Hangman"
-        , "level"   : "Basic"
+        , "level"   : "Easy"
         , "course"  : "Fun Games"
         , "demo"    : "/learn/pack-1/2-the_hangman"
         , "cover"   : "/learn/covers/2-the_hangman.jpg"
