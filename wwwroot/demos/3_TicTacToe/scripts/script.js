@@ -14,6 +14,14 @@ function parseMessage(message){
         }
     }
 
+    /* Manage "user" message cases */
+    if (message.type == 'data'){
+        let other = message.data.subscriberInfo;
+        switch (message.action){
+            case "allowSubscribe" : updateUserList(); break; 
+        }
+    }
+
     console.log(message);
 }
 
