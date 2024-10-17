@@ -3,8 +3,7 @@
 		<cfargument name="subscriberInfo" type="struct">
 
 		<!--- When new user has joined send msg to Lobby --->
-		<cfset local.msg = {"action" : "newUser", "subscriberInfo" : arguments.subscriberInfo}>	
-		<cfset wsPublish("websocket",local.msg)>	
+		<cfset wsPublish("websocket","newUser")>	
 
 		<cfreturn true>		
 	</cffunction>
