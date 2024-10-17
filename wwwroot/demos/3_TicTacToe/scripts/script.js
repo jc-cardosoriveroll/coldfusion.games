@@ -17,7 +17,7 @@ function parseMessage(message){
             case "welcome" :
                 $.get('remote/async.cfm?action=users', function(r) {
                     let users = JSON.parse(r);
-                    users.forEach(function(user) {
+                    users.forEach(function(user.) {
                         const ulElement = document.getElementById('onlineUsers');
                         const liElement = document.createElement('li');
                         liElement.textContent = user.name;
@@ -31,9 +31,7 @@ function parseMessage(message){
 
 }
 
+
 function unsubscribe(data){
     console.log(data);    
-}
-
-function getAsyncData(mode){
 }
