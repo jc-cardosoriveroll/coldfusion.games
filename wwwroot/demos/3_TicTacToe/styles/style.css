@@ -2,8 +2,8 @@
 /* disabled input box that confirms self userID */ 
 .clientid { 
     border: none; 
-    background-color: white;
-    width: 150px;
+    background-color: fffbbf;
+    width: 100px;
 }
 
 /* main container */
