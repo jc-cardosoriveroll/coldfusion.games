@@ -3,7 +3,7 @@
 
 <cfswitch expression="#action#">
     <cfcase value="wsGetSubscribers">
-        <cfset local.result = application.game.wsGetSubscribers("websocket")>
+        <cfset local.result = application.game.wsGetSubscribers(channel="websocket")>
     </cfcase>
 </cfswitch>
 
