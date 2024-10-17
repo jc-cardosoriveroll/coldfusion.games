@@ -3,7 +3,7 @@
         subscribeTo	="play" />
 
 <cfset wsUsers = wsGetSubscribers('websocket')>
-
+<cfset wsChannels = wsGetAllChannels()>
 
 
   <!----------------- MAIN CONTENT ---------------->
@@ -33,6 +33,7 @@
 
                     <!--- List all users --->
                     <cfdump var="#wsUsers#">
+                    <cfdump var="#wsChannels#">
 
               </div>
             </div>

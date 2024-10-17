@@ -45,11 +45,13 @@
 
 		<cfif structKeyExists(url,"init")>
             <!--- tell everyone to reconnect --->
+			<!---
 			<cfloop collection="#wsGetAllChannels()#" item="key">
 				<cfset wsPublish(key,"FORCE-RECONNECT")>
 			</cfloop>
 			<cfset onApplicationStop()>
 			<cflocation url="/" addtoken="false">
+			--->
 		</cfif>
 
 		<cfreturn true />
