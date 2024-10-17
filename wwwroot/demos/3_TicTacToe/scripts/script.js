@@ -17,7 +17,7 @@ function parseMessage(message){
     /* Manage "user" message cases */
     if (message.type == 'data'){
         let other = message.data.subscriberInfo;
-        switch (message.action){
+        switch (message.data.action){
             case "allowSubscribe" : updateUserList(); break; 
         }
     }
