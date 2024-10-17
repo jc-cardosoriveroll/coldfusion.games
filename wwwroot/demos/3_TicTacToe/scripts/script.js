@@ -15,18 +15,16 @@ function parseMessage(message){
     if (data2.type == 'response'){
         switch (data2.reqType){
             case "welcome" :
-                let users = getAsyncData("users");
-                console.log(users);
-
-               /* update user list  
-                users.forEach(function(user) {
-                    console.log(user);
-                    const ulElement = document.getElementById('onlineUsers');
-                    const liElement = document.createElement('li');
-                    liElement.textContent = user.name;
-                    ulElement.appendChild(liElement);
+                $.get('remote/async.cfm?action=users', function(r) {
+                    let users = JSON.parse(r);
+                    users.forEach(function(user) {
+                        const ulElement = document.getElementById('onlineUsers');
+                        const liElement = document.createElement('li');
+                        liElement.textContent = user.name;
+                        ulElement.appendChild(liElement);
+                    });
                 });
-                */
+             
             break; 
         }
     }
@@ -38,7 +36,4 @@ function unsubscribe(data){
 }
 
 function getAsyncData(mode){
-    $.get('remote/async.cfm?action=' + mode, function(data) {
-       return JSON.stringify(data);
-      });
 }
