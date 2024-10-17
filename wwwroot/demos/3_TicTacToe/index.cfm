@@ -38,6 +38,8 @@
 
                     <h3>Play against:</h3> 
                     <ul id="onlineUsers"></ul>
+                    <hr>
+                    open: #url.fullpageUrl#
 
               </div>
             </div>
