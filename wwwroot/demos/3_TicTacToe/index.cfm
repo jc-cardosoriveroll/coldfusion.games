@@ -39,7 +39,7 @@
                     <h3>Play against:</h3> 
                     <ul id="onlineUsers"></ul>
                     <hr>
-                    open: #application.game.getFullUrl()#
+                    open: #cgi.server_name#/#cgi.SCRIPT_NAME#
 
               </div>
             </div>
