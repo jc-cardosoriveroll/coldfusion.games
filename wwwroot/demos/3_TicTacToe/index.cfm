@@ -31,7 +31,7 @@
 
                     <h1>Welcome to Lobby</h1>
 
-                    <input type="hidden" name="clientid" id="clientid" value="0">
+                    <input type="text" name="clientid" id="clientid" value="0">
                     <!--- List all users --->
                     <cfdump var="#wsChannels#">
                     <cfdump var="#wsUsers#">
