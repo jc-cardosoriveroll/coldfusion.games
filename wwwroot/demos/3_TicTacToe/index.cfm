@@ -30,12 +30,7 @@
                   <div class="container">
 
                     <h1>Welcome to Lobby</h1>
-
-                    <input type="text" name="clientid" id="clientid" value="0">
-                    <!--- List all users --->
-                    <cfdump var="#wsChannels#">
-                    <cfdump var="#wsUsers#">
-                    <textarea id="console" rows="5" style="width: 800px;"></textarea>
+                    <input type="hidden" name="clientid" id="clientid" value="0">
 
               </div>
             </div>

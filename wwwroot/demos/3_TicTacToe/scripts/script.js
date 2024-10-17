@@ -11,17 +11,13 @@ function parseMessage(message){
         clientid.value = data2.clientid;  
     }
 
-    /* Get PublisherId from Data to identify Source */
-    if (typeof data2.publisherid !== 'undefined') {
-        let publisherid = document.getElementById("publisherid");
-        publisherid.value = data2.publisherid;  
+    /* case for Msg Types  */
+    if (typeof data2.action !== 'undefined') {
+        switch (data2.action) {
+            case "newUser":
+                alert("refresh the User List");
+            break;
+        }
     }
-
-    /* case for Msg Types 
-    switch (expression) {
-        case value1:
-
-        break;
-    }*/
 }
 
