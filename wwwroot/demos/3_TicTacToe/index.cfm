@@ -1,8 +1,9 @@
 <cfwebsocket name   ="ws"
         onMessage 	="parseMessage"
+          onClose = "unsubscribe"
         subscribeTo	="websocket" 
               secure= true />
-              
+
 <cfset Users = wsGetSubscribers("websocket")>
 
   <!----------------- MAIN CONTENT ---------------->

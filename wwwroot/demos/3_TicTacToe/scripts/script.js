@@ -11,21 +11,8 @@ function parseMessage(message){
         clientid.innerHTML = data2.clientid;  
     }
 
-    /* case for Msg Types  */
-    if (typeof data2.data !== 'undefined') {
-        switch (data2.data) {
-            case "wsGetSubscribers":
-                //refresh the User List
-                ajaxRequest("wsGetSubscribers");
-            break;
-        }
-    }
 }
 
-function ajaxRequest(action)
-{
-    $.get( "remote/async.cfm?action=" + action, function( data ) {
-        var result = JSON.parse(data);
-        console.log(result); 
-    });
+function unsubscribe(){
+    ws.unsubscribe( "websocket" );
 }
