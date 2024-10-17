@@ -4,5 +4,5 @@ function parseMessage(message){
 }
 
 function updateLobby(message){
-    alert(message);
+    alert(JSON.stringify(message));
 }
