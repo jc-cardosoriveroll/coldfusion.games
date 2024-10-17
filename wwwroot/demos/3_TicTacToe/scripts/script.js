@@ -5,9 +5,9 @@ function parseMessage(message){
     console.log(data1);
 
     var data2 =   JSON.parse(data1);  /* use as obj */
+    let clientid = document.getElementById("clientid");
     /* Get ClientID from Data to identify Self */
     if (typeof data2.clientid !== 'undefined') {
-        let clientid = document.getElementById("clientid");
         clientid.innerHTML = data2.clientid;  
     }
 
@@ -18,10 +18,13 @@ function parseMessage(message){
                 $.get('remote/async.cfm?action=users', function(r) {
                     let users = JSON.parse(r);
                     users.forEach(function(user) {
-                        const ulElement = document.getElementById('onlineUsers');
-                        const liElement = document.createElement('li');
-                        liElement.textContent = user.clientid;
-                        ulElement.appendChild(liElement);
+                        if (user.clientid != clientid)
+                        {
+                            const ulElement = document.getElementById('onlineUsers');
+                            const liElement = document.createElement('li');
+                            liElement.textContent = user.clientid;
+                            ulElement.appendChild(liElement);
+                        }
                     });
                 });
              
