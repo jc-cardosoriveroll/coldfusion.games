@@ -5,12 +5,7 @@
         <cfparam name="arguments.category" default="Coding">
         <cfparam name="arguments.level" default="1">
 
-        <!--- Set Image Paths --->
-        <cfset this["paths"] = {
-            "hang" : "images/steps",
-            "large" : "images/letters/480px",
-            "small" : "images/letters/24px"
-        }>
+
 
         <!--- Set Global values --->
         <cfset this["data"] = {
@@ -21,7 +16,7 @@
             "show" : [],
             "gameOver" : false,
             "wonOrLost" : "None",
-            "hangImg" : this.paths.hang & "/step0.png" 
+            "hangImg" : "images/step0.png" 
         }>
 
 
@@ -56,7 +51,7 @@
 
     <cffunction name="jsontoqry" access="private" hint="reads json file and converts to query">
         <!--- Read source file --->
-        <cffile variable="local.file" action="read" file="#expandpath('words.json')#" >
+        <cffile variable="local.file" action="read" file="#expandpath('data/words.json')#" >
         <cfset local.data = deserializeJSON(local.file)>
 
         <!--- create new query to simplify data --->
@@ -118,9 +113,9 @@
         <cfset local.show = []>
         <cfloop from="1" to="#len(this.data.word)#" index="local.w">
             <cfset local.thisLetter = mid(this.data.word,local.w,1)>
-            <cfset local.show[local.w] =  this.paths.large & "/0_hires.png"> <!--- default null --->
+            <cfset local.show[local.w] =  "images/0_hires.png"> <!--- default null --->
             <cfif arrayfindnocase(this.data.hits,local.thisLetter)>
-                <cfset local.show[local.w] = this.paths.large & "/" & local.thisLetter & "_hires.png">
+                <cfset local.show[local.w] = "images/" & local.thisLetter & "_hires.png">
             </cfif>
         </cfloop>
         <cfset this.data.show = local.show>
@@ -149,7 +144,7 @@
     </cffunction>
 
     <cffunction name="evalHangImg" access="private" hint="updates the image to display">
-        <cfset this.data.hangImg = this.paths.hang & "/step" & arraylen(this.data.miss) & ".png">
+        <cfset this.data.hangImg = "images/" & arraylen(this.data.miss) & ".png">
         <cfreturn />
     </cffunction>
 

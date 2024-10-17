@@ -16,10 +16,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css?uuid=#createUUID()#">
+        <link rel="stylesheet" href="styles/style.css?uuid=#createUUID()#">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="script.js?uuid=#createUUID()#"></script>
+        <script src="scripts/script.js?uuid=#createUUID()#"></script>
       </head>
       <body>
         <!--- Main Content --->
@@ -30,12 +30,12 @@
                 <div class="container">
 
                   <div class="image">
-                    <img src="images/steps/step0.png" width="115" height="160" id="hang"> <!--- keep size consistent --->
+                    <img src="images/step0.png" width="115" height="160" id="hang"> <!--- keep size consistent --->
                   </div>
                   <div class="letters">
                     <cfloop from="1" to="#len(application.game.data.word)#" index="w">
                       <!--- JS will change the image async through ID (default: 0 for empty) --->
-                      <img src="images/letters/480px/0_hiRes.png" height="60" width="60" class="letter" id="p#w#">
+                      <img src="images/0_hiRes.png" height="60" width="60" class="letter" id="p#w#">
                     </cfloop>
                   </div>
 
@@ -43,7 +43,7 @@
                     <cfloop from="1" to="#arraylen(letters)#" index="l">
                       <li>
                         <a class="pick" letter="#letters[l]#">
-                            <img src="images/letters/24px/#letters[l]#.png" />
+                            <img src="images/#letters[l]#.png" />
                         </a>
                       </li>
                     </cfloop>
