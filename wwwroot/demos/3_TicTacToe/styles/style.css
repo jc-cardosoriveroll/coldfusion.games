@@ -1,7 +1,20 @@
 
 /* disabled input box that confirms self userID */ 
-.clientid { border: none; background-color: white;}
+.clientid { 
+    border: none; 
+    background-color: white;
+    width: 150px;
+}
 
+/* main container */
+.container {
+    text-align: center;
+}
+
+/* list used un lobby to select, remove bullet */
+li {
+    list-style-type: none;
+}
 
 /* card container in center screen */
 .card {
