@@ -1,9 +1,10 @@
 function parseMessage(message){
-    var data   = JSON.stringify(message).replace(/,"/g,',\n "').replace('{','{\n ').replace('}','\n}');
-    document.getElementById("console").innerHTML = data;
+    var data1   = JSON.stringify(message).replace(/,"/g,',\n "').replace('{','{\n ').replace('}','\n}');
+    let console = document.getElementById("console");
+    console.innerHTML = data1;
+
+    var data2 = JSON.parse(message);
+    let clientid = document.getElementById("clientid");
+    clientid.value = data2.clientid;  
 }
 
-function getLocalClientId(message){
-    var data = JSON.parse(message);
-    alert("clientId:" + data.clientid);
-}
