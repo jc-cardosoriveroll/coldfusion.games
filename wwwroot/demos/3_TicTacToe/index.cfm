@@ -1,9 +1,9 @@
-<cfwebsocket name   ="websocket"
+<cfwebsocket name   ="app003"
         onMessage 	="parseMessage"
-        subscribeTo	="play" />
+        subscribeTo	="app003" />
 
 <cfset wsChannels = wsGetAllChannels()>
-<cfset wsUsers = wsGetSubscribers('play')>
+<cfset wsUsers = wsGetSubscribers('app003')>
 
 
   <!----------------- MAIN CONTENT ---------------->

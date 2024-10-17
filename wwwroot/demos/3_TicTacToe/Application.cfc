@@ -12,7 +12,7 @@
 
 	<!--- Websocket specific --->
     <cfset this.wschannels = [ 
-		{ 	name: "play",  cfclistener: "components.listener" }  
+		{ 	name: "app003",  cfclistener: "components.listener" }  
 	]>
 
 
