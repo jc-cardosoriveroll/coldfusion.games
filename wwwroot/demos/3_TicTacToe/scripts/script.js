@@ -15,9 +15,8 @@ function parseMessage(message){
     if (data2.type == 'response'){
         switch (data2.reqType){
             case "welcome" :
-                let users = getAsyncData("users");
-                console.log(JSON.stringify(users));
-                /* update user list  */
+                let users = JSON.parse(getAsyncData("users"));
+               /* update user list  */
                 users.forEach(function(user) {
                     console.log(user);
                     const ulElement = document.getElementById('onlineUsers');
