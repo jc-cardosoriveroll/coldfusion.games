@@ -10,12 +10,10 @@ $(document).ready(function() {
         $.get( "remote/async.cfm?letter=" + letter, function( data ) {
             /* ----------------------------------------------- */
                 /* expect a data response like: 
-                {"data":{"hits":["a"],"word":"India","category":"Countries","wonOrLost":"None"
-                ,"miss":["b"],"gameOver":false,"hangImg":"images/steps/step1.png","level":"1"
-                ,"show":["images/letters/480px/0_hires.png","images/letters/480px/0_hires.png"
-                ,"images/letters/480px/0_hires.png","images/letters/480px/0_hires.png"
-                ,"images/letters/480px/a_hires.png"]},"paths":{"small":"images/letters/24px"
-                ,"hang":"images/steps","large":"images/letters/480px"}}             
+                {"data":
+                    {"hits":["a"],"word":"India","category":"Countries","wonOrLost":"None"
+                    ,"miss":["b"],"gameOver":false,"hangImg":"images/step1.png","level":"1"
+                    ,"show":["images/0_hires.png","images/0_hires.png","images/0_hires.png","images/0_hires.png","images/a_hires.png"] }}             
             /* ----------------------------------------------- */
 
             /* always good practice to debug in console */

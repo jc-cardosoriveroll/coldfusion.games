@@ -144,7 +144,7 @@
     </cffunction>
 
     <cffunction name="evalHangImg" access="private" hint="updates the image to display">
-        <cfset this.data.hangImg = "images/" & arraylen(this.data.miss) & ".png">
+        <cfset this.data.hangImg = "images/step" & arraylen(this.data.miss) & ".png">
         <cfreturn />
     </cffunction>
 
