@@ -12,18 +12,12 @@
 		<cfargument name="publisherInfo" type="struct">
 
 		<!--- When new user let subscribers know they need to refresh user list --->
-		<cfset local.data = {"users" : getSocketUsers(channel="websocket")}>
+		<cfset local.data = {"users" : wsGetSubscribers("websocket")}>
 		<cfset wsPublish("websocket",serializeJSON(local.data))>	
 
 		<cfreturn arguments.message>
 	</cffunction>
 
 
-    <!--- custom "internal" helpers --->
-    <cffunction name="getSocketUsers" access="private">
-        <cfargument name="channel" default="websocket">
-        <cfset local.wsUsers = wsGetSubscribers(arguments.channel)>
-        <cfreturn local.wsUsers>
-    </cffunction>
 
 </cfcomponent>
