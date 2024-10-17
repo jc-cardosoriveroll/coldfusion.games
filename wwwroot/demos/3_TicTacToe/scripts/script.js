@@ -3,6 +3,7 @@ function parseMessage(message){
     document.getElementById("console").innerHTML = data;
 }
 
-ws.onopen = function() {
-    console.log('WebSocket connection opened with ID:', clientId);
-  };
+function getLocalClientId(message){
+    var data = JSON.parse(message);
+    alert("clientId:" + data.clientid);
+}
