@@ -1,23 +1,22 @@
 function parseMessage(message){
     
     /* Make Message a Readable Json and send to console */
-    var data1   = JSON.stringify(message);
+    var data   = JSON.parse(message);
 
-    var data2 =   JSON.parse(data1);  /* use as obj */
     let clientid = document.getElementById("clientid");
     /* Get ClientID from Data to identify Self */
-    if (typeof data2.clientid !== 'undefined') {
-        clientid.innerHTML = data2.clientid;  
+    if (typeof data.clientid !== 'undefined') {
+        clientid.innerHTML = data.clientid;  
     }
 
     /* Manage "server" response cases */
-    if (data2.type == 'response'){
-        switch (data2.reqType){
+    if (data.type == 'response'){
+        switch (data.reqType){
             case "subscribeTo" : updateUserList(); break; 
         }
     }
 
-    console.log(data2);
+    console.log(data);
 
 }
 
