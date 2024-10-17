@@ -18,13 +18,8 @@ function parseMessage(message){
         }
     }
 
-    /* Manage "other" client messages which come as Data */
-    if (data2.type == 'data'){
-        let custom = JSON.parse(data2.type);
-        switch (custom.type){
-            case "unsubscribe" : updateUserList(); break; 
-        }
-    }
+    console.log(data2.type);
+    
 }
 
 function updateUserList(){

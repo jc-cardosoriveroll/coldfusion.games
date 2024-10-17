@@ -1,8 +1,10 @@
 <cfwebsocket name   ="ws"
+        subscribeTo	="websocket" 
         onMessage 	="parseMessage"
           onClose   ="parseMessage"
-        subscribeTo	="websocket" 
-              secure= false />
+          onError   ="parseMessage"
+           onOpen   ="parseMessage"
+            secure  = false />
 
 
   <!----------------- MAIN CONTENT ---------------->
