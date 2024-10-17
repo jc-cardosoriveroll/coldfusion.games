@@ -18,7 +18,7 @@ function parseMessage(message){
                 $.get('remote/async.cfm?action=users', function(r) {
                     let users = JSON.parse(r);
                     users.forEach(function(user) {
-                        if (user.clientid != clientid)
+                        if (user.clientid != clientid.innerHTML)
                         {
                             const ulElement = document.getElementById('onlineUsers');
                             const liElement = document.createElement('li');
