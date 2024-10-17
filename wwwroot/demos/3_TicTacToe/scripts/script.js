@@ -19,7 +19,7 @@ function parseMessage(message){
         switch (data2.reqType){
             case "welcome" :
                 let data = getAsyncData("users");
-                console.log(JSON.stringify(subs));
+                console.log(JSON.stringify(data));
             break; 
         }
     }
