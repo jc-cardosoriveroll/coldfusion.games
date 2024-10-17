@@ -1,5 +1,5 @@
 <cfwebsocket name   ="ws"
-        onMessage 	="updateLobby"
+        onMessage 	="parseMessage"
         subscribeTo	="websocket" />
 
 <cfset wsChannels = wsGetAllChannels()>
