@@ -1,11 +1,20 @@
-component extends="CFIDE.websocket.ChannelListener" {
+<cfcomponent extends="CFIDE.websocket.ChannelListener">
+	<cffunction access="public" return="boolean" name="allowSubscribe">
+		<cfargument name="subscriberInfo" type="struct">
 
-	public boolean function allowSubscribe(struct subscriberInfo){
-		return true;
-	}
+		<!--- When new user has joined send msg to Lobby --->
+		<cfset local.msg = {"action" : "join"}>	
+		<cfset wsPublish("websocket",local.msg)>	
 
-	public any function beforePublish( any message, struct publisherInfo){
+		<cfreturn true>		
+	</cffunction>
 
-		return arguments.message;
-	}
-}
+	<cffunction access="public" return="any" name="beforePublish">
+		<cfargument name="message" type="any">
+		<cfargument name="publisherInfo" type="struct">
+
+		<cfreturn arguments.message>
+	</cffunction>
+
+</cfcomponent>
+
