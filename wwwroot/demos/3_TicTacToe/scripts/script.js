@@ -40,4 +40,5 @@ function updateUserList(){
             }
         });
     });
+    console.log("contacts updated");
 }
