@@ -2,7 +2,7 @@
 <cfset local.result = {}>
 
 <cfswitch expression="#action#">
-    <cfcase value="getUsers">
+    <cfcase value="users">
         <cfreturn [{"name" : "wiki"},{"name" : "lega"},{"name" : "nat"}]>
         <!---
         <cfset local.result = application.game.getData(channel="websocket")>

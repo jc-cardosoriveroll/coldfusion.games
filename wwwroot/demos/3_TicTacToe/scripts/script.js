@@ -35,14 +35,9 @@ function unsubscribe(data){
 }
 
 function getAsyncData(mode){
-    switch (mode){
-        case "users" :
-            $.ajax({
-                url: 'remote/async.cfm?action=getUsers',
-                type: 'GET',
-                success: function(data) { return data;} 
-            });
-            return data;
-        break;
-    }
+    $.ajax({
+        url: 'remote/async.cfm?action=' + mode,
+        type: 'GET',
+        success: function(m) { return data;} 
+    });
 }
