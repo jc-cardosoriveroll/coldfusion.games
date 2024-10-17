@@ -1,23 +1,20 @@
 function parseMessage(message){
     
-    /* Make Message a Readable Json and send to console */
-    var data   = JSON.parse(message);
 
     let clientid = document.getElementById("clientid");
     /* Get ClientID from Data to identify Self */
-    if (typeof data.clientid !== 'undefined') {
-        clientid.innerHTML = data.clientid;  
+    if (typeof message.clientid !== 'undefined') {
+        clientid.innerHTML = message.clientid;  
     }
 
     /* Manage "server" response cases */
-    if (data.type == 'response'){
-        switch (data.reqType){
+    if (message.type == 'response'){
+        switch (message.reqType){
             case "subscribeTo" : updateUserList(); break; 
         }
     }
 
-    console.log(data);
-
+    console.log(message);
 }
 
 function updateUserList(){
