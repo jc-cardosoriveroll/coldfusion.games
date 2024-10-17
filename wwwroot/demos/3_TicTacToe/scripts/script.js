@@ -15,8 +15,7 @@ function parseMessage(message){
     if (data2.type == 'response'){
         switch (data2.reqType){
             case "welcome" :
-                let u = getAsyncData("users");
-                users = JSON.parse(u);
+                let users = getAsyncData("users");
                 console.log(users);
 
                /* update user list  
@@ -43,7 +42,7 @@ function getAsyncData(mode){
     $.ajax({
         url: 'remote/async.cfm?action=' + mode,
         type: 'GET',
-        success: function(response) { data = jSON.stringify(response); }  
+        success: function(response) { data = jSON.parse(response); }  
     });
     return data;
 }
