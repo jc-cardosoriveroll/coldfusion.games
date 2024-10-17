@@ -14,7 +14,7 @@ function parseMessage(message){
     /* Manage server response cases */
     if (data2.type == 'response'){
         switch (data2.reqType){
-            case "welcome" :
+            case "subscribeTo" :
                 $.get('remote/async.cfm?action=users', function(r) {
                     let users = JSON.parse(r);
                     users.forEach(function(user) {
