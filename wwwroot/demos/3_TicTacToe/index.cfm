@@ -2,6 +2,8 @@
         onMessage 	="parseMessage"
         subscribeTo	="websocket" />
 
+<cfset Users = wsGetSubscribers("websocket")>
+
   <!----------------- MAIN CONTENT ---------------->
   <cfoutput>
       <!DOCTYPE html>
@@ -27,6 +29,9 @@
 
                     <h1>Welcome to Lobby</h1>
                     <input type="hidden" name="clientid" id="clientid" value="0">
+
+                    <cfdump var="#users#">
+
 
               </div>
             </div>
