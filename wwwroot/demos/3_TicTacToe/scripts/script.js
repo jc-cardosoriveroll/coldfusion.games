@@ -23,6 +23,7 @@ function parseMessage(message){
                             const ulElement = document.getElementById('onlineUsers');
                             const liElement = document.createElement('li');
                             liElement.textContent = user.clientid;
+                            liElement.id = user.clientid;
                             ulElement.appendChild(liElement);
                         }
                     });
@@ -36,5 +37,6 @@ function parseMessage(message){
 
 
 function unsubscribe(data){
-    console.log("unsubscribe" & JSON.stringify(data));    
+    let msg = JSON.stringify(data);
+    ws.publish( "websocket", "radio killed the moviestar " + data);
 }
