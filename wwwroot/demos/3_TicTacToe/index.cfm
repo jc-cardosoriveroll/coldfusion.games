@@ -21,9 +21,9 @@
 
 	<script src="/assets/js/simple.js"></script>
 
-	<cfwebsocket 	name 		="ws"
+	<cfwebsocket 	name 		="websocket"
 					onMessage 	="parseMessage"
-					subscribeTo	="game"/>
+					subscribeTo	="websocket"/>
 
 </body>
 </html>
