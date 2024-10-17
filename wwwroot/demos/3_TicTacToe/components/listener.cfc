@@ -2,8 +2,8 @@
 	<cffunction access="public" return="boolean" name="allowSubscribe">
 		<cfargument name="subscriberInfo" type="struct">
 
-		<!--- When new user has joined send msg to Lobby --->
-		<cfset wsPublish("websocket","newUser")>	
+		<!--- When new user let subscribers know they need to refresh user list --->
+		<cfset wsPublish("websocket","wsGetSubscribers")>	
 
 		<cfreturn true>		
 	</cffunction>

@@ -2,10 +2,6 @@
         onMessage 	="parseMessage"
         subscribeTo	="websocket" />
 
-<cfset wsChannels = wsGetAllChannels()>
-<cfset wsUsers = wsGetSubscribers('websocket')>
-
-
   <!----------------- MAIN CONTENT ---------------->
   <cfoutput>
       <!DOCTYPE html>
