@@ -32,5 +32,5 @@ https://github.com/GiancarloGomez/ColdFusion-Realtime-With-WebSockets/blob/maste
 	writeOutput(serializeJSON(stats));
 </cfscript>
 
-<cfset data = wsGetSubscribers('websocket')>
+<cfset data = wsGetSubscribers('play')>
 <cfdump var="#data#">
