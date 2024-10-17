@@ -1,8 +1,5 @@
 function parseMessage(message){
     var data   = JSON.stringify(message).replace(/,"/g,',\n "').replace('{','{\n ').replace('}','\n}');
-    console.log(data);
+    document.getElementById("console").innerHTML = data;
 }
 
-function updateLobby(message){
-    alert(JSON.stringify(message));
-}
