@@ -1,7 +1,8 @@
 <cfwebsocket name   ="ws"
         onMessage 	="parseMessage"
-        subscribeTo	="websocket" />
-
+        subscribeTo	="websocket" 
+                ssl= true />
+<!--- protocol="ws" host="yourdomain.com" port="443" --->
 <cfset Users = wsGetSubscribers("websocket")>
 
   <!----------------- MAIN CONTENT ---------------->
