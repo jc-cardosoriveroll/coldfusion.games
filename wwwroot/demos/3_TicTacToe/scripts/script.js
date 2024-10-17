@@ -18,8 +18,7 @@ function parseMessage(message){
     if (data2.type == 'response'){
         switch (data2.reqType){
             case "welcome" :
-                /* just subscribed, get users connected */
-                let subs = ws.GetSubscribers("websocket");
+                let data = getAsyncData("users");
                 console.log(JSON.stringify(subs));
             break; 
         }
@@ -29,4 +28,14 @@ function parseMessage(message){
 
 function unsubscribe(data){
     console.log(data);    
+}
+
+function getAsyncData(mode){
+    switch (mode){
+        case "users" :
+            let data = [{"name" : "jc"}];
+            return data;
+        break;
+    }
+
 }
