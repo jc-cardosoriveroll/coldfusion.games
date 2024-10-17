@@ -7,8 +7,7 @@
 		<cfreturn true>		
 	</cffunction>
 
-
-	<cffunction name="public" return="any" name="allowPublish">
+	<cffunction access="public" return="any" name="allowPublish">
 		<cfargument name="publisherInfo" type="struct">
 
 		<cfset local.data = {"action" : "allowPublish", "publisherInfo" : arguments.publisherInfo}>
