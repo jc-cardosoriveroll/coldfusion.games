@@ -15,8 +15,9 @@ function parseMessage(message){
     if (data2.type == 'response'){
         switch (data2.reqType){
             case "welcome" :
-                let data = getAsyncData("users");
-                /* update user list */
+                let users = getAsyncData("users");
+                console.log(JSON.stringify(users));
+                /* update user list 
                 data.forEach(function(user) {
                     console.log(user);
                     const ulElement = document.getElementById('onlineUsers');
@@ -24,6 +25,7 @@ function parseMessage(message){
                     liElement.textContent = user.name;
                     ulElement.appendChild(liElement);
                 });
+                */
             break; 
         }
     }
