@@ -11,6 +11,16 @@ function parseMessage(message){
         clientid.innerHTML = data2.clientid;  
     }
 
+    /* Manage server response cases */
+    if (data2.req == 'response'){
+        switch (data2.reqType){
+            case "welcome" :
+                /* just subscribed, get a list of connected users */
+                alert("hello!");
+            break;
+        }
+    }
+
 }
 
 function unsubscribe(){
