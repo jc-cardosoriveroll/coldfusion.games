@@ -43,7 +43,7 @@ function getAsyncData(mode){
     $.ajax({
         url: 'remote/async.cfm?action=' + mode,
         type: 'GET',
-        success: function(response) { data = response;} 
+        success: function(response) { data = jSON.stringify(response); }  
     });
     return data;
 }
