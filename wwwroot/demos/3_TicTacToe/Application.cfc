@@ -12,7 +12,7 @@
 
 	<!--- Websocket specific (websocket: lobby, games: actual game) --->
     <cfset this.wschannels = [ 
-		{ 	name: "websocket",  cfclistener: "components.game" }  
+		{ 	name: "websocket",  cfclistener: "components.listeners" }  
 	]>
 
     <!--- Define the page request properties. --->    
