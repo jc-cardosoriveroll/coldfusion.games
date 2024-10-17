@@ -18,8 +18,8 @@ li {
 
 /* card container in center screen */
 .card {
-    width: 800px; /* Adjust width as needed */
-    height: 500px; /* Adjust height as needed */
+    width: 400px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
     border: 1px solid #ccc;
     border-radius: 10px; /* Optional: Rounded corners */
     overflow: hidden; /* Prevent content from overflowing */
@@ -45,7 +45,7 @@ li {
     border: 1px solid #000;
     border-radius: 10px; /* Optional: Rounded corners */
     overflow: hidden;
-    background-color: #ffffff; /* Optional: Background color */
+    background-color: #f0f0f0; /* Optional: Background color */
     justify-content: center;
     align-items: center;
     text-align: center;
