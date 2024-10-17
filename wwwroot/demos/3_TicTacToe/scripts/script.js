@@ -15,7 +15,7 @@ function parseMessage(message){
     console.log(data2.reqType);
 
     /* Manage server response cases */
-    if (data2.req == 'response'){
+    if (data2.type == 'response'){
         switch (data2.reqType){
             case "welcome" :
                 /* just subscribed, get a list of connected users */
