@@ -8,7 +8,7 @@ function parseMessage(message){
     /* Get ClientID from Data to identify Self */
     if (typeof data2.clientid !== 'undefined') {
         let clientid = document.getElementById("clientid");
-        clientid.value = data2.clientid;  
+        clientid.innerHTML = data2.clientid;  
     }
 
     /* case for Msg Types  */

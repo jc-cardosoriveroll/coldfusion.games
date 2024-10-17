@@ -29,7 +29,7 @@
 
 
                     <h1>Welcome to Lobby</h1>
-                    <p>Your ID: <input type="text" name="clientid" id="clientid" value="0" disabled>
+                    <p>Your ID: <span id="clientid"></span>
 
                      <hr>
 
