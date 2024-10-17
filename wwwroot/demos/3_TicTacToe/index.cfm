@@ -34,7 +34,7 @@
                     <!--- List all users --->
                     <cfdump var="#wsChannels#">
                     <cfdump var="#wsUsers#">
-                    <textarea id="console"></textarea>
+                    <textarea id="console" rows="5" style="width: 800px;"></textarea>
 
               </div>
             </div>
