@@ -18,9 +18,10 @@ function parseMessage(message){
     if (data2.type == 'response'){
         switch (data2.reqType){
             case "welcome" :
-                /* just subscribed, let the other's know */
-                ws.publish( "websocket", "here I am" );            
-            break;
+                /* just subscribed, get users connected */
+                let subs = wsGetSubscribers("websocket");
+                console.log(JSON.stringify(subs));
+            break; 
         }
     }
 
