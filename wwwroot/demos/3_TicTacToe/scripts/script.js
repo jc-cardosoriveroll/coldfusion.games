@@ -36,5 +36,5 @@ function parseMessage(message){
 
 
 function unsubscribe(data){
-    console.log(data);    
+    console.log("unsubscribe" & JSON.stringify(data));    
 }
