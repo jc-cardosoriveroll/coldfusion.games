@@ -38,11 +38,7 @@ function unsubscribe(data){
 }
 
 function getAsyncData(mode){
-    let data;
-    $.ajax({
-        url: 'remote/async.cfm?action=' + mode,
-        type: 'GET',
-        success: function(response) { data = JSON.parse(response); }  
-    });
-    return data;
+    $.get('remote/async.cfm?action=' + mode, function(data) {
+       return JSON.stringify(data);
+      });
 }
