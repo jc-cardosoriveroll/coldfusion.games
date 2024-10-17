@@ -27,11 +27,18 @@
   
                   <div class="container">
 
+
                     <h1>Welcome to Lobby</h1>
-                    <input type="hidden" name="clientid" id="clientid" value="0">
+                    <h3>Your ID: <input type="text" name="clientid" id="clientid" value="0" disabled>
 
-                    <cfdump var="#users#">
+                     <hr>
 
+                    <h3>Play against...</h3> 
+                    <ul>
+                      <cfloop from="1" to="#arraylen(users)#" index="u">
+                          <li>#users[u].clientId#
+                      </cfloop>
+                    </ul>
 
               </div>
             </div>
