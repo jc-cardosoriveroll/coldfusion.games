@@ -2,7 +2,7 @@
         onMessage 	="parseMessage"
           onClose = "unsubscribe"
         subscribeTo	="websocket" 
-              secure= true />
+              secure= false />
 
 <cfset Users = wsGetSubscribers("websocket")>
 
