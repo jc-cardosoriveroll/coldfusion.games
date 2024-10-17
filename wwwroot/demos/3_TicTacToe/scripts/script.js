@@ -19,7 +19,7 @@ function parseMessage(message){
         switch (data2.reqType){
             case "welcome" :
                 /* just subscribed, get users connected */
-                let subs = wsGetSubscribers("websocket");
+                let subs = ws.GetSubscribers("websocket");
                 console.log(JSON.stringify(subs));
             break; 
         }
