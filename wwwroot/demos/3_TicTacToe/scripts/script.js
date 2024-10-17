@@ -12,8 +12,8 @@ function parseMessage(message){
     }
 
     /* case for Msg Types  */
-    if (typeof data2.action !== 'undefined') {
-        switch (data2.action) {
+    if (typeof data2.data !== 'undefined') {
+        switch (data2.data) {
             case "newUser":
                 alert("refresh the User List");
             break;
