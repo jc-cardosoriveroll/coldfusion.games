@@ -2,8 +2,8 @@
         onMessage 	="parseMessage"
         subscribeTo	="play" />
 
-<cfset wsUsers = wsGetSubscribers('websocket')>
 <cfset wsChannels = wsGetAllChannels()>
+<cfset wsUsers = wsGetSubscribers('play')>
 
 
   <!----------------- MAIN CONTENT ---------------->
@@ -32,8 +32,8 @@
                     <h1>Welcome to Lobby</h1>
 
                     <!--- List all users --->
-                    <cfdump var="#wsUsers#">
                     <cfdump var="#wsChannels#">
+                    <cfdump var="#wsUsers#">
 
               </div>
             </div>
