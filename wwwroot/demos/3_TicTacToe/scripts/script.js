@@ -1,8 +1,7 @@
 function parseMessage(message){
     
     /* Make Message a Readable Json and send to console */
-    var data1   = JSON.stringify(message).replace(/,"/g,',\n "').replace('{','{\n ').replace('}','\n}');
-    console.log(data1);
+    var data1   = JSON.stringify(message);
 
     var data2 =   JSON.parse(data1);  /* use as obj */
     let clientid = document.getElementById("clientid");
@@ -18,8 +17,8 @@ function parseMessage(message){
         }
     }
 
-    console.log(data2.type);
-    
+    console.log(data2);
+
 }
 
 function updateUserList(){
