@@ -17,15 +17,14 @@ function parseMessage(message){
             case "welcome" :
                 let users = getAsyncData("users");
                 console.log(JSON.stringify(users));
-                /* update user list 
-                data.forEach(function(user) {
+                /* update user list  */
+                users.forEach(function(user) {
                     console.log(user);
                     const ulElement = document.getElementById('onlineUsers');
                     const liElement = document.createElement('li');
                     liElement.textContent = user.name;
                     ulElement.appendChild(liElement);
                 });
-                */
             break; 
         }
     }
