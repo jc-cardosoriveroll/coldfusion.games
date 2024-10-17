@@ -20,7 +20,7 @@ function parseMessage(message){
                     users.forEach(function(user) {
                         const ulElement = document.getElementById('onlineUsers');
                         const liElement = document.createElement('li');
-                        liElement.textContent = user.name;
+                        liElement.textContent = user.clientid;
                         ulElement.appendChild(liElement);
                     });
                 });
