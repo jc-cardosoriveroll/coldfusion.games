@@ -10,11 +10,10 @@
 	<cfset THIS.SetClientCookies = true />
     <cfset THIS.serialization.preservecaseforstructkey = true />
 
-	<!--- Websocket specific --->
+	<!--- Websocket specific (websocket: lobby, games: actual game) --->
     <cfset this.wschannels = [ 
 		{ 	name: "websocket",  cfclistener: "components.listener" }  
 	]>
-
 
     <!--- Define the page request properties. --->    
 	<cfsetting
