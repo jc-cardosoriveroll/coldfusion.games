@@ -26,6 +26,7 @@ function parseMessage(message){
 }
 
 function updateUserList(){
+    clearUserList();
     let clientid = document.getElementById("clientid");
     $.get('remote/async.cfm?action=users', function(r) {
         let users = JSON.parse(r);
@@ -41,4 +42,9 @@ function updateUserList(){
         });
     });
     console.log("contacts updated");
+}
+
+function clearUserList(){
+    const ulElement = document.getElementById('onlineUsers');
+    ulElement.textContent = '';
 }
