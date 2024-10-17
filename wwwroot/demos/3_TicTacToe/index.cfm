@@ -1,6 +1,6 @@
 <cfwebsocket name   ="ws"
         onMessage 	="parseMessage"
-          onClose = "unsubscribe"
+          onClose   ="parseMessage"
         subscribeTo	="websocket" 
               secure= false />
 

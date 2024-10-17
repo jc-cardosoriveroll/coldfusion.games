@@ -11,32 +11,35 @@ function parseMessage(message){
         clientid.innerHTML = data2.clientid;  
     }
 
-    /* Manage server response cases */
+    /* Manage "server" response cases */
     if (data2.type == 'response'){
         switch (data2.reqType){
-            case "subscribeTo" :
-                $.get('remote/async.cfm?action=users', function(r) {
-                    let users = JSON.parse(r);
-                    users.forEach(function(user) {
-                        if (user.clientid != clientid.innerHTML)
-                        {
-                            const ulElement = document.getElementById('onlineUsers');
-                            const liElement = document.createElement('li');
-                            liElement.textContent = user.clientid;
-                            liElement.id = user.clientid;
-                            ulElement.appendChild(liElement);
-                        }
-                    });
-                });
-             
-            break; 
+            case "subscribeTo" : updateUserList(); break; 
         }
     }
 
+    /* Manage "other" client messages which come as Data */
+    if (data2.type == 'data'){
+        let custom = JSON.parse(data2.type);
+        switch (custom.type){
+            case "unsubscribe" : updateUserList(); break; 
+        }
+    }
 }
 
-
-function unsubscribe(data){
-    let msg = JSON.stringify(data);
-    ws.publish( "websocket", "radio killed the moviestar " + data);
+function updateUserList(){
+    let clientid = document.getElementById("clientid");
+    $.get('remote/async.cfm?action=users', function(r) {
+        let users = JSON.parse(r);
+        users.forEach(function(user) {
+            if (user.clientid != clientid.innerHTML)
+            {
+                const ulElement = document.getElementById('onlineUsers');
+                const liElement = document.createElement('li');
+                liElement.textContent = user.clientid;
+                liElement.id = user.clientid;
+                ulElement.appendChild(liElement);
+            }
+        });
+    });
 }
