@@ -5,7 +5,7 @@
 		<cfargument name="subscriberInfo" type="struct">
 
 		<!--- When new user let subscribers know they need to refresh user list --->
-		<cfset local.data = getSocketUsers(channel="websockets")>
+		<cfset local.data = getSocketUsers(channel="websocket")>
 		<cfset wsPublish("websocket",serializeJSON(local.data))>	
 
 		<cfreturn true>		
