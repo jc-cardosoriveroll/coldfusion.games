@@ -36,7 +36,7 @@
                     <h3>Play against...</h3> 
                     <ul>
                       <cfloop from="1" to="#arraylen(users)#" index="u">
-                          <li>#users[u].clientId#
+                          <li>#users[u].clientId#</li>
                       </cfloop>
                     </ul>
 
