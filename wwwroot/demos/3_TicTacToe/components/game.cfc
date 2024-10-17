@@ -4,7 +4,8 @@
 	<cffunction access="public" return="boolean" name="allowSubscribe">
 		<cfargument name="subscriberInfo" type="struct">
 
-		<cfset wsPublish("websocket",serializeJSON(arguments.subscriberInfo))>		
+		<cfset local.data = {"action" : "allowSubscribe", "clientid" : arguments.subscriberInfo.clientid}>
+		<cfset wsPublish("websocket",serializeJSON(local.data))>		
 		<cfreturn true>		
 	</cffunction>
 
