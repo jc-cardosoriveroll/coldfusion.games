@@ -3,7 +3,7 @@
 
         <cfreturn this>
     </cffunction>
-
+    
     <cffunction name="wsGetSubscribers" access="public">
         <cfargument name="channel" default="websocket">
         <cfset local.wsUsers = wsGetSubscribers(arguments.channel)>
