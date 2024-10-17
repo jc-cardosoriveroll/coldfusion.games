@@ -16,7 +16,7 @@ function parseMessage(message){
         switch (data2.reqType){
             case "welcome" :
                 let u = getAsyncData("users");
-                users = JSON.parse(u).users;
+                users = JSON.parse(u);
                 console.log(users);
 
                /* update user list  
