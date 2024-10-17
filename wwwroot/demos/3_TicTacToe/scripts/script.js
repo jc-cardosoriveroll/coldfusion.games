@@ -19,7 +19,14 @@ function parseMessage(message){
         switch (data2.reqType){
             case "welcome" :
                 let data = getAsyncData("users");
-                console.log(JSON.stringify(data));
+                /* update user list */
+                data.forEach(function(user) {
+                    console.log(user);
+                    const ulElement = document.getElementById('onlineUsers');
+                    const liElement = document.createElement('li');
+                    liElement.textContent = user.name;
+                    ulElement.appendChild(liElement);
+                });
             break; 
         }
     }
@@ -33,7 +40,7 @@ function unsubscribe(data){
 function getAsyncData(mode){
     switch (mode){
         case "users" :
-            let data = [{"name" : "jc"}];
+            let data = [{"name" : "jc"},{"name" : "edith"}];
             return data;
         break;
     }
