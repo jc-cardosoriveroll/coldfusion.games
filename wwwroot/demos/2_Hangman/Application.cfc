@@ -5,9 +5,10 @@
 
     <!--- Set up the application. --->    
 	<cfset THIS.Name = "app002" />
-	<cfset THIS.ApplicationTimeout = CreateTimeSpan( 0, 0, 1, 0 ) />
+	<cfset THIS.ApplicationTimeout = CreateTimeSpan( 1, 0, 0, 0 ) />
 	<cfset THIS.SessionManagement = true />
 	<cfset THIS.SetClientCookies = true />
+    <cfset THIS.serialization.preservecaseforstructkey = true />
 
     <!--- Define the page request properties. --->    
 	<cfsetting
@@ -19,7 +20,7 @@
     <!--- "Fires when the application is first created." --->
 	<cffunction name="OnApplicationStart" access="public" returntype="boolean" output="false">
         <!--- GAME SPECIFIC COMPONENT--->        
-        <cfset application["game"] = new game()>
+        <cfset application["game"] = new components.game()>
         <!------------------------------>
 		<cfreturn true />
 	</cffunction>

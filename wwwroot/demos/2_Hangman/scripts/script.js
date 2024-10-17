@@ -7,7 +7,7 @@ $(document).ready(function() {
         var letter = $(this).attr("letter");
 
         /* Call Async URL with data */
-        $.get( "async.cfm?letter=" + letter, function( data ) {
+        $.get( "remote/async.cfm?letter=" + letter, function( data ) {
             /* ----------------------------------------------- */
                 /* expect a data response like: 
                 {"data":{"hits":["a"],"word":"India","category":"Countries","wonOrLost":"None"
