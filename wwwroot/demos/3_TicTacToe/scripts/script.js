@@ -19,7 +19,7 @@ function parseMessage(message){
         switch (data2.reqType){
             case "welcome" :
                 /* just subscribed, get a list of connected users */
-                alert("hello!");
+                ws.invoke( "websocket", "components.game", "test" );            
             break;
         }
     }

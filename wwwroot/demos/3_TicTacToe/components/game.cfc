@@ -22,6 +22,9 @@
 		<cfreturn arguments.message>
 	</cffunction>
 
+	<cffunction name="test" access="remote" return="any">
+		<cfset wsPublish("websocket","yupi!!")>		
+	</cffunction>
 
 
 </cfcomponent>
