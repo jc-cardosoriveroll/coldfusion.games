@@ -44,6 +44,7 @@
 		<cfargument name="TargetPage" type="string" required="true"/>
 
 		<cfif structKeyExists(url,"init")>
+			onApplicationStart()>
             <!--- tell everyone to reconnect --->
 			<!---
 			<cfloop collection="#wsGetAllChannels()#" item="key">
