@@ -7,7 +7,7 @@ component extends="CFIDE.websocket.ChannelListener" {
 				//lock me baby
 					lock type="exclusive" timeout=30 {
 					//get all users 
-					var users = wsGetSubscribers('chat');
+					var users = wsGetSubscribers('websocket');
 					res = arrayfind(users, function(item) {
 						return item.subscriberinfo.userinfo.username eq attemptuser;
 					});
@@ -28,7 +28,7 @@ component extends="CFIDE.websocket.ChannelListener" {
 	}
 
 	public function afterUnsubscribe(struct subscriberInfo){
-		wsPublish("play","unsubscribed");
+		wsPublish("websocket","unsubscribed");
 	}
 
 }
