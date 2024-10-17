@@ -26,6 +26,3 @@ function parseMessage(message){
         document.body.scrollIntoView({block: "end", behavior: "smooth"});
 }
 
-function unsubscribe(data){
-    console.log(data);    
-}

@@ -13,7 +13,7 @@ function parseMessage(message){
 
     console.log(data2.req);
     console.log(data2.reqType);
-    
+
     /* Manage server response cases */
     if (data2.req == 'response'){
         switch (data2.reqType){
@@ -26,3 +26,6 @@ function parseMessage(message){
 
 }
 
+function unsubscribe(data){
+    console.log(data);    
+}
