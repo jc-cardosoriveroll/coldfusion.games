@@ -28,7 +28,7 @@ component extends="CFIDE.websocket.ChannelListener" {
 	}
 
 	public function afterUnsubscribe(struct subscriberInfo){
-		wsPublish("game","unsubscribed");
+		wsPublish("play","unsubscribed");
 	}
 
 }

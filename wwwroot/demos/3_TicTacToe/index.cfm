@@ -2,7 +2,7 @@
         onMessage 	="parseMessage"
         subscribeTo	="play" />
 
-<cfset wsUsers = wsGetSubscribers('play')>
+<cfset wsUsers = wsGetSubscribers('websocket')>
 
 
 
