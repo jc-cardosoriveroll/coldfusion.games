@@ -11,9 +11,6 @@ function parseMessage(message){
         clientid.innerHTML = data2.clientid;  
     }
 
-    console.log(data2.req);
-    console.log(data2.reqType);
-
     /* Manage server response cases */
     if (data2.type == 'response'){
         switch (data2.reqType){
@@ -40,9 +37,12 @@ function unsubscribe(data){
 function getAsyncData(mode){
     switch (mode){
         case "users" :
-            let data = [{"name" : "jc"},{"name" : "edith"}];
+            $.ajax({
+                url: 'remote/async.cfm?action=getUsers',
+                type: 'GET',
+                success: function(data) { return data;} 
+            });
             return data;
         break;
     }
-
 }

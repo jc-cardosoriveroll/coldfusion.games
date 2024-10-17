@@ -4,7 +4,6 @@
         subscribeTo	="websocket" 
               secure= false />
 
-<cfset Users = wsGetSubscribers("websocket")>
 
   <!----------------- MAIN CONTENT ---------------->
   <cfoutput>
@@ -36,11 +35,7 @@
                      <hr>
 
                     <h3>Play against:</h3> 
-                    <ul id="onlineUsers">
-                      <cfloop from="1" to="#arraylen(users)#" index="u">
-                          <li>#users[u].clientId#</li>
-                      </cfloop>                        
-                    </ul>
+                    <ul id="onlineUsers"></ul>
 
               </div>
             </div>
