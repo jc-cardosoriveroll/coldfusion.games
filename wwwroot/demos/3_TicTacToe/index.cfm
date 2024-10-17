@@ -1,4 +1,4 @@
-<cfwebsocket name   ="websocket"
+<cfwebsocket name   ="ws"
         onMessage 	="parseMessage"
         subscribeTo	="websocket" />
 
