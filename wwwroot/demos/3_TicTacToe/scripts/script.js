@@ -18,8 +18,8 @@ function parseMessage(message){
     if (data2.type == 'response'){
         switch (data2.reqType){
             case "welcome" :
-                /* just subscribed, get a list of connected users */
-                ws.invoke( "websocket", "components.game", "test" );            
+                /* just subscribed, let the other's know */
+                ws.publish( "websocket", "here I am" );            
             break;
         }
     }
