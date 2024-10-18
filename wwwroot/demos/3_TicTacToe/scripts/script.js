@@ -46,7 +46,7 @@ function newgame(p1,p2){
     parentDiv.removeChild(divToRemove);
     */
     const lobby = document.getElementById("lobby");
-    game.className = "hidden";
+    lobby.className = "hidden";
 
     const game = document.getElementById("game");
     game.className = "visible";
