@@ -27,7 +27,8 @@ function parseMessage(message){
         if (message.type == 'data' && typeof message.data !== 'undefined') {
             switch (message.data){
                 case "play" : 
-                    alert("yeah! on to the game...");
+                    if (message.publisherid !== clientid.innerHTML)
+                        { alert("yeah! on to the game..."); }
                 break;
             }
         }
