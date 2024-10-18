@@ -45,9 +45,29 @@ function newgame(p1,p2){
     parentDiv.removeChild(divToRemove);
 
     const game = document.getElementById("game");
+    centerDiv("game");
     game.className = "visible";
 
     $.get( "remote/async.cfm?action=newgame&p1=" + p1 & "&p2=" + p2, function( data ) {
         console.log(data);
     });        
 }
+
+function centerDiv(divElement) {
+    // Get the parent div's dimensions
+    const parentWidth = divElement.parentElement.offsetWidth;
+    const parentHeight = divElement.parentElement.offsetHeight;
+  
+    // Get the child div's dimensions
+    const childWidth = divElement.offsetWidth;
+    const childHeight = divElement.offsetHeight;
+  
+    // Calculate the top and left positions to center the child div
+    const topPosition = (parentHeight - childHeight) / 2;
+    const leftPosition = (parentWidth - childWidth) / 2;
+  
+    // Set the top and left properties of the child div
+    divElement.style.position = 'absolute';
+    divElement.style.top = topPosition + 'px';
+    divElement.style.left = leftPosition + 'px';
+  }
