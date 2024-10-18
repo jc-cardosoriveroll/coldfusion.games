@@ -6,7 +6,6 @@
 		<cfreturn true>		
 	</cffunction>
 
-	<!---
 	<cffunction access="public" return="any" name="beforePublish">
 		<cfargument name="message" type="any">
 		<cfargument name="publisherInfo" type="struct">
@@ -14,6 +13,7 @@
 		<cfreturn arguments.message>
 	</cffunction>
 
+	<!---
 	<cffunction access="public" return="any" name="allowPublish">
 		<cfargument name="publisherInfo" type="struct">
 		<cfset wsPublish("websocket","refreshUsers")>	
