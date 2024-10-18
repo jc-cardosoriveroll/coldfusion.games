@@ -27,7 +27,9 @@ function parseMessage(message){
         if (message.type == 'data' && typeof message.data !== 'undefined') {
             switch (message.data){
                 case "newgame" : 
-                    if (message.publisherid !== clientid.innerHTML)
+                    if (message.publisherid !== clientid.innerHTML && 
+                        message.publisherid !== "0" &&
+                        clientid.innerHTML !== "")
                     { newgame(clientid.innerHTML,message.publisherid); }
                 break;
             }
@@ -35,9 +37,9 @@ function parseMessage(message){
     }
 }
 
-function newgame(id1,id2){
+function newgame(p1,p2){
         //actual game is managed in CF Backend 
-        $.get( "remote/async.cfm?action=newgame", function( data ) {
+        $.get( "remote/async.cfm?action=newgame&p1=" + p1 & "&p2=" + p2, function( data ) {
             console.log(data);
         });        
 }
