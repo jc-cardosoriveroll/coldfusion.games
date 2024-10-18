@@ -12,7 +12,9 @@ function parseMessage(message){
     }
     // Get PublisherId to identify Sender
     if (typeof message.publisherid !== 'undefined') {
-        publisherid.innerHTML = message.publisherid;  
+        if (message.publisherid !== 0){
+            publisherid.innerHTML = message.publisherid;  
+        }
     }
 
     // Manage Messages (core)    
@@ -22,7 +24,7 @@ function parseMessage(message){
         if (message.type == 'response' && typeof message.reqType !== 'undefined') {
             switch (message.reqType){
                 case "subscribeTo" : 
-                    //updateUserList();
+                    updateUserList();
                 break;
             }
         }
