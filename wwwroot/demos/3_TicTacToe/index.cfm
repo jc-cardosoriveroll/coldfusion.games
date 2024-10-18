@@ -41,7 +41,7 @@
                     <hr>
                     Share:
                     <div id="divToCopy">http://coldfusion.games/demos/3_ticTacToe</div>
-                    <br><a href="##"  onclick="copyToClipboard()">Copy</a>
+                    <a href="##"  onclick="copyToClipboard()">Copy</a>
               </div>
             </div>
             <span class="love">Built with &hearts; by JC. Learn more in our <a href="https://www.udemy.com/course/desarrollo-apps-en-adobe-coldfusion/">Coldfusion Courses.</a></span>
