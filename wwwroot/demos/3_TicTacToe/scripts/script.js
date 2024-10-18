@@ -28,7 +28,7 @@ function parseMessage(message){
             switch (message.data){
                 case "newgame" : 
                     if (message.publisherid !== clientid.innerHTML)
-                    { newgame(clientid.innerHTML,messagepublisherid); }
+                    { newgame(clientid.innerHTML,message.publisherid); }
                 break;
             }
         }
