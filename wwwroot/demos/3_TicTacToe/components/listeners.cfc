@@ -15,7 +15,6 @@
 	<cffunction access="public" return="any" name="beforePublish">
 		<cfargument name="message" type="any">
 		<cfargument name="publisherInfo" type="struct">
-		<cfset refresh()>
 		<cfreturn arguments.message>
 	</cffunction>
 
