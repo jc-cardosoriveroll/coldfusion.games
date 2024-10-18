@@ -48,3 +48,14 @@ function clearUserList(){
     const ulElement = document.getElementById('onlineUsers');
     ulElement.textContent = '';
 }
+
+
+function copyToClipboard() {
+  const divToCopy = document.getElementById("divToCopy");
+  const tempElement = document.createElement("textarea");
+  tempElement.value = divToCopy.innerHTML;
+  document.body.appendChild(tempElement);
+  tempElement.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempElement);
+}
