@@ -33,12 +33,18 @@ function updateUserList(){
         users.forEach(function(user) {
             if (user.clientid != clientid.innerHTML)
             {
+                // Example usage:
                 const ulElement = document.getElementById('onlineUsers');
-                const liElement = document.createElement('li');
-                liElement.textContent = user.clientid;                
-                liElement.id = user.clientid;
-                liElement.setAttribute("onclick", "handleClick('" + user.clientid + "')");                
-                ulElement.appendChild(liElement);
+                const valueToFind = user.clientid;
+                const found = searchForValueInLI(ulElement, valueToFind);
+
+                if (!found) {
+                    const liElement = document.createElement('li');
+                    liElement.textContent = user.clientid;                
+                    liElement.setAttribute("onclick", "handleClick('" + user.clientid + "')");                
+                    ulElement.appendChild(liElement);
+                } 
+
             }
         });
     });
@@ -64,3 +70,23 @@ function copyToClipboard() {
   document.body.removeChild(tempElement);
   alert("copied");
 }
+
+function searchForValueInLI(listElement, valueToSearch) {
+    // Get all LI elements within the list
+    const liElements = listElement.querySelectorAll('li');
+  
+    // Iterate through each LI element
+    for (const li of liElements) {
+      // Get the text content of the LI element
+      const liText = li.textContent.trim();
+  
+      // Check if the value matches
+      if (liText === valueToSearch) {
+        // If found, return true
+        return true;
+      }
+    }
+  
+    // If not found after iterating through all elements, return false
+    return false;
+  }
