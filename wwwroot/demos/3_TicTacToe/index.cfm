@@ -33,13 +33,8 @@
 
                     <h1>Welcome to Lobby</h1>
                     <p>Your ID: <span id="clientid"></span>
-                      <span id="publisherid" class="hidden"></span>
+                    <h3>Waiting for Other Player to Connect</h3> 
 
-                     <hr>
-
-                    <h3>Play against:</h3> 
-                    <ul id="onlineUsers"></ul>
-                    <hr>
                     <div id="divToCopy">http://coldfusion.games/demos/3_ticTacToe</div>
               </div>
             </div>
