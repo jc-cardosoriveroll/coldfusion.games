@@ -40,9 +40,13 @@ function parseMessage(message){
 function newgame(p1,p2){
     //actual game is managed in CF Backend 
 
+    /*
     const divToRemove = document.getElementById("lobby");
     const parentDiv = divToRemove.parentNode;
     parentDiv.removeChild(divToRemove);
+    */
+    const lobby = document.getElementById("lobby");
+    game.className = "hidden";
 
     const game = document.getElementById("game");
     game.className = "visible";
