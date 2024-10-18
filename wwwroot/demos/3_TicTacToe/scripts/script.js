@@ -20,7 +20,7 @@ function parseMessage(message){
 
         // Server Events (system)
         if (message.type == 'response' && typeof message.reqType !== 'undefined') {
-            switch (message.data.reqType){
+            switch (message.reqType){
                 case "subscribeTo" : 
                     updateUserList();
                 break;
@@ -29,7 +29,7 @@ function parseMessage(message){
 
         // Data Events (publishers)
         if (message.type == 'data' && typeof message.action !== 'undefined') {
-            switch (message.data.action){
+            switch (message.action){
                 case "refreshUsers" : 
                     updateUserList(); 
                 break;
