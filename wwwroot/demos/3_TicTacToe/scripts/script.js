@@ -41,6 +41,7 @@ function parseMessage(message){
 
 // function to update User list with a "clickable" ID 
 function updateUserList(){
+    console.log("refreshing user list...");
     // always clear the list first 
     const ulElement = document.getElementById('onlineUsers');
     ulElement.textContent = '';
