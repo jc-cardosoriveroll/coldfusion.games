@@ -4,17 +4,10 @@ function parseMessage(message){
 
     // Containers to store/display key user ID
     let clientid = document.getElementById("clientid");
-    let publisherid = document.getElementById("publisherid");
 
     // Get ClientID to identify Self
     if (typeof message.clientid !== 'undefined') {
         clientid.innerHTML = message.clientid;  
-    }
-    // Get PublisherId to identify Sender
-    if (typeof message.publisherid !== 'undefined') {
-        if (message.publisherid !== 0){
-            publisherid.innerHTML = message.publisherid;  
-        }
     }
 
     // Manage Messages (core)    
@@ -25,7 +18,7 @@ function parseMessage(message){
             switch (message.reqType){
                 case "subscribeTo" : 
                     //now that I subscribed, broadcast I wan't to play...
-                    ws.publish("websocket","play!");
+                    ws.publish("websocket","play");
                 break;
             }
         } 
