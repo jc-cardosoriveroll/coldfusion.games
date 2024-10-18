@@ -28,22 +28,20 @@ function parseMessage(message){
 function updateUserList(){
     clearUserList();
     let clientid = document.getElementById("clientid");
-    debounce(function() {
-        $.get('remote/async.cfm?action=users', function(r) {
-            let users = JSON.parse(r);
-            users.forEach(function(user) {
-                if (user.clientid != clientid.innerHTML)
-                {
-                    const ulElement = document.getElementById('onlineUsers');
-                    const liElement = document.createElement('li');
-                    liElement.textContent = user.clientid;                
-                    liElement.id = user.clientid;
-                    liElement.setAttribute("onclick", "handleClick('" + user.clientid + "')");                
-                    ulElement.appendChild(liElement);
-                }
-            });
+    $.get('remote/async.cfm?action=users', function(r) {
+        let users = JSON.parse(r);
+        users.forEach(function(user) {
+            if (user.clientid != clientid.innerHTML)
+            {
+                const ulElement = document.getElementById('onlineUsers');
+                const liElement = document.createElement('li');
+                liElement.textContent = user.clientid;                
+                liElement.id = user.clientid;
+                liElement.setAttribute("onclick", "handleClick('" + user.clientid + "')");                
+                ulElement.appendChild(liElement);
+            }
         });
-    }, 250);        
+    });
     console.log("contacts updated");
 }
 
@@ -66,19 +64,3 @@ function copyToClipboard() {
   document.body.removeChild(tempElement);
   alert("copied");
 }
-
-// https://davidwalsh.name/javascript-debounce-function
-function debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-        var context = this, args = arguments;
-        var later = function() {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    };
-};
