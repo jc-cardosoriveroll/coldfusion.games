@@ -31,12 +31,12 @@
                   <div class="container">
 
 
-                    <h1>Welcome to Lobby</h1>
-                    <p>Your ID: <span id="clientid"></span>
-                    <h3>Waiting for Otder Player to Connect</h3> 
-
-                    <div id="divToCopy">http://coldfusion.games/demos/3_ticTacToe</div>
-
+                    <div id="lobby" class="visible">
+                      <h1>Welcome to Lobby</h1>
+                      <p>Your ID: <span id="clientid"></span>
+                      <h3>Waiting for Otder Player to Connect</h3> 
+                      <br>http://coldfusion.games/demos/3_ticTacToe
+                    </div>
 
                     <div id="game" class="visible">
                         <table>
