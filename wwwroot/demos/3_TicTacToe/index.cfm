@@ -34,7 +34,7 @@
                     <div id="lobby" class="visible">
                       <h1>Welcome to Lobby</h1>
                       <p>Your ID: <span id="clientid"></span>
-                      <h3>Waiting for Otder Player to Connect</h3> 
+                      <h3>Waiting for Another Player to Connect</h3> 
                       <br>http://coldfusion.games/demos/3_ticTacToe
                     </div>
 
