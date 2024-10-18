@@ -9,9 +9,10 @@
 
 	<cffunction access="public" return="any" name="allowPublish">
 		<cfargument name="publisherInfo" type="struct">
-
+		<!---
 		<cfset local.data = {"action" : "allowPublish", "publisherInfo" : arguments.publisherInfo}>
 		<cfset wsPublish("websocket",serializeJSON(local.data))>		
+		--->
 	</cffunction>
 
 	<cffunction access="public" return="any" name="beforePublish">
