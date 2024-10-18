@@ -82,5 +82,6 @@ function searchForValueInLI(listElement, valueToSearch) {
 }
 
 function handleClick(target,action){
-    alert("send invite to " + target + " to " + action + "the game...");
+    alert("send invite to " + target + " to " + action + " the game...");
+    ws.publish("websocket",action);
 }
