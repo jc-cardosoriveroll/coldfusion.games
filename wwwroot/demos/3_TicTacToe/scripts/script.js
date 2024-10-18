@@ -45,7 +45,7 @@ function newgame(p1,p2){
     parentDiv.removeChild(divToRemove);
 
     const game = document.getElementById("game");
-    centerDiv("game");
+    centerDiv();
     game.className = "visible";
 
     $.get( "remote/async.cfm?action=newgame&p1=" + p1 & "&p2=" + p2, function( data ) {
@@ -53,21 +53,25 @@ function newgame(p1,p2){
     });        
 }
 
-function centerDiv(divElement) {
+function centerDiv() {
+
+    const container = document.getElementById("container");
+    const game = document.getElementById("game");
+
     // Get the parent div's dimensions
-    const parentWidth = divElement.parentElement.offsetWidth;
-    const parentHeight = divElement.parentElement.offsetHeight;
+    const parentWidth = container.offsetWidth;
+    const parentHeight = container.offsetHeight;
   
     // Get the child div's dimensions
-    const childWidth = divElement.offsetWidth;
-    const childHeight = divElement.offsetHeight;
+    const childWidth = game.offsetWidth;
+    const childHeight = game.offsetHeight;
   
     // Calculate the top and left positions to center the child div
     const topPosition = (parentHeight - childHeight) / 2;
     const leftPosition = (parentWidth - childWidth) / 2;
   
     // Set the top and left properties of the child div
-    divElement.style.position = 'absolute';
-    divElement.style.top = topPosition + 'px';
-    divElement.style.left = leftPosition + 'px';
+    game.style.position = 'absolute';
+    game.style.top = topPosition + 'px';
+    game.style.left = leftPosition + 'px';
   }

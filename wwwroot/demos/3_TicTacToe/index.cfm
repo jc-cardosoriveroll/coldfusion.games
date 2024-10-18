@@ -26,7 +26,7 @@
           <!--- Main Content --->
           <div class="card">
             <div class="card-body">
-              <div class="card-window">
+              <div class="card-window" id="container">
   
                   <div id="lobby" class="visible">
                     <h1>Welcome to Tic-Tac-Toe Lobby</h1>
