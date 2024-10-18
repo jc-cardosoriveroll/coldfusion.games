@@ -54,3 +54,12 @@
   align-items: center;
   text-align: center;
 }
+
+
+.love {
+  text-align: center;
+  font-style: italic;
+  background-color: #fffbbf;
+  color: crimson;
+  font-weight : bolder;
+}
