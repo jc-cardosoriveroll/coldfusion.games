@@ -21,7 +21,6 @@
 	<cffunction access="public" return="any" name="beforeSendMessage">
 		<cfargument name="message" type="any">
 		<cfargument name="subscriberInfo" type="struct">
-		<cfset refresh()>
 		<cfreturn arguments.message>
 	</cffunction>
 
@@ -31,7 +30,7 @@
 		<cfset refresh()>
 	</cffunction>
 	--->
-	
+
 	<cffunction access="private" return="any" name="refresh">
 		<cfset wsPublish("websocket","refreshUsers")>	
 	</cffunction>
