@@ -1,5 +1,8 @@
 function parseMessage(message){
 
+    /* always update user list */
+    updateUserList();
+
 
     let clientid = document.getElementById("clientid");
     /* Get ClientID from Data to identify Self */
