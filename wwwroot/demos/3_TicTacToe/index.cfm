@@ -36,6 +36,27 @@
                     <h3>Waiting for Other Player to Connect</h3> 
 
                     <div id="divToCopy">http://coldfusion.games/demos/3_ticTacToe</div>
+
+                    <div id="game" class="hidden">
+                        <table class="table">
+                          <tr>
+                            <th class="cell" id="p11"></th>
+                            <th class="cell" id="p12"></th>
+                            <th class="cell" id="p13"></th>
+                          </tr>
+                          <tr>
+                            <th class="cell" id="p21"></th>
+                            <th class="cell" id="p22"></th>
+                            <th class="cell" id="p23"></th>
+                          </tr>
+                          <tr>
+                            <th class="cell" id="p31"></th>
+                            <th class="cell" id="p32"></th>
+                            <th class="cell" id="p33"></th>
+                          </tr>
+                        </table>
+                    </div>
+
               </div>
             </div>
             <span class="love">Built with &hearts; by JC. Learn more in our <a href="https://www.udemy.com/course/desarrollo-apps-en-adobe-coldfusion/">Coldfusion Courses.</a></span>

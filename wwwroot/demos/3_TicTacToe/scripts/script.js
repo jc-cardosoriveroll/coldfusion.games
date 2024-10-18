@@ -17,8 +17,8 @@ function parseMessage(message){
         if (message.type == 'response' && typeof message.reqType !== 'undefined') {
             switch (message.reqType){
                 case "subscribeTo" : 
-                    //now that I subscribed, broadcast I wan't to play...
-                    ws.publish("websocket","play");
+                    //now that I subscribed, broadcast "newgame" to join available game..
+                    ws.publish("websocket","newgame");
                 break;
             }
         } 
@@ -26,12 +26,18 @@ function parseMessage(message){
         // Data Events (publishers)
         if (message.type == 'data' && typeof message.data !== 'undefined') {
             switch (message.data){
-                case "play" : 
+                case "newgame" : 
                     if (message.publisherid !== clientid.innerHTML)
-                        { alert("yeah! on to the game..."); }
+                    { newgame(clientid.innerHTML,messagepublisherid); }
                 break;
             }
         }
     }
 }
 
+function newgame(id1,id2){
+        //actual game is managed in CF Backend 
+        $.get( "remote/async.cfm?action=newgame", function( data ) {
+            console.log(data);
+        });        
+}
