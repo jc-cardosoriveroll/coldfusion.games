@@ -63,7 +63,7 @@ function updateUserList(){
                     // append element to list when not found (new)
                     const liElement = document.createElement('li');
                     liElement.textContent = user.clientid;                
-                    liElement.setAttribute("onclick", "handleClick('" + user.clientid + "')");                
+                    liElement.setAttribute("onclick", "handleClick('" + user.clientid + "','start')");                
                     ulElement.appendChild(liElement);
                 } 
             }
@@ -81,6 +81,6 @@ function searchForValueInLI(listElement, valueToSearch) {
     return false;
 }
 
-function handleClick(id){
-    alert(id);
+function handleClick(target,action){
+    alert("send invite to " + target + " to " + action + "the game...");
 }
