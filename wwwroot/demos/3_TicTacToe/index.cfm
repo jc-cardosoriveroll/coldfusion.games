@@ -28,35 +28,32 @@
             <div class="card-body">
               <div class="card-window">
   
-                  <div class="container">
+                  <div id="lobby" class="visible">
+                    <h1>Welcome to Tic-Tac-Toe Lobby</h1>
+                    <p>Your ID: <span id="clientid"></span>
+                    <h3>Waiting for Another Player to Connect</h3> 
+                    <br>http://coldfusion.games/demos/3_ticTacToe
+                  </div>
 
-
-                    <div id="lobby" class="visible">
-                      <h1>Welcome to Tic-Tac-Toe Lobby</h1>
-                      <p>Your ID: <span id="clientid"></span>
-                      <h3>Waiting for Another Player to Connect</h3> 
-                      <br>http://coldfusion.games/demos/3_ticTacToe
-                    </div>
-
-                    <div id="game" class="hidden">
-                        <table>
-                          <tr>
-                            <td class="cell br" id="p11"></td>
-                            <td class="cell br" id="p12"></td>
-                            <td class="cell b" id="p13"></td>
-                          </tr>
-                          <tr>
-                            <td class="cell br" id="p21"></td>
-                            <td class="cell br" id="p22"></td>
-                            <td class="cell b" id="p23"></td>
-                          </tr>
-                          <tr>
-                            <td class="cell r" id="p31"></td>
-                            <td class="cell r" id="p32"></td>
-                            <td class="cell" id="p33"></td>
-                          </tr>
-                        </table>
-                    </div>
+                  <div id="game" class="hidden">
+                      <table>
+                        <tr>
+                          <td class="cell br" id="p11"></td>
+                          <td class="cell br" id="p12"></td>
+                          <td class="cell b" id="p13"></td>
+                        </tr>
+                        <tr>
+                          <td class="cell br" id="p21"></td>
+                          <td class="cell br" id="p22"></td>
+                          <td class="cell b" id="p23"></td>
+                        </tr>
+                        <tr>
+                          <td class="cell r" id="p31"></td>
+                          <td class="cell r" id="p32"></td>
+                          <td class="cell" id="p33"></td>
+                        </tr>
+                      </table>
+                  </div>
 
               </div>
             </div>
