@@ -1,5 +1,3 @@
-<!--- https://www.bennadel.com/blog/726-coldfusion-application-cfc-tutorial-and-application-cfc-reference.htm --->
-
 <!--- "Handle the application." --->
 <cfcomponent displayname="Application" output="true" >
 

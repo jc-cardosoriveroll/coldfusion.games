@@ -1,4 +1,4 @@
-<!--- https://www.bennadel.com/blog/726-coldfusion-application-cfc-tutorial-and-application-cfc-reference.htm --->
+<!--- https://github.com/GiancarloGomez/ColdFusion-Realtime-With-WebSockets/tree/master/ --->
 
 <!--- "Handle the application." --->
 <cfcomponent displayname="Application" output="true" >
