@@ -13,12 +13,12 @@
 		<cfreturn arguments.message>
 	</cffunction>
 
-	<!---
 	<cffunction access="public" return="any" name="allowPublish">
 		<cfargument name="publisherInfo" type="struct">
 		<cfset wsPublish("websocket","refreshUsers")>	
 	</cffunction>
-
+ 
+	<!---
 
 	<cffunction access="public" return="any" name="afterUnsubscribe">
 		<cfargument name="subscriberInfo" type="struct">
