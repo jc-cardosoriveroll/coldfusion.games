@@ -20,11 +20,20 @@ function parseMessage(message){
     // Manage Messages (core)    
     if (typeof message.type !== 'undefined'){
 
+        // Server Events (system)
+        if (message.type == 'response' && typeof message.reqType !== 'undefined') {
+            switch (message.reqType){
+                case "subscribeTo" : 
+                    alert("new player joined... start game");
+                break;
+            }
+        } 
+
         // Data Events (publishers)
         if (message.type == 'data' && typeof message.action !== 'undefined') {
             switch (message.action){
-                case "newGame" : 
-                    alert("new game, with...");
+                case "xxx" : 
+
                 break;
             }
         }
