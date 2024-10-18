@@ -19,7 +19,7 @@ function parseMessage(message){
     if (typeof message.type !== 'undefined'){
 
         // Server Events (system)
-        if (message.type == 'response' && typeof message.data.reqType !== 'undefined') {
+        if (message.type == 'response' && typeof message.reqType !== 'undefined') {
             switch (message.data.reqType){
                 case "subscribeTo" : 
                     updateUserList();
@@ -28,7 +28,7 @@ function parseMessage(message){
         }
 
         // Data Events (publishers)
-        if (message.type == 'data' && typeof message.data.action !== 'undefined') {
+        if (message.type == 'data' && typeof message.action !== 'undefined') {
             switch (message.data.action){
                 case "refreshUsers" : 
                     updateUserList(); 
