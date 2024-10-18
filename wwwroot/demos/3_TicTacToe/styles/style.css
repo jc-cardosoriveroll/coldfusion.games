@@ -11,10 +11,16 @@
   visibility: hidden;
 }
 
+/* visible element */
+.visible {
+  visibility: visible;
+}
+
 .cell{
   width:  75px;
   height: 75px;
 }
+
 /* main container */
 .container {
     text-align: center;
