@@ -35,8 +35,9 @@ function updateUserList(){
             {
                 const ulElement = document.getElementById('onlineUsers');
                 const liElement = document.createElement('li');
-                liElement.textContent = user.clientid;
+                liElement.textContent = user.clientid;                
                 liElement.id = user.clientid;
+                liElement.setAttribute("onclick", "handleClick('" + user.clientid + "')");                
                 ulElement.appendChild(liElement);
             }
         });
@@ -49,6 +50,9 @@ function clearUserList(){
     ulElement.textContent = '';
 }
 
+function handleClick(id){
+    alert(id);
+}
 
 function copyToClipboard() {
   const divToCopy = document.getElementById("divToCopy");
