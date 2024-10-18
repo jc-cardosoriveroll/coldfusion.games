@@ -24,7 +24,8 @@ function parseMessage(message){
         if (message.type == 'response' && typeof message.reqType !== 'undefined') {
             switch (message.reqType){
                 case "subscribeTo" : 
-                    alert("new player joined... start game");
+                    //now that I subscribed, broadcast I wan't to play...
+                    ws.publish("websocket","play!");
                 break;
             }
         } 
