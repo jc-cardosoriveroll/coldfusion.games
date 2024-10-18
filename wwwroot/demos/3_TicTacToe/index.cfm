@@ -38,7 +38,7 @@
                       <br>http://coldfusion.games/demos/3_ticTacToe
                     </div>
 
-                    <div id="game" class="visible">
+                    <div id="game" class="hidden">
                         <table>
                           <tr>
                             <td class="cell br" id="p11"></td>
