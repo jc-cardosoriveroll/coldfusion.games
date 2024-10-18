@@ -58,4 +58,5 @@ function copyToClipboard() {
   tempElement.select();
   document.execCommand("copy");
   document.body.removeChild(tempElement);
+  alert("copied");
 }

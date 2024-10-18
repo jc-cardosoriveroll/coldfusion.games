@@ -39,7 +39,8 @@
                     <h3>Play against:</h3> 
                     <ul id="onlineUsers"></ul>
                     <hr>
-                    <div id="divToCopy"><a href="##"  onclick="copyToClipboard()">http://coldfusion.games/demos/3_ticTacToe</a></div>
+                    <div id="divToCopy">http://coldfusion.games/demos/3_ticTacToe</div>
+                    <a href="##"  onclick="copyToClipboard()">Copy</a>
               </div>
             </div>
             <span class="love">Built with &hearts; by JC. Learn more in our <a href="https://www.udemy.com/course/desarrollo-apps-en-adobe-coldfusion/">Coldfusion Courses.</a></span>
