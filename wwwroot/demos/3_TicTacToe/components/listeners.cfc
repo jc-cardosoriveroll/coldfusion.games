@@ -3,7 +3,7 @@
     <!--- Websocket function overwriters --->
 	<cffunction access="public" return="boolean" name="allowSubscribe">
 		<cfargument name="subscriberInfo" type="struct">
-		
+		<cfset wsPublish("websocket","refreshUsers")>		
 		<cfreturn true>		
 	</cffunction>
 
