@@ -1,7 +1,5 @@
 function parseMessage(message){
 
-    /* always update user list */
-    updateUserList();
 
     let clientid = document.getElementById("clientid");
     /* Get ClientID from Data to identify Self */
@@ -15,8 +13,11 @@ function parseMessage(message){
             case "refreshUsers" : updateUserList(); break;
         }
     }
-    
+
     console.log(message);
+
+    /* always update user list */
+    updateUserList();
 }
 
 function updateUserList(){
