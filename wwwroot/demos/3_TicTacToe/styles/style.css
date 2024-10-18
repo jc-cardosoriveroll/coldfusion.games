@@ -4,8 +4,12 @@
 /* visible element */
 .visible { visibility: visible; }
 
+/* game container style */
+#game { text-align: center; }
+
 /* actual grid for game */
 .board {  width: 300; height: 300px;}
+
  
 /* styles to draw table grid for game */
 .br { border-bottom: 1px solid black; border-right: 1px solid black; width: 100px; height: 100px;}
