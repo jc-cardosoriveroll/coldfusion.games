@@ -42,7 +42,7 @@
                     <ul id="onlineUsers"></ul>
                     <hr>
                     <div id="divToCopy">http://coldfusion.games/demos/3_ticTacToe</div>
-                    <a onclick="copyToClipboard()"><i class="fa fa-copy" /></a>
+                    <i class="fa fa-copy fa-2x" onclick="copyToClipboard()" />
               </div>
             </div>
             <span class="love">Built with &hearts; by JC. Learn more in our <a href="https://www.udemy.com/course/desarrollo-apps-en-adobe-coldfusion/">Coldfusion Courses.</a></span>
