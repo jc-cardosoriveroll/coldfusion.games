@@ -38,7 +38,7 @@
                     <div id="divToCopy">http://coldfusion.games/demos/3_ticTacToe</div>
 
                     <div id="game" class="visible">
-                        <table class="table">
+                        <table class="table board">
                           <tr>
                             <th class="cell p11" id="p11"></th>
                             <th class="cell p12" id="p12"></th>
