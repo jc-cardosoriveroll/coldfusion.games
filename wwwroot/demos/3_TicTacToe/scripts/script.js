@@ -31,10 +31,10 @@ function parseMessage(message){
         } 
 
         // Data Events (publishers)
-        if (message.type == 'data' && typeof message.action !== 'undefined') {
-            switch (message.action){
-                case "xxx" : 
-
+        if (message.type == 'data' && typeof message.data !== 'undefined') {
+            switch (message.data){
+                case "play" : 
+                    alert("yeah! on to the game...");
                 break;
             }
         }
