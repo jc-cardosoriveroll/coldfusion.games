@@ -19,6 +19,7 @@ function parseMessage(message){
         let other = message.data.subscriberInfo;
         switch (message.data.action){
             case "allowSubscribe" : updateUserList(); break; 
+            case "refreshUsers" : updateUserList(); break;
         }
     }
 

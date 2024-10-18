@@ -7,12 +7,15 @@
 		<cfreturn true>		
 	</cffunction>
 
+	<cffunction access="public" return="boolean" name="afterUnsubscribe">
+		<cfargument name="subscriberInfo" type="struct">
+		<cfset wsPublish("websocket","refreshUsers")>		
+		<cfreturn true>		
+	</cffunction>	
+
 	<cffunction access="public" return="any" name="allowPublish">
 		<cfargument name="publisherInfo" type="struct">
-		<!---
-		<cfset local.data = {"action" : "allowPublish", "publisherInfo" : arguments.publisherInfo}>
-		<cfset wsPublish("websocket",serializeJSON(local.data))>		
-		--->
+		<cfset wsPublish("websocket","refreshUsers")>		
 	</cffunction>
 
 	<cffunction access="public" return="any" name="beforePublish">
