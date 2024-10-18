@@ -15,12 +15,14 @@
 	<cffunction access="public" return="any" name="beforePublish">
 		<cfargument name="message" type="any">
 		<cfargument name="publisherInfo" type="struct">
+		<!--- cannot send message here --->
 		<cfreturn arguments.message>
 	</cffunction>
 
 	<cffunction access="public" return="any" name="beforeSendMessage">
 		<cfargument name="message" type="any">
 		<cfargument name="subscriberInfo" type="struct">
+		<!--- cannot send message here --->
 		<cfreturn arguments.message>
 	</cffunction>
 
