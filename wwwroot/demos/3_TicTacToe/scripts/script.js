@@ -22,7 +22,7 @@ function parseMessage(message){
         if (message.type == 'response' && typeof message.reqType !== 'undefined') {
             switch (message.reqType){
                 case "subscribeTo" : 
-                    updateUserList();
+                    //updateUserList();
                 break;
             }
         }
