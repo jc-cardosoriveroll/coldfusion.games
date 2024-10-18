@@ -5,7 +5,7 @@
 .visible { visibility: visible; }
 
 /* game container style */
-#game { text-align: center; }
+#container { text-align: center; }
 
 /* actual grid for game */
 .board {  width: 300; height: 300px;}
