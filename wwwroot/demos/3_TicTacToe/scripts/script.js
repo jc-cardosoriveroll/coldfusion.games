@@ -1,5 +1,6 @@
 function parseMessage(message){
-    
+
+    /* always update user list */
     updateUserList();
 
     let clientid = document.getElementById("clientid");
@@ -8,20 +9,13 @@ function parseMessage(message){
         clientid.innerHTML = message.clientid;  
     }
 
-    /* Manage "server" response cases
-    if (message.type == 'response'){
-        switch (message.reqType){
-            case "subscribeTo" : updateUserList(); break; 
-        }
-    }
-
     if (message.type == 'data'){
         //let other = message.data.subscriberInfo;
         switch (message.data.action){
             case "refreshUsers" : updateUserList(); break;
         }
     }
-    */
+    
     console.log(message);
 }
 
