@@ -1,90 +1,95 @@
 function parseMessage(message){
+    // Always log to console raw check
+    console.log(message);
 
-    /* always update user list */
-    updateUserList();
-
-
+    // Containers to store/display key user ID
     let clientid = document.getElementById("clientid");
-    /* Get ClientID from Data to identify Self */
+    let publisherid = document.getElementById("publisherid");
+
+    // Get ClientID to identify Self
     if (typeof message.clientid !== 'undefined') {
         clientid.innerHTML = message.clientid;  
     }
-
-    if (message.type == 'data'){
-        //let other = message.data.subscriberInfo;
-        switch (message.data.action){
-            case "refreshUsers" : updateUserList(); break;
-        }
+    // Get PublisherId to identify Sender
+    if (typeof message.publisherid !== 'undefined') {
+        publisherid.innerHTML = message.publisherid;  
     }
 
-    console.log(message);
+    // Manage Messages (core)    
+    if (typeof message.type !== 'undefined'){
 
-    /* always update user list */
-    updateUserList();
+        // Server Events (system)
+        if (message.type == 'response' && typeof message.data.reqType !== 'undefined') {
+            switch (message.data.reqType){
+                case "subscribeTo" : 
+                    updateUserList();
+                break;
+            }
+        }
+
+        // Data Events (publishers)
+        if (message.type == 'data' && typeof message.data.action !== 'undefined') {
+            switch (message.data.action){
+                case "refreshUsers" : 
+                    updateUserList(); 
+                break;
+            }
+        }
+    }
 }
 
+
+// function to update User list with a "clickable" ID 
 function updateUserList(){
-    clearUserList();
+    // always clear the list first 
+    const ulElement = document.getElementById('onlineUsers');
+    ulElement.textContent = '';
+    // set container for remote async call
     let clientid = document.getElementById("clientid");
     $.get('remote/async.cfm?action=users', function(r) {
         let users = JSON.parse(r);
         users.forEach(function(user) {
             if (user.clientid != clientid.innerHTML)
             {
-                // Example usage:
+                // first make sure element doesn't alrady exist
                 const ulElement = document.getElementById('onlineUsers');
                 const valueToFind = user.clientid;
                 const found = searchForValueInLI(ulElement, valueToFind);
 
                 if (!found) {
+                    // append element to list when not found (new)
                     const liElement = document.createElement('li');
                     liElement.textContent = user.clientid;                
                     liElement.setAttribute("onclick", "handleClick('" + user.clientid + "')");                
                     ulElement.appendChild(liElement);
                 } 
-
             }
         });
     });
-    console.log("contacts updated");
 }
 
-function clearUserList(){
-    const ulElement = document.getElementById('onlineUsers');
-    ulElement.textContent = '';
-}
 
-function handleClick(id){
-    alert(id);
-}
-
+// Helper Function
 function copyToClipboard() {
   const divToCopy = document.getElementById("divToCopy");
   const tempElement = document.createElement("textarea");
   tempElement.value = divToCopy.innerHTML;
   document.body.appendChild(tempElement);
   tempElement.select();
-  document.execCommand("copy");
+  navigator.clipboard.writeText(text);
   document.body.removeChild(tempElement);
   alert("copied");
 }
 
+// Helper Function to see if a value is already in a "LI" list
 function searchForValueInLI(listElement, valueToSearch) {
-    // Get all LI elements within the list
     const liElements = listElement.querySelectorAll('li');
-  
-    // Iterate through each LI element
     for (const li of liElements) {
-      // Get the text content of the LI element
       const liText = li.textContent.trim();
-  
-      // Check if the value matches
-      if (liText === valueToSearch) {
-        // If found, return true
-        return true;
-      }
-    }
-  
-    // If not found after iterating through all elements, return false
+      if (liText === valueToSearch) { return true; }}
     return false;
-  }
+}
+
+function handleClick(id){
+    alert(id);
+}
