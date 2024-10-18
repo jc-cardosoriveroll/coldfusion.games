@@ -37,22 +37,22 @@
 
                     <div id="divToCopy">http://coldfusion.games/demos/3_ticTacToe</div>
 
-                    <div id="game" class="hidden">
+                    <div id="game" class="visible">
                         <table class="table">
                           <tr>
-                            <th class="cell" id="p11"></th>
-                            <th class="cell" id="p12"></th>
-                            <th class="cell" id="p13"></th>
+                            <th class="cell p11" id="p11"></th>
+                            <th class="cell p12" id="p12"></th>
+                            <th class="cell p13" id="p13"></th>
                           </tr>
                           <tr>
-                            <th class="cell" id="p21"></th>
-                            <th class="cell" id="p22"></th>
-                            <th class="cell" id="p23"></th>
+                            <th class="cell p21" id="p21"></th>
+                            <th class="cell p22" id="p22"></th>
+                            <th class="cell p23" id="p23"></th>
                           </tr>
                           <tr>
-                            <th class="cell" id="p31"></th>
-                            <th class="cell" id="p32"></th>
-                            <th class="cell" id="p33"></th>
+                            <th class="cell p31" id="p31"></th>
+                            <th class="cell p32" id="p32"></th>
+                            <th class="cell p33" id="p33"></th>
                           </tr>
                         </table>
                     </div>
