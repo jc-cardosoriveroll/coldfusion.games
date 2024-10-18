@@ -72,18 +72,6 @@ function updateUserList(){
 }
 
 
-// Helper Function
-function copyToClipboard() {
-  const divToCopy = document.getElementById("divToCopy");
-  const tempElement = document.createElement("textarea");
-  tempElement.value = divToCopy.innerHTML;
-  document.body.appendChild(tempElement);
-  tempElement.select();
-  navigator.clipboard.writeText(text);
-  document.body.removeChild(tempElement);
-  alert("copied");
-}
-
 // Helper Function to see if a value is already in a "LI" list
 function searchForValueInLI(listElement, valueToSearch) {
     const liElements = listElement.querySelectorAll('li');
