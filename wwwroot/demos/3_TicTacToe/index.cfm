@@ -33,6 +33,7 @@
 
                     <h1>Welcome to Lobby</h1>
                     <p>Your ID: <span id="clientid"></span>
+                      <div id="publisherid" class="hidden"></div>
 
                      <hr>
 

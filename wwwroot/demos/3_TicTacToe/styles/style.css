@@ -6,6 +6,11 @@
     width: 100px;
 }
 
+/* hide element */
+.hidden {
+  visibility: hidden;
+}
+
 /* main container */
 .container {
     text-align: center;
