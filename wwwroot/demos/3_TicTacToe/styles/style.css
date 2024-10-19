@@ -6,7 +6,7 @@
 
 /* game container style */
 #container { text-align: center; }
-#game {margin-left: 150px; margin-top: -250px;}
+#game {position: relative; padding-left: 50px; padding-top: 100px;}
 
 /* actual grid for game */
 .board {  width: 300; height: 300px;}
