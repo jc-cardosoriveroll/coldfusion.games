@@ -53,12 +53,8 @@ function parseMessage(message){
                     break;
 
                     case "nextturn" :
-                        /*
-                        $.unblockUI();
-                        updateUI();    
-                        enableUI();                           
-                        alert("your turn");
-                        */
+                        msg = {"action" : "nextturn", "game" : window.game};
+                        ws.publish("websocket",msg);                                                    
                     break;
                 }
             }
@@ -66,7 +62,17 @@ function parseMessage(message){
     }
 }
 
-
+function pick(pos){
+    if (pos == "p11") { window.game.p11 == window.clientid; }
+    if (pos == "p12") { window.game.p12 == window.clientid; }
+    if (pos == "p13") { window.game.p13 == window.clientid; }
+    if (pos == "p21") { window.game.p21 == window.clientid; }
+    if (pos == "p22") { window.game.p22 == window.clientid; }
+    if (pos == "p23") { window.game.p23 == window.clientid; }
+    if (pos == "p31") { window.game.p31 == window.clientid; }
+    if (pos == "p32") { window.game.p32 == window.clientid; }
+    if (pos == "p33") { window.game.p33 == window.clientid; }
+}
 
 function enableUI(){
     var lobby = document.getElementById("lobby");
