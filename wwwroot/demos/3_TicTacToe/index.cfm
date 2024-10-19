@@ -24,6 +24,8 @@
         </head>
         <body>
           <!--- Main Content --->
+          <span id="game" class="hidden"></span>
+
           <div class="card">
             <div class="card-body">
               <div class="card-window" id="container">
@@ -36,7 +38,6 @@
                   </div>
 
                   <div id="board" class="hidden">
-                      <span id="game" class="hidden"></span>
                       <table>
                         <tr>
                           <td class="cell br" id="p11"></td>
