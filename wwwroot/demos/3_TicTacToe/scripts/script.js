@@ -1,16 +1,14 @@
+window.gameid = document.getElementById("gameid").innerHTML;
+window.clientid = document.getElementById("clientid").innerHTML;
+
+
 function parseMessage(message){
     // Always log to console raw check
     console.log(message);
 
-    // Containers to store Game ID
-    let game = document.getElementById("game");
-
-    // Containers to store/display key user ID
-    let clientid = document.getElementById("clientid");
-
     // Get ClientID to identify Self
     if (typeof message.clientid !== 'undefined') {
-        clientid.innerHTML = message.clientid;  
+        window.clientid = message.clientid;  
     }
 
     // Manage Messages (core)    
@@ -30,10 +28,10 @@ function parseMessage(message){
         if (message.type == 'data' && typeof message.data !== 'undefined') {
             switch (message.data){
                 case "newgame" : 
-                    if (message.publisherid !== clientid.innerHTML && 
+                    if (message.publisherid !== window.clientid && 
                         message.publisherid !== "0" &&
-                        clientid.innerHTML !== "")
-                    { newgame(clientid.innerHTML,message.publisherid); }
+                        window.clientid !== "")
+                    { newgame(window.clientid,message.publisherid); }
                 break;
 
                 case "nextturn" :
@@ -60,25 +58,23 @@ function newgame(p1,p2){
       })
         .done(function( msg ) {
             // New Struct Exists, save local identifier for future moves
-            let go = JSON.parse(msg).game; 
-            game.innerHTML = go.id;             
+            var go = JSON.parse(msg).game; 
+            window.gameid = go.id;             
         });
 }
 
 
 function pick(cell)
 {
-    let game = document.getElementById("game");
-    let clientid = document.getElementById("clientid");
 
     $.ajax({
         method: "GET",
-        url: "remote/async.cfm?action=pickcell&id=" + game.innerHTML + "&cell=" + cell + "&p=" + clientid.innerHTML
+        url: "remote/async.cfm?action=pickcell&id=" + window.gameid + "&cell=" + cell + "&p=" + window.clientid
       })
         .done(function( msg ) {
             // move based on status (same game obj)
             // after turn simply sendMsg for turn
-            let go = JSON.parse(msg).game; 
+            var go = JSON.parse(msg).game; 
             ws.publish("websocket","nextturn");
             console.log(go);
         });

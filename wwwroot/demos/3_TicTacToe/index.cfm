@@ -55,7 +55,7 @@
                         </tr>
                       </table>
                   </div>
-                  <span id="game" class="hidden"></span>
+                  <span id="gameid" class="hidden"></span>
 
               </div>
             </div>
