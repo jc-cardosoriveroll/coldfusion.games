@@ -62,10 +62,6 @@
             <span class="love">Built with &hearts; by JC. Learn more in our <a href="https://www.udemy.com/course/desarrollo-apps-en-adobe-coldfusion/">Coldfusion Courses.</a></span>
           </div>
 
-          <!--- This Hidden value will control game --->
-          <span id="game" class="hidden">0</span>
-
-
         </body>
       </html>
   </cfoutput>

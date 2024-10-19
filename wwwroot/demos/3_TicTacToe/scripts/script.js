@@ -2,9 +2,6 @@ function parseMessage(message){
     // Always log to console raw check
     console.log(message);
 
-    // Point to gameId to determine behaviour
-    const game = document.getElementById("game");
-
     // Containers to store/display key user ID
     let clientid = document.getElementById("clientid");
 
@@ -52,9 +49,6 @@ function newgame(p1,p2){
     const board = document.getElementById("board");
     board.className = "visible";
 
-    const game = document.getElementById("game");
-
-
     $.ajax({
         method: "GET",
         url: "remote/async.cfm?init=true&action=newgame&p1=" + p1 + "&p2=" + p2
@@ -62,7 +56,6 @@ function newgame(p1,p2){
         .done(function( msg ) {
             // New Struct Exists, save local identifier for future moves
             let go = JSON.parse(msg).game; 
-            //Now that we have set game ID we can start ping-pong
-            game.innerHTML = go.id;              
+            alert(go.id);
         });
 }
