@@ -62,6 +62,10 @@ function newgame(p1,p2){
         });
 }
 
+$(".cell").on("click",function(){
+    alert("clicked cell");
+})
+
 
 function centerDiv(div) {
     const divElement = document.getElementById(div); // Replace 'myDiv' with the actual ID of your <div>
@@ -73,7 +77,7 @@ function centerDiv(div) {
     const divWidth = divElement.offsetWidth;
     const divHeight = divElement.offsetHeight;
   
-    const centerX = (parentWidth - divWidth) / 2;
+    const centerX = ((parentWidth - divWidth) / 2)+divWidth;
     const centerY = (parentHeight - divHeight) / 2;
   
     divElement.style.position = 'absolute';
