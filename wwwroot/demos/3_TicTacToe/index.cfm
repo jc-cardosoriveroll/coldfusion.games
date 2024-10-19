@@ -42,19 +42,19 @@
                   <div id="board" class="hidden">
                       <table>
                         <tr>
-                          <td class="cell br"><button onclick="pick('p11');">here</button></td>
-                          <td class="cell br"><button onclick="pick('p12');">here</button></td>
-                          <td class="cell b"><button onclick="pick('p13');">here</button></td>
+                          <td class="cell br" id="p11"><button onclick="pick('p11');">here</button></td>
+                          <td class="cell br" id="p12"><button onclick="pick('p12');">here</button></td>
+                          <td class="cell b" id="p13"><button onclick="pick('p13');">here</button></td>
                         </tr>
                         <tr>
-                          <td class="cell br"><button onclick="pick('p21');">here</button></td>
-                          <td class="cell br"><button onclick="pick('p22');">here</button></td>
-                          <td class="cell b"><button onclick="pick('p23');">here</button></td>
+                          <td class="cell br" id="p21"><button onclick="pick('p21');">here</button></td>
+                          <td class="cell br" id="p22"><button onclick="pick('p22');">here</button></td>
+                          <td class="cell b" id="p23"><button onclick="pick('p23');">here</button></td>
                         </tr>
                         <tr>
-                          <td class="cell r"><button onclick="pick('p31');">here</button></td>
-                          <td class="cell r"><button onclick="pick('p32');">here</button></td>
-                          <td class="cell"><button onclick="pick('p33');">here</button></td>
+                          <td class="cell r" id="p31"><button onclick="pick('p31');">here</button></td>
+                          <td class="cell r" id="p32"><button onclick="pick('p32');">here</button></td>
+                          <td class="cell" id="p33"><button onclick="pick('p33');">here</button></td>
                         </tr>
                       </table>
                   </div>

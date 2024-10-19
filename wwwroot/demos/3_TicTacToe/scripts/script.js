@@ -68,6 +68,7 @@ function pick(cell)
       })
         .done(function( msg ) {
             var go = JSON.parse(msg).game; 
+            updateUI(go);
             ws.publish("websocket",go.state);
             $.blockUI();
         });
@@ -85,7 +86,46 @@ function enableUI(){
     $.unblockUI();    
 }
 
+function updateUI(game)
+{
+    var p11 = document.getElementById("p11");
+    var p12 = document.getElementById("p12");
+    var p13 = document.getElementById("p13");
+    var p21 = document.getElementById("p21");
+    var p22 = document.getElementById("p22");
+    var p23 = document.getElementById("p23");
+    var p31 = document.getElementById("p31");
+    var p32 = document.getElementById("p32");
+    var p33 = document.getElementById("p33");
 
+    if (game.p11 == game.p1) { insertImage("p11","X"); }
+    if (game.p12 == game.p1) { insertImage("p12","X"); }
+    if (game.p13 == game.p1) { insertImage("p13","X"); }
+    if (game.p21 == game.p1) { insertImage("p21","X"); }
+    if (game.p22 == game.p1) { insertImage("p22","X"); }
+    if (game.p23 == game.p1) { insertImage("p23","X"); }
+    if (game.p31 == game.p1) { insertImage("p31","X"); }
+    if (game.p32 == game.p1) { insertImage("p32","X"); }
+    if (game.p33 == game.p1) { insertImage("p33","X"); }
+
+    if (game.p11 == game.p2) { insertImage("p11","O"); }
+    if (game.p12 == game.p2) { insertImage("p12","O"); }
+    if (game.p13 == game.p2) { insertImage("p13","O"); }
+    if (game.p21 == game.p2) { insertImage("p21","O"); }
+    if (game.p22 == game.p2) { insertImage("p22","O"); }
+    if (game.p23 == game.p2) { insertImage("p23","O"); }
+    if (game.p31 == game.p2) { insertImage("p31","O"); }
+    if (game.p32 == game.p2) { insertImage("p32","O"); }
+    if (game.p33 == game.p2) { insertImage("p33","O"); }
+}
+
+function insertImage(pos,image)
+{
+    const cell = document.getElementById(pos);
+    const image = document.createElement('img');
+    image.src = "/images/" + image + ".png";
+    cell.appendChild(image);
+}
 
 function centerDiv(div) {
     const divElement = document.getElementById(div); // Replace 'myDiv' with the actual ID of your <div>
