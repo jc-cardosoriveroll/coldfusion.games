@@ -54,8 +54,8 @@
                           <td class="cell" id="p33"></td>
                         </tr>
                       </table>
-                      <span id="game"></span>
                   </div>
+                  <span id="game" class="hidden"></span>
 
               </div>
             </div>
