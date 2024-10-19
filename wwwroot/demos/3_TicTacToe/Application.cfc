@@ -43,6 +43,9 @@
 
 		<cfif structKeyExists(url,"init")>
 			onApplicationStart()>
+			<cfif structkeyExists(session,"game")>
+				<cfset structDelete(session,"game")>
+			</cfif>
             <!--- tell everyone to reconnect --->
 			<!---
 			<cfloop collection="#wsGetAllChannels()#" item="key">
