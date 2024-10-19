@@ -57,7 +57,7 @@
 
 		<cfif this.turn eq arguments.p>
 			<cfreturn true>
-		</cif>
+		</cfif>
 		<cfreturn false>
 	</cffunction>
 
