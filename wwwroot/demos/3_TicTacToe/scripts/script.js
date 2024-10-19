@@ -5,7 +5,8 @@ window.game =
                     "client1" : "0", "client2" : "0",
                     "p11" : "0", "p12" : "0", "p13" : "0",
                     "p21" : "0", "p22" : "0", "p23" : "0",
-                    "p31" : "0", "p32" : "0", "p33" : "0"
+                    "p31" : "0", "p32" : "0", "p33" : "0",
+                    "turn" : "0"
                 };
 
 
@@ -37,8 +38,6 @@ function parseMessage(message){
 
         // Data Events (only attend messages from "other" publishers)
         if (message.type == 'data' && typeof message.data !== 'undefined') {
-            if ((window.clientid !== message.publisherid) && message.publisherid !== "0")
-            {
                 $.unblockUI();
                 updateUI();
 
@@ -47,16 +46,19 @@ function parseMessage(message){
                     case "newgame" : 
                         // let the other player know that I have joined and will play
                         window.game.client2 = window.clientid;
+                        window.game.turn = message.data.client1;
                         msg = {"action" : "nextturn", "game" : window.game};
                         ws.publish("websocket",msg);                                                    
                     break;
 
                     case "nextturn" :
-                        msg = {"action" : "nextturn", "game" : window.game};
-                        ws.publish("websocket",msg);                                                    
+                        if (message.game.turn == window.clientid)
+                        {
+                            msg = {"action" : "nextturn", "game" : window.game};
+                            ws.publish("websocket",msg);                                                    
+                        }
                     break;
                 }
-            }
         }
     }
 }
