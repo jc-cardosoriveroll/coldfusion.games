@@ -10,7 +10,7 @@ window.game =
 
 function parseMessage(message){
     // Always log to console raw check
-    console.log(message);
+    //console.log(message);
 
     // Get ClientID to identify Self
     if (typeof message.clientid !== 'undefined') {
@@ -45,6 +45,7 @@ function parseMessage(message){
                         window.game.p2 = p2;
                         window.game.turn = p1;
                         msg = {"action" : "nextturn", "game" : window.game};
+                        console.log(msg);
                         //ws.publish("websocket",msg);                                                    
                     break;
 
@@ -61,22 +62,7 @@ function parseMessage(message){
         }
 }
 
-function newgame(p1,p2){
-}
 
-
-function pick(cell)
-{
-    $.ajax({
-        method: "POST",
-        url: "remote/async.cfm?action=pickcell&id=" + window.gameid + "&cell=" + cell + "&p=" + window.clientid
-      })
-        .done(function( msg ) {
-            go = JSON.parse(msg); 
-            ws.publish("websocket",go.state);
-            $.blockUI();
-        });
-}
 
 function enableUI(){
     var lobby = document.getElementById("lobby");
