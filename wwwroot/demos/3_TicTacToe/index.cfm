@@ -39,19 +39,19 @@
                   <div id="board" class="hidden">
                       <table>
                         <tr>
-                          <td class="cell br"><a href="##" id="p11" class="btn">here</a></td>
-                          <td class="cell br"><a href="##" id="p12" class="btn">here</a></td>
-                          <td class="cell b"><a href="##" id="p13" class="btn">here</a></td>
+                          <td class="cell br"><a href="##" id="p11" class="pick">here</a></td>
+                          <td class="cell br"><a href="##" id="p12" class="pick">here</a></td>
+                          <td class="cell b"><a href="##" id="p13" class="pick">here</a></td>
                         </tr>
                         <tr>
-                          <td class="cell br"><a href="##" id="p21" class="btn">here</a></td>
-                          <td class="cell br"><a href="##" id="p22" class="btn">here</a></td>
-                          <td class="cell b"><a href="##" id="p23" class="btn">here</a></td>
+                          <td class="cell br"><a href="##" id="p21" class="pick">here</a></td>
+                          <td class="cell br"><a href="##" id="p22" class="pick">here</a></td>
+                          <td class="cell b"><a href="##" id="p23" class="pick">here</a></td>
                         </tr>
                         <tr>
-                          <td class="cell r"><a href="##" id="p31" class="btn">here</a></td>
-                          <td class="cell r"><a href="##" id="p32" class="btn">here</a></td>
-                          <td class="cell"><a href="##" id="p33" class="btn">here</a></td>
+                          <td class="cell r"><a href="##" id="p31" class="pick">here</a></td>
+                          <td class="cell r"><a href="##" id="p32" class="pick">here</a></td>
+                          <td class="cell"><a href="##" id="p33" class="pick">here</a></td>
                         </tr>
                       </table>
                   </div>
