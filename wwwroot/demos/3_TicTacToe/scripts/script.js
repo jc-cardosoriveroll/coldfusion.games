@@ -27,14 +27,10 @@ function parseMessage(message){
         if (message.type == 'data' && typeof message.data !== 'undefined') {
             switch (message.data){
                 case "newgame" : 
-                    /*
                     if (message.publisherid !== clientid.innerHTML && 
                         message.publisherid !== "0" &&
                         clientid.innerHTML !== "")
                     { newgame(clientid.innerHTML,message.publisherid); }
-                     */
-                    alert(message.publisherid);
-                    alert(clientid.innerHTML);
                 break;
             }
         }
@@ -55,7 +51,10 @@ function newgame(p1,p2){
     const game = document.getElementById("game");
     game.className = "visible";
 
+    alert("new game");
+    /*
     $.get( "remote/async.cfm?action=newgame&p1=" + p1 & "&p2=" + p2, function( data ) {
         ws.publish("websocket",data);
-    });        
+    }); 
+    */       
 }
