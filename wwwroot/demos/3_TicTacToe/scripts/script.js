@@ -37,7 +37,7 @@ function parseMessage(message){
 
         // Data Events (only attend messages from "other" publishers)
         if (message.type == 'data' && typeof message.data !== 'undefined') {
-            if (window.clientid !== message.publisherid)
+            if ((window.clientid !== message.publisherid) && message.publisherid !== "0")
             {
                 $.unblockUI();
                 enableUI();
