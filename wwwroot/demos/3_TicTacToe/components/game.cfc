@@ -26,7 +26,7 @@
 						{"p32" : "0"},
 						{"p33" : "0"}
 					]
-			}
+			}>
 		<cfreturn local.game>
 	</cffunction>
 	
