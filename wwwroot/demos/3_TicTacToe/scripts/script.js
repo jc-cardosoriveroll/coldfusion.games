@@ -52,7 +52,6 @@ function newgame(p1,p2){
     game.className = "visible";
 
     $.get( "remote/async.cfm?action=newgame&p1=" + p1 & "&p2=" + p2, function( data ) {
-        let obj = JSON.parse(data);
-        alert(obj.id);
+        ws.publish("websocket",data);
     });        
 }
