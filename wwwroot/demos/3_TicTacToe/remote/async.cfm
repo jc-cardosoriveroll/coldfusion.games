@@ -13,7 +13,15 @@
         <cfparam name="url.id">
         <cfparam name="url.p">
         <cfparam name="url.cell">
-        <cfset session.game = session.game.pickcell(id=url.id,p=url.p,cell=url.cell)>
+        <cfset result = session.game.pickcell(id=url.id,p=url.p,cell=url.cell)>
+        <cfswitch expression="#result.state#">
+            <cfcase value="reset">
+                <cfset session.game = createobject("component","game").init(p1=url.p1,p2=url.p2)>
+            </cfcase>
+            <cfcase value="endgame">
+
+            </cfcase>
+        </cfswitch>
     </cfcase>
 </cfswitch>
 
