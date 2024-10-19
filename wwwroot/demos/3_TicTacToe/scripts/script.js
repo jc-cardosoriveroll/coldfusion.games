@@ -11,7 +11,7 @@ window.game =
 
 function parseMessage(message){
     // Always log to console raw check
-    //console.log(message);
+    console.log(message);
 
     // Get ClientID to identify Self
     if (typeof message.clientid !== 'undefined') {
@@ -30,6 +30,7 @@ function parseMessage(message){
                     msg = {"action" : "newgame", "game" : window.game};
                     ws.publish("websocket",msg);
                     $.blockUI();
+                    enableUI();
                 break;
             }
         } 
@@ -38,15 +39,17 @@ function parseMessage(message){
         if (message.type == 'data' && typeof message.data !== 'undefined') {
             if (window.clientid !== message.publisherid)
             {
+                $.unblockUI();
+                enableUI();
+                updateUI();
+
                 /* expect message.data = {"action" : "X", "game" : game} */
                 switch (message.data.action){
                     case "newgame" : 
                         // let the other player know that I have joined and will play
                         window.game.client2 = window.clientid;
                         msg = {"action" : "nextturn", "game" : window.game};
-                        console.log(msg);
-                        enableUI();
-                        //ws.publish("websocket",msg);                                                    
+                        ws.publish("websocket",msg);                                                    
                     break;
 
                     case "nextturn" :
@@ -73,51 +76,40 @@ function enableUI(){
     var board = document.getElementById("board");
     board.className = "visible";
     centerDiv("board");
-
-    $.unblockUI();    
 }
 
 function updateUI()
 {
-    $.ajax({
-        method: "GET",
-        url: "remote/async.cfm?action=getGame"
-      })
-    .done(function( msg ) {
-        // New Struct Exists, save local identifier for future moves
-        var go = JSON.parse(msg); 
+    var p11 = document.getElementById("p11");
+    var p12 = document.getElementById("p12");
+    var p13 = document.getElementById("p13");
+    var p21 = document.getElementById("p21");
+    var p22 = document.getElementById("p22");
+    var p23 = document.getElementById("p23");
+    var p31 = document.getElementById("p31");
+    var p32 = document.getElementById("p32");
+    var p33 = document.getElementById("p33");
 
-        var p11 = document.getElementById("p11");
-        var p12 = document.getElementById("p12");
-        var p13 = document.getElementById("p13");
-        var p21 = document.getElementById("p21");
-        var p22 = document.getElementById("p22");
-        var p23 = document.getElementById("p23");
-        var p31 = document.getElementById("p31");
-        var p32 = document.getElementById("p32");
-        var p33 = document.getElementById("p33");
+    if (window.game.p11 == window.game.client1) { deleteButton("p11"); insertImage("p11","X"); }
+    if (window.game.p12 == window.game.client1) { deleteButton("p12"); insertImage("p12","X"); }
+    if (window.game.p13 == window.game.client1) { deleteButton("p13"); insertImage("p13","X"); }
+    if (window.game.p21 == window.game.client1) { deleteButton("p21"); insertImage("p21","X"); }
+    if (window.game.p22 == window.game.client1) { deleteButton("p22"); insertImage("p22","X"); }
+    if (window.game.p23 == window.game.client1) { deleteButton("p23"); insertImage("p23","X"); }
+    if (window.game.p31 == window.game.client1) { deleteButton("p31"); insertImage("p31","X"); }
+    if (window.game.p32 == window.game.client1) { deleteButton("p32"); insertImage("p32","X"); }
+    if (window.game.p33 == window.game.client1) { deleteButton("p33"); insertImage("p33","X"); }
 
-        if (go.game.p11 == go.game.p1) { deleteButton("p11"); insertImage("p11","X"); }
-        if (go.game.p12 == go.game.p1) { deleteButton("p12"); insertImage("p12","X"); }
-        if (go.game.p13 == go.game.p1) { deleteButton("p13"); insertImage("p13","X"); }
-        if (go.game.p21 == go.game.p1) { deleteButton("p21"); insertImage("p21","X"); }
-        if (go.game.p22 == go.game.p1) { deleteButton("p22"); insertImage("p22","X"); }
-        if (go.game.p23 == go.game.p1) { deleteButton("p23"); insertImage("p23","X"); }
-        if (go.game.p31 == go.game.p1) { deleteButton("p31"); insertImage("p31","X"); }
-        if (go.game.p32 == go.game.p1) { deleteButton("p32"); insertImage("p32","X"); }
-        if (go.game.p33 == go.game.p1) { deleteButton("p33"); insertImage("p33","X"); }
+    if (window.game.p11 == window.game.client2) { deleteButton("p11"); insertImage("p11","O"); }
+    if (window.game.p12 == window.game.client2) { deleteButton("p12"); insertImage("p12","O"); }
+    if (window.game.p13 == window.game.client2) { deleteButton("p13"); insertImage("p13","O"); }
+    if (window.game.p21 == window.game.client2) { deleteButton("p21"); insertImage("p21","O"); }
+    if (window.game.p22 == window.game.client2) { deleteButton("p22"); insertImage("p22","O"); }
+    if (window.game.p23 == window.game.client2) { deleteButton("p23"); insertImage("p23","O"); }
+    if (window.game.p31 == window.game.client2) { deleteButton("p31"); insertImage("p31","O"); }
+    if (window.game.p32 == window.game.client2) { deleteButton("p32"); insertImage("p32","O"); }
+    if (window.game.p33 == window.game.client2) { deleteButton("p33"); insertImage("p33","O"); }
 
-        if (go.game.p11 == go.game.p2) { deleteButton("p11"); insertImage("p11","O"); }
-        if (go.game.p12 == go.game.p2) { deleteButton("p12"); insertImage("p12","O"); }
-        if (go.game.p13 == go.game.p2) { deleteButton("p13"); insertImage("p13","O"); }
-        if (go.game.p21 == go.game.p2) { deleteButton("p21"); insertImage("p21","O"); }
-        if (go.game.p22 == go.game.p2) { deleteButton("p22"); insertImage("p22","O"); }
-        if (go.game.p23 == go.game.p2) { deleteButton("p23"); insertImage("p23","O"); }
-        if (go.game.p31 == go.game.p2) { deleteButton("p31"); insertImage("p31","O"); }
-        if (go.game.p32 == go.game.p2) { deleteButton("p32"); insertImage("p32","O"); }
-        if (go.game.p33 == go.game.p2) { deleteButton("p33"); insertImage("p33","O"); }
-
-    });
 }
 
 function insertImage(pos,image){
