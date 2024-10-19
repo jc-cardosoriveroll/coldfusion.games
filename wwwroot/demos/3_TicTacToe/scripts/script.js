@@ -47,7 +47,7 @@ function parseMessage(message){
                     break;
 
                     case "nextturn" :
-                        lastmove = array[window.game.history.length - 1];
+                        lastmove = message.game.history[window.game.history.length - 1];
                         msg = {"action" : "nextturn", "game" : window.game};
                         console.log(lastmove);                                                   
                     break;
