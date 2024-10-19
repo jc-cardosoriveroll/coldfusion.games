@@ -53,8 +53,8 @@ function newgame(p1,p2){
             // New Struct Exists, save local identifier for future moves
             let go = JSON.parse(msg); 
             const game = document.getElementById("game");
-            game.innerHTML = go.id;              
-            alert( go.id );
+            //game.innerHTML = go.id;              
+            alert( JSON.stringify(go) );
         });
 
 }
