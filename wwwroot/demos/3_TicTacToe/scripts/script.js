@@ -1,10 +1,16 @@
-window.game = document.getElementById("game").value;
-window.clientid = document.getElementById("clientid").value; 
+// global variables 
+window.clientid = 0; 
+window.game = 
+                {
+                    "p11" : "0", "p12" : "0", "p13" : "0",
+                    "p21" : "0", "p22" : "0", "p23" : "0",
+                    "p31" : "0", "p32" : "0", "p33" : "0"
+                };
 
 
 function parseMessage(message){
     // Always log to console raw check
-    //console.log(message);
+    console.log(message);
 
     // Get ClientID to identify Self
     if (typeof message.clientid !== 'undefined') {
@@ -19,48 +25,43 @@ function parseMessage(message){
             switch (message.reqType){
                 case "subscribeTo" : 
                     //now that I subscribed, broadcast "newgame" to join available game..
-                    ws.publish("websocket","newgame");
+                    msg = {"action" : "newgame", "game" : window.game};
+                    ws.publish("websocket",msg);
                     $.blockUI();
                 break;
             }
         } 
 
-        // Data Events (only attend messages from "other" publishers: alt selectors)
+        // Data Events (only attend messages from "other" publishers)
         if (message.type == 'data' && typeof message.data !== 'undefined') {
-            if (message.publisherid !== window.clientid && 
-                message.publisherid !== "0" &&
-                window.clientid !== "")
-                {
-                    switch (message.data){
-                        case "newgame" : 
-                            // let the other player know I have joined and want to play
-                            newgame(window.clientid,message.publisherid);
-                        break;
 
-                        case "nextturn" :
-                            $.unblockUI();
-                            updateUI();    
-                            enableUI();                           
-                            alert("your turn");
-                        break;
-                    }
+            data = JSON.parse(data); /* expect {"action" : "X", "data" : game} */
+
+                switch (data.action){
+                    case "newgame" : 
+                        // let the other player know I have joined and want to play
+                        enableUI();
+                        window.game.p1 = p1;
+                        window.game.p2 = p2;
+                        window.game.turn = p1;
+                        msg = {"action" : "nextturn", "game" : window.game};
+                        //ws.publish("websocket",msg);                                                    
+                    break;
+
+                    case "nextturn" :
+                        /*
+                        $.unblockUI();
+                        updateUI();    
+                        enableUI();                           
+                        alert("your turn");
+                        */
+                    break;
                 }
             }
         }
 }
 
 function newgame(p1,p2){
-    enableUI();
-    $.ajax({
-        method: "GET",
-        url: "remote/async.cfm?init=true&action=newgame&p1=" + p1 + "&p2=" + p2
-      })
-        .done(function( msg ) {
-            // New Struct Exists, save local identifier for future moves
-            go = JSON.parse(msg); 
-            window.game = JSON.stringify(go.game);             
-            console.log(window.game);
-        });
 }
 
 
