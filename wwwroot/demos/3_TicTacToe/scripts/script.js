@@ -25,24 +25,24 @@ function parseMessage(message){
             }
         } 
 
-        // Data Events (publishers)
+        // Data Events (only attend messages from "other" publishers: alt selectors)
         if (message.type == 'data' && typeof message.data !== 'undefined') {
-            switch (message.data){
-                case "newgame" : 
-                    if (message.publisherid !== window.clientid && 
-                        message.publisherid !== "0" &&
-                        window.clientid !== "")
-                    { 
-                        newgame(window.clientid,message.publisherid);
-                    }
-                break;
+            if (message.publisherid !== window.clientid && 
+                message.publisherid !== "0" &&
+                window.clientid !== "")
+                {
+                    switch (message.data){
+                        case "newgame" : 
+                            newgame(window.clientid,message.publisherid);
+                        break;
 
-                case "nextturn" :
-                    alert("your turn");
-                break;
+                        case "nextturn" :
+                            alert("your turn");
+                        break;
+                    }
+                }
             }
         }
-    }
 }
 
 function newgame(p1,p2){
