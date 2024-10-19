@@ -28,4 +28,13 @@
 		<cfreturn this>
 	</cffunction>
 
+	<cffunction name="pickcell" hint="will modify and return this.game object">
+		<cfargument name="id" hint="id of game to make sure we only modify corresponding">
+		<cfargument name="p" hint="id of the player that made the move">
+		<cfargument name="cell" hint="position that was chosed by p">
+
+		<cfset this.game.pxy["#arguments.cell#"] = arguments.p>
+		<cfreturn this>
+	</cffunction>
+
 </cfcomponent>

@@ -65,7 +65,19 @@ function newgame(p1,p2){
 
 function pick(cell)
 {
-    alert("clicked cell" + cell);
+    let game = document.getElementById("game");
+    let clientid = document.getElementById("clientid");
+
+    $.ajax({
+        method: "GET",
+        url: "remote/async.cfm?action=pickcell&id=" + game.innerHTML + "&cell=" + cell + "&p=" + clientid.innerHTML
+      })
+        .done(function( msg ) {
+            // move based on status (same game obj)
+            // after turn simply sendMsg for turn
+            let go = JSON.parse(msg).game; 
+            alert(JSON.stringify(go));
+        });
 }
 
 
