@@ -1,16 +1,11 @@
 
 
-<cfparam name="action" default="">
-<cfset local.result = serializeJSON(url)>
+<cfparam name="url.action" default="">
+<cfset local.result = {}>
 
-<!---
-<cfset local.game = createobject("component","game").init()>
---->
-<cfswitch expression="#action#">
+<cfswitch expression="#url.action#">
     <cfcase value="newgame">
-        <!---
-        <cfset local.result = local.game.newGame(p1=json.p1,p2=json.p2)>
-        --->
+        <cfset local.result = createobject("component","game").init(p1=url.p1,p2=url.p2)>
     </cfcase>
 </cfswitch>
 
