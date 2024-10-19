@@ -74,9 +74,11 @@ function pick(cell)
         .done(function( msg ) {
             // move based on status (same game obj)
             // after turn simply sendMsg for turn
+            console.log(msg);
+            /*
             var go = JSON.parse(msg).game; 
             ws.publish("websocket","nextturn");
-            console.log(go);
+            */
         });
 }
 
