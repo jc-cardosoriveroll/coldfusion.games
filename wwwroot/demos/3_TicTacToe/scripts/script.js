@@ -90,17 +90,8 @@ function enableUI(){
 function centerDiv(div) {
     const divElement = document.getElementById(div); // Replace 'myDiv' with the actual ID of your <div>
     const parentContainer = divElement.parentElement;
-  
-    const parentWidth = parentContainer.offsetWidth;
-    const parentHeight = parentContainer.offsetHeight;
-  
-    const divWidth = divElement.offsetWidth;
-    const divHeight = divElement.offsetHeight;
-  
-    const centerX = (parentWidth - divWidth) / 2;
-    const centerY = (parentHeight - divHeight) / 2;
-  
-    divElement.style.position = 'absolute';
-    divElement.style.left = centerX + 'px';
-    divElement.style.top = centerY + 'px';
+    const parentWidth = parentContainer.offsetWidth; const parentHeight = parentContainer.offsetHeight;
+    const divWidth = divElement.offsetWidth; const divHeight = divElement.offsetHeight;
+    const centerX = (parentWidth - divWidth) / 2; const centerY = (parentHeight - divHeight) / 2;
+    divElement.style.position = 'absolute'; divElement.style.left = centerX + 'px'; divElement.style.top = centerY + 'px';
   }
