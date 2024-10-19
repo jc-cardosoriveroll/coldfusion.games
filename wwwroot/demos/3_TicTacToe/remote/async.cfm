@@ -1,7 +1,7 @@
 <cfparam name="action" default="">
 <cfset local.result = {}>
 
-<cfset local.game = createobject("component","../components/game").init()>
+<cfset local.game = createobject("component","../components.game").init()>
 <cfswitch expression="#action#">
     <cfcase value="newgame">
         <cfparam name="url.p1">
