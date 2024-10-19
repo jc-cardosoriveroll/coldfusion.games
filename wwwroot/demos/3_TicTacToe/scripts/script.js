@@ -53,8 +53,7 @@ function newgame(p1,p2){
             // New Struct Exists, save local identifier for future moves
             let go = JSON.parse(msg).game; 
             const game = document.getElementById("game");
+            //Now that we have set game ID we can start ping-pong
             game.innerHTML = go.id;              
-            alert( go.id );
         });
-
 }
