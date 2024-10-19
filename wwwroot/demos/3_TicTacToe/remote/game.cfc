@@ -1,13 +1,10 @@
 <cfcomponent>
 
 	<cffunction name="init">
-		<cfreturn this>
-	</cffunction>
-	<cffunction name="newGame" access="remote">
 		<cfargument name="p1" hint="clientId for Player1 from websocket">
 		<cfargument name="p2" hint="clientId for Player2 from websocket">
 
-		<cfset local.game =
+		<cfset this.game =
 			{
 				"id" : createUUID(),
 				"p1" : arguments.p1,
@@ -27,8 +24,8 @@
 						{"p33" : "0"}
 					]
 			}>
-		<cfreturn local.game>
+
+		<cfreturn this>
 	</cffunction>
-	
 
 </cfcomponent>
