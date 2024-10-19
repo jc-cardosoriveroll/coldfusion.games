@@ -39,19 +39,19 @@
                   <div id="board" class="hidden">
                       <table>
                         <tr>
-                          <td class="cell br" id="p11"></td>
-                          <td class="cell br" id="p12"></td>
-                          <td class="cell b" id="p13"></td>
+                          <td class="cell br" id="p11">here</td>
+                          <td class="cell br" id="p12">here</td>
+                          <td class="cell b" id="p13">here</td>
                         </tr>
                         <tr>
-                          <td class="cell br" id="p21"></td>
-                          <td class="cell br" id="p22"></td>
-                          <td class="cell b" id="p23"></td>
+                          <td class="cell br" id="p21">here</td>
+                          <td class="cell br" id="p22">here</td>
+                          <td class="cell b" id="p23">here</td>
                         </tr>
                         <tr>
-                          <td class="cell r" id="p31"></td>
-                          <td class="cell r" id="p32"></td>
-                          <td class="cell" id="p33"></td>
+                          <td class="cell r" id="p31">here</td>
+                          <td class="cell r" id="p32">here</td>
+                          <td class="cell" id="p33">here</td>
                         </tr>
                       </table>
                   </div>
