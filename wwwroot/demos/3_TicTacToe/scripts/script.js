@@ -47,9 +47,16 @@ function parseMessage(message){
                     break;
 
                     case "nextturn" :
-                        lastmove = message.game.history[window.game.history.length - 1];
-                        msg = {"action" : "nextturn", "game" : window.game};
-                        console.log(lastmove);                                                   
+                        if (window.game.history.length == 0)
+                        {
+                            alert("start game");
+                        }
+                        else
+                        {
+                            lastmove = window.game.history[window.game.history.length - 1];
+                            alert("last move:" & JSON.stringify(lastmove));
+                        }
+                        //msg = {"action" : "nextturn", "game" : window.game};
                     break;
                 }
         }
