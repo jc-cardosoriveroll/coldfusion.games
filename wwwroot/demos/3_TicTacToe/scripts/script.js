@@ -21,7 +21,7 @@ function parseMessage(message){
             switch (message.reqType){
                 case "subscribeTo" : 
                     //now that I subscribed, broadcast "newgame" to join available game..
-                    if (game.id == "0")
+                    if (game.innerHTML == "0")
                     { ws.publish("websocket","newgame"); }
                 break;
             }
@@ -31,7 +31,7 @@ function parseMessage(message){
         if (message.type == 'data' && typeof message.data !== 'undefined') {
             switch (message.data){
                 case "newgame" : 
-                    if (game.id == "0")
+                    if (game.innerHTML == "0")
                     {
                         if (message.publisherid !== clientid.innerHTML && 
                             message.publisherid !== "0" &&
