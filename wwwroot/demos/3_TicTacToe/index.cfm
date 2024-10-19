@@ -39,19 +39,19 @@
                   <div id="board" class="hidden">
                       <table>
                         <tr>
-                          <td class="cell br" id="p11">here</td>
-                          <td class="cell br" id="p12">here</td>
-                          <td class="cell b" id="p13">here</td>
+                          <td class="cell br"><a href="##" id="p11" class="btn">here</a></td>
+                          <td class="cell br"><a href="##" id="p12" class="btn">here</a></td>
+                          <td class="cell b"><a href="##" id="p13" class="btn">here</a></td>
                         </tr>
                         <tr>
-                          <td class="cell br" id="p21">here</td>
-                          <td class="cell br" id="p22">here</td>
-                          <td class="cell b" id="p23">here</td>
+                          <td class="cell br"><a href="##" id="p21" class="btn">here</a></td>
+                          <td class="cell br"><a href="##" id="p22" class="btn">here</a></td>
+                          <td class="cell b"><a href="##" id="p23" class="btn">here</a></td>
                         </tr>
                         <tr>
-                          <td class="cell r" id="p31">here</td>
-                          <td class="cell r" id="p32">here</td>
-                          <td class="cell" id="p33">here</td>
+                          <td class="cell r"><a href="##" id="p31" class="btn">here</a></td>
+                          <td class="cell r"><a href="##" id="p32" class="btn">here</a></td>
+                          <td class="cell"><a href="##" id="p33" class="btn">here</a></td>
                         </tr>
                       </table>
                   </div>
