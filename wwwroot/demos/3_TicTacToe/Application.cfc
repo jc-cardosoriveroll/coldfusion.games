@@ -28,6 +28,7 @@
         <cfset application.timestamp                   = getHttpTimeString()>
         <cfset application.publishedMessages           = 0>
         <cfset application.publishedPreviousMessages   = 0>
+        <cfset application.game  					   = new components.game()>
         <!----------------------------------------------->
 		<cfreturn true />
 	</cffunction>
