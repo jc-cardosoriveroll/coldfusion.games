@@ -1,5 +1,5 @@
-window.gameid = document.getElementById("gameid").innerHTML;
-window.clientid = document.getElementById("clientid").innerHTML;
+window.gameid = document.getElementById("gameid");
+window.clientid = document.getElementById("clientid");
 
 
 function parseMessage(message){
@@ -8,7 +8,7 @@ function parseMessage(message){
 
     // Get ClientID to identify Self
     if (typeof message.clientid !== 'undefined') {
-        window.clientid = message.clientid;  
+        window.clientid.innerHTML = message.clientid;  
     }
 
     // Manage Messages (core)    
@@ -28,10 +28,10 @@ function parseMessage(message){
         if (message.type == 'data' && typeof message.data !== 'undefined') {
             switch (message.data){
                 case "newgame" : 
-                    if (message.publisherid !== window.clientid && 
+                    if (message.publisherid !== window.clientid.innerHTML && 
                         message.publisherid !== "0" &&
-                        window.clientid !== "")
-                    { newgame(window.clientid,message.publisherid); }
+                        window.clientid.innerHTML !== "")
+                    { newgame(window.clientid.innerHTML,message.publisherid); }
                 break;
 
                 case "nextturn" :
@@ -59,17 +59,16 @@ function newgame(p1,p2){
         .done(function( msg ) {
             // New Struct Exists, save local identifier for future moves
             var go = JSON.parse(msg).game; 
-            window.gameid = go.id;             
+            window.gameid.innerHTML = go.id;             
         });
 }
 
 
 function pick(cell)
 {
-
     $.ajax({
         method: "GET",
-        url: "remote/async.cfm?action=pickcell&id=" + window.gameid + "&cell=" + cell + "&p=" + window.clientid
+        url: "remote/async.cfm?action=pickcell&id=" + window.gameid.innerHTML + "&cell=" + cell + "&p=" + window.clientid.innerHTML
       })
         .done(function( msg ) {
             // move based on status (same game obj)
