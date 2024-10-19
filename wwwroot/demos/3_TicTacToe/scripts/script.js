@@ -52,9 +52,8 @@ function newgame(p1,p2){
     game.className = "visible";
 
     $.ajax({
-        method: "POST",
-        url: "remote/async.cfm?action=newgame",
-        data: { p1: p1, p2: p2 },
+        method: "GET",
+        url: "remote/async.cfm?action=newgame&p1=" + p1 + "&p2=" + p2
       })
         .done(function( msg ) {
           alert( msg );
