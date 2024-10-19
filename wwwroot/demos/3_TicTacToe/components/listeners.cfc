@@ -22,6 +22,7 @@
 		<cfargument name="message" type="any">
 		<cfargument name="subscriberInfo" type="struct">
 		<!--- cannot send message here --->
+
 		<cfreturn arguments.message>
 	</cffunction>
 

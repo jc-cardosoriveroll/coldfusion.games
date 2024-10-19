@@ -27,10 +27,14 @@ function parseMessage(message){
         if (message.type == 'data' && typeof message.data !== 'undefined') {
             switch (message.data){
                 case "newgame" : 
+                    /*
                     if (message.publisherid !== clientid.innerHTML && 
                         message.publisherid !== "0" &&
                         clientid.innerHTML !== "")
                     { newgame(clientid.innerHTML,message.publisherid); }
+                     */
+                    alert(message.publisherid);
+                    alert(clientid.innerHTML);
                 break;
             }
         }
