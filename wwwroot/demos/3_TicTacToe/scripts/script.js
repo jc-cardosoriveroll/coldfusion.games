@@ -2,6 +2,9 @@ function parseMessage(message){
     // Always log to console raw check
     console.log(message);
 
+    // Containers to store Game ID
+    let game = document.getElementById("game");
+
     // Containers to store/display key user ID
     let clientid = document.getElementById("clientid");
 
@@ -18,8 +21,7 @@ function parseMessage(message){
             switch (message.reqType){
                 case "subscribeTo" : 
                     //now that I subscribed, broadcast "newgame" to join available game..
-                    if (game.innerHTML == "0")
-                    { ws.publish("websocket","newgame"); }
+                    ws.publish("websocket","newgame");
                 break;
             }
         } 
@@ -28,13 +30,10 @@ function parseMessage(message){
         if (message.type == 'data' && typeof message.data !== 'undefined') {
             switch (message.data){
                 case "newgame" : 
-                    if (game.innerHTML == "0")
-                    {
-                        if (message.publisherid !== clientid.innerHTML && 
-                            message.publisherid !== "0" &&
-                            clientid.innerHTML !== "")
-                        { newgame(clientid.innerHTML,message.publisherid); }
-                    }
+                    if (message.publisherid !== clientid.innerHTML && 
+                        message.publisherid !== "0" &&
+                        clientid.innerHTML !== "")
+                    { newgame(clientid.innerHTML,message.publisherid); }
                 break;
             }
         }
@@ -56,6 +55,7 @@ function newgame(p1,p2){
         .done(function( msg ) {
             // New Struct Exists, save local identifier for future moves
             let go = JSON.parse(msg).game; 
+            game.innerHTML = go.id;             
             alert(go.id);
         });
 }
