@@ -1,8 +1,7 @@
 <cfparam name="action" default="">
 <cfset local.result = {}>
 
-<cfset local.game = new components.game()>
-
+<cfset local.game = createobject("component","/components.game").init()>
 
 <cfswitch expression="#action#">
     <cfcase value="newgame">
