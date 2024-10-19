@@ -122,7 +122,7 @@ function updateUI()
 function insertImage(pos,image){
     cell = document.getElementById(pos);
     image = document.createElement('img');
-    image.src = "/images/" + image + ".png";
+    image.src = "images/" + image + ".png";
     cell.appendChild(image);
 }
 
