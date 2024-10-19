@@ -58,10 +58,6 @@ function parseMessage(message){
                 }
             }
         }
-        else
-        {
-            enableUI();
-        }
     }
 }
 
