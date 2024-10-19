@@ -35,6 +35,10 @@ function parseMessage(message){
                         clientid.innerHTML !== "")
                     { newgame(clientid.innerHTML,message.publisherid); }
                 break;
+
+                case "nextturn" :
+                    alert("your turn");
+                break;
             }
         }
     }
@@ -76,7 +80,8 @@ function pick(cell)
             // move based on status (same game obj)
             // after turn simply sendMsg for turn
             let go = JSON.parse(msg).game; 
-            alert(JSON.stringify(go));
+            ws.publish("websocket","nextturn");
+            console.log(go);
         });
 }
 
