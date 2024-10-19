@@ -77,7 +77,7 @@ function centerDiv(div) {
     const divWidth = divElement.offsetWidth;
     const divHeight = divElement.offsetHeight;
   
-    const centerX = ((parentWidth - divWidth) / 2)+divWidth;
+    const centerX = (parentWidth - divWidth) / 2;
     const centerY = (parentHeight - divHeight) / 2;
   
     divElement.style.position = 'absolute';
