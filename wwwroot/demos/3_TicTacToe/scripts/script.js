@@ -20,7 +20,7 @@ function parseMessage(message){
                 case "subscribeTo" : 
                     //now that I subscribed, broadcast "newgame" to join available game..
                     ws.publish("websocket","newgame");
-
+                    $.blockUI();
                 break;
             }
         } 
