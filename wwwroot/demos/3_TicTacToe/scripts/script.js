@@ -62,7 +62,7 @@ function newgame(p1,p2){
         });
 }
 
-$(".cell").on("click",function(){
+$(".btn").on("click",function(){
     alert("clicked cell");
 })
 
