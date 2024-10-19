@@ -98,34 +98,39 @@ function updateUI(game)
     var p32 = document.getElementById("p32");
     var p33 = document.getElementById("p33");
 
-    if (game.p11 == game.p1) { insertImage("p11","X"); }
-    if (game.p12 == game.p1) { insertImage("p12","X"); }
-    if (game.p13 == game.p1) { insertImage("p13","X"); }
-    if (game.p21 == game.p1) { insertImage("p21","X"); }
-    if (game.p22 == game.p1) { insertImage("p22","X"); }
-    if (game.p23 == game.p1) { insertImage("p23","X"); }
-    if (game.p31 == game.p1) { insertImage("p31","X"); }
-    if (game.p32 == game.p1) { insertImage("p32","X"); }
-    if (game.p33 == game.p1) { insertImage("p33","X"); }
+    if (game.p11 == game.p1) { deleteButton("p11"); insertImage("p11","X"); }
+    if (game.p12 == game.p1) { deleteButton("p12"); insertImage("p12","X"); }
+    if (game.p13 == game.p1) { deleteButton("p13"); insertImage("p13","X"); }
+    if (game.p21 == game.p1) { deleteButton("p21"); insertImage("p21","X"); }
+    if (game.p22 == game.p1) { deleteButton("p22"); insertImage("p22","X"); }
+    if (game.p23 == game.p1) { deleteButton("p23"); insertImage("p23","X"); }
+    if (game.p31 == game.p1) { deleteButton("p31"); insertImage("p31","X"); }
+    if (game.p32 == game.p1) { deleteButton("p32"); insertImage("p32","X"); }
+    if (game.p33 == game.p1) { deleteButton("p33"); insertImage("p33","X"); }
 
-    if (game.p11 == game.p2) { insertImage("p11","O"); }
-    if (game.p12 == game.p2) { insertImage("p12","O"); }
-    if (game.p13 == game.p2) { insertImage("p13","O"); }
-    if (game.p21 == game.p2) { insertImage("p21","O"); }
-    if (game.p22 == game.p2) { insertImage("p22","O"); }
-    if (game.p23 == game.p2) { insertImage("p23","O"); }
-    if (game.p31 == game.p2) { insertImage("p31","O"); }
-    if (game.p32 == game.p2) { insertImage("p32","O"); }
-    if (game.p33 == game.p2) { insertImage("p33","O"); }
+    if (game.p11 == game.p2) { deleteButton("p11"); insertImage("p11","O"); }
+    if (game.p12 == game.p2) { deleteButton("p12"); insertImage("p12","O"); }
+    if (game.p13 == game.p2) { deleteButton("p13"); insertImage("p13","O"); }
+    if (game.p21 == game.p2) { deleteButton("p21"); insertImage("p21","O"); }
+    if (game.p22 == game.p2) { deleteButton("p22"); insertImage("p22","O"); }
+    if (game.p23 == game.p2) { deleteButton("p23"); insertImage("p23","O"); }
+    if (game.p31 == game.p2) { deleteButton("p31"); insertImage("p31","O"); }
+    if (game.p32 == game.p2) { deleteButton("p32"); insertImage("p32","O"); }
+    if (game.p33 == game.p2) { deleteButton("p33"); insertImage("p33","O"); }
 }
 
-function insertImage(pos,image)
-{
+function insertImage(pos,image){
     cell = document.getElementById(pos);
     image = document.createElement('img');
     image.src = "/images/" + image + ".png";
     cell.appendChild(image);
 }
+
+function deleteButton(divElement) {
+    while (divElement.firstChild) {
+      divElement.removeChild(divElement.firstChild);
+    }
+  }
 
 function centerDiv(div) {
     const divElement = document.getElementById(div); // Replace 'myDiv' with the actual ID of your <div>
