@@ -34,7 +34,6 @@ function parseMessage(message){
                         window.clientid !== "")
                     { 
                         newgame(window.clientid,message.publisherid);
-                        $.blockUI();
                     }
                 break;
 
