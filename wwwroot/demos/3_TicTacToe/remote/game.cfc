@@ -30,7 +30,7 @@
 		<cfargument name="p" hint="id of the player that made the move">
 		<cfargument name="cell" hint="position that was chosed by p">
 
-		<cfset this.game.pxy["#arguments.cell#"] = arguments.p>
+		<cfset this.game["#arguments.cell#"] = arguments.p>
 		<cfreturn this>
 	</cffunction>
 
