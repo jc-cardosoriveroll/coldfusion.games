@@ -56,8 +56,8 @@ function newgame(p1,p2){
       })
         .done(function( msg ) {
             // New Struct Exists, save local identifier for future moves
-            var go = JSON.parse(msg).game; 
-            window.gameid = go.id;             
+            go = JSON.parse(msg); 
+            window.gameid = go.game.id;             
         });
 }
 
