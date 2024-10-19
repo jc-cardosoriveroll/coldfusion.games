@@ -3,7 +3,7 @@
 	<cffunction name="init">
 		<cfreturn this>
 	</cffunction>
-	<cffunction name="newgame">
+	<cffunction name="newgame" access="remote">
 		<cfargument name="p1" hint="clientId for Player1 from websocket">
 		<cfargument name="p2" hint="clientId for Player2 from websocket">
 
