@@ -24,6 +24,8 @@
         </head>
         <body>
           <!--- Main Content --->
+          <span id="clientid" class="hiden"></span>
+          <span id="gameid" class="hidden"></span>
 
           <div class="card">
             <div class="card-body">
@@ -31,7 +33,6 @@
   
                   <div id="lobby" class="visible">
                     <h1>Welcome to Tic-Tac-Toe Lobby</h1>
-                    <p>Your ID: <span id="clientid"></span>
                     <h3>Waiting for Another Player to Connect</h3> 
                     <br>http://coldfusion.games/demos/3_ticTacToe
                   </div>
@@ -55,7 +56,6 @@
                         </tr>
                       </table>
                   </div>
-                  <span id="gameid" class="hidden"></span>
 
               </div>
             </div>
