@@ -23,6 +23,9 @@
             </cfcase>
         </cfswitch>
     </cfcase>
+    <cfcase value="getGame">
+        <!--- doesn't require action, it just returns session.game --->
+    </cfcase>
 </cfswitch>
 
 <cfif isdefined("session.game")>

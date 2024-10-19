@@ -90,35 +90,45 @@ function enableUI(){
 
 function updateUI(game)
 {
-    var p11 = document.getElementById("p11");
-    var p12 = document.getElementById("p12");
-    var p13 = document.getElementById("p13");
-    var p21 = document.getElementById("p21");
-    var p22 = document.getElementById("p22");
-    var p23 = document.getElementById("p23");
-    var p31 = document.getElementById("p31");
-    var p32 = document.getElementById("p32");
-    var p33 = document.getElementById("p33");
+    $.ajax({
+        method: "GET",
+        url: "remote/async.cfm?action=getGame"
+      })
+    .done(function( msg ) {
+        // New Struct Exists, save local identifier for future moves
+        var go = JSON.parse(msg); 
 
-    if (game.p11 == game.p1) { deleteButton("p11"); insertImage("p11","X"); }
-    if (game.p12 == game.p1) { deleteButton("p12"); insertImage("p12","X"); }
-    if (game.p13 == game.p1) { deleteButton("p13"); insertImage("p13","X"); }
-    if (game.p21 == game.p1) { deleteButton("p21"); insertImage("p21","X"); }
-    if (game.p22 == game.p1) { deleteButton("p22"); insertImage("p22","X"); }
-    if (game.p23 == game.p1) { deleteButton("p23"); insertImage("p23","X"); }
-    if (game.p31 == game.p1) { deleteButton("p31"); insertImage("p31","X"); }
-    if (game.p32 == game.p1) { deleteButton("p32"); insertImage("p32","X"); }
-    if (game.p33 == game.p1) { deleteButton("p33"); insertImage("p33","X"); }
+        var p11 = document.getElementById("p11");
+        var p12 = document.getElementById("p12");
+        var p13 = document.getElementById("p13");
+        var p21 = document.getElementById("p21");
+        var p22 = document.getElementById("p22");
+        var p23 = document.getElementById("p23");
+        var p31 = document.getElementById("p31");
+        var p32 = document.getElementById("p32");
+        var p33 = document.getElementById("p33");
 
-    if (game.p11 == game.p2) { deleteButton("p11"); insertImage("p11","O"); }
-    if (game.p12 == game.p2) { deleteButton("p12"); insertImage("p12","O"); }
-    if (game.p13 == game.p2) { deleteButton("p13"); insertImage("p13","O"); }
-    if (game.p21 == game.p2) { deleteButton("p21"); insertImage("p21","O"); }
-    if (game.p22 == game.p2) { deleteButton("p22"); insertImage("p22","O"); }
-    if (game.p23 == game.p2) { deleteButton("p23"); insertImage("p23","O"); }
-    if (game.p31 == game.p2) { deleteButton("p31"); insertImage("p31","O"); }
-    if (game.p32 == game.p2) { deleteButton("p32"); insertImage("p32","O"); }
-    if (game.p33 == game.p2) { deleteButton("p33"); insertImage("p33","O"); }
+        if (go.game.p11 == go.game.p1) { deleteButton("p11"); insertImage("p11","X"); }
+        if (go.game.p12 == go.game.p1) { deleteButton("p12"); insertImage("p12","X"); }
+        if (go.game.p13 == go.game.p1) { deleteButton("p13"); insertImage("p13","X"); }
+        if (go.game.p21 == go.game.p1) { deleteButton("p21"); insertImage("p21","X"); }
+        if (go.game.p22 == go.game.p1) { deleteButton("p22"); insertImage("p22","X"); }
+        if (go.game.p23 == go.game.p1) { deleteButton("p23"); insertImage("p23","X"); }
+        if (go.game.p31 == go.game.p1) { deleteButton("p31"); insertImage("p31","X"); }
+        if (go.game.p32 == go.game.p1) { deleteButton("p32"); insertImage("p32","X"); }
+        if (go.game.p33 == go.game.p1) { deleteButton("p33"); insertImage("p33","X"); }
+
+        if (go.game.p11 == go.game.p2) { deleteButton("p11"); insertImage("p11","O"); }
+        if (go.game.p12 == go.game.p2) { deleteButton("p12"); insertImage("p12","O"); }
+        if (go.game.p13 == go.game.p2) { deleteButton("p13"); insertImage("p13","O"); }
+        if (go.game.p21 == go.game.p2) { deleteButton("p21"); insertImage("p21","O"); }
+        if (go.game.p22 == go.game.p2) { deleteButton("p22"); insertImage("p22","O"); }
+        if (go.game.p23 == go.game.p2) { deleteButton("p23"); insertImage("p23","O"); }
+        if (go.game.p31 == go.game.p2) { deleteButton("p31"); insertImage("p31","O"); }
+        if (go.game.p32 == go.game.p2) { deleteButton("p32"); insertImage("p32","O"); }
+        if (go.game.p33 == go.game.p2) { deleteButton("p33"); insertImage("p33","O"); }
+
+    });
 }
 
 function insertImage(pos,image){
