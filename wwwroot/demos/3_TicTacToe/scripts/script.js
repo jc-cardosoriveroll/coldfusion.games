@@ -49,7 +49,14 @@ function parseMessage(message){
                     case "nextturn" :
                         if (window.game.history.length == 0)
                         {
-                            alert("start game");
+                            if (window.game.clientid == window.clientid)
+                            {
+                                alert("start game");
+                            }
+                            else
+                            {
+                                alert("not your turn");
+                            }
                         }
                         else
                         {
