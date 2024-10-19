@@ -39,18 +39,18 @@
 		<!--- Some validations to drive game, this is the core engine --->
 
 		<!--- 1) game does not exist (reset game)--->
-		<cfif (this.game.p1 neq arguments.p) and (this.game.p2 neq arguments.p)>
+		<cfif (arguments.game.p1 neq arguments.p) and (arguments.game.p2 neq arguments.p)>
 			<cfset this.state = "reset">
 			<cfreturn this> 
 		</cfif>
 
 		<!--- 2) It is not the player's turn --->
-		<cfif not(isTurn(p))><cfreturn this></cfif>		
+		<cfif not(isTurn(p))><cfreturn arguments.game></cfif>		
 
 		<!--- Great! All checks passed - Set the cell(s) value --->
-		<cfset this.game["state"] = "nextturn">
+		<cfset arguments.game["state"] = "nextturn">
 		<cfset changePlayer()>
-		<cfset this.game["#arguments.cell#"] = arguments.p>
+		<cfset arguments["#arguments.cell#"] = arguments.p>
 
 		<!--- Finally, if all moves have happened, change the state --->
 
@@ -58,9 +58,10 @@
 	</cffunction>
 
 	<cffunction name="isTurn" access="private">
+		<cfargument name="game">
 		<cfargument name="p">
 
-		<cfif this.game.turn eq arguments.p>
+		<cfif arguments.game.turn eq arguments.p>
 			<cfreturn true>
 		</cfif>
 		<cfreturn false>
@@ -68,10 +69,11 @@
 
 
 	<cffunction name="changePlayer" access="private">
-		<cfif this.game.turn eq this.game.p1>
-			<cfset this.game.turn = this.game.p2>
+		<cfargument name="game">
+		<cfif arguments.game.turn eq arguments.p1>
+			<cfset arguments.game.turn = arguments.game.p2>
 		<cfelse>
-			<cfset this.game.turn = this.game.p1>
+			<cfset arguments.game.turn = arguments.game.p1>
 		</cfif>
 	</cffunction>
 
