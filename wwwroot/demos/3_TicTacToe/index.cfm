@@ -24,15 +24,16 @@
         </head>
         <body>
           <!--- Main Content --->
-          <span id="clientid" class="hiden"></span>
-          <span id="gameid" class="hidden"></span>
+          <input type="hidden" id="clientid" value="0" class="hidden">
+          <input type="hidden" id="gameid" value="0" class="hidden">
 
           <div class="card">
             <div class="card-body">
               <div class="card-window" id="container">
   
                   <div id="lobby" class="visible">
-                    <h1>Welcome to Tic-Tac-Toe Lobby</h1>
+                    <h1>Welcome to Tic-Tac-Toe</h1>
+                    <hr>
                     <h3>Waiting for Another Player to Connect</h3> 
                     <br>http://coldfusion.games/demos/3_ticTacToe
                   </div>
