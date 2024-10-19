@@ -48,6 +48,7 @@ function newgame(p1,p2){
 
     const board = document.getElementById("board");
     board.className = "visible";
+    centerDiv("board");
 
     $.ajax({
         method: "GET",
@@ -62,8 +63,8 @@ function newgame(p1,p2){
 }
 
 
-function centerDiv() {
-    const divElement = document.getElementById('board'); // Replace 'myDiv' with the actual ID of your <div>
+function centerDiv(div) {
+    const divElement = document.getElementById(div); // Replace 'myDiv' with the actual ID of your <div>
     const parentContainer = divElement.parentElement;
   
     const parentWidth = parentContainer.offsetWidth;
