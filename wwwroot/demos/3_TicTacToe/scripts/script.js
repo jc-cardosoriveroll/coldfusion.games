@@ -35,7 +35,7 @@ function parseMessage(message){
         // Data Events (only attend messages from "other" publishers)
         if (message.type == 'data' && typeof message.data !== 'undefined') {
 
-            data = JSON.parse(data); /* expect {"action" : "X", "data" : game} */
+            data = JSON.parse(message.data); /* expect {"action" : "X", "data" : game} */
 
                 switch (data.action){
                     case "newgame" : 
