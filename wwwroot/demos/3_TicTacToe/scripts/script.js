@@ -38,25 +38,23 @@ function parseMessage(message){
 }
 
 function newgame(p1,p2){
-    //actual game is managed in CF Backend 
-
-    /*
-    const divToRemove = document.getElementById("lobby");
-    const parentDiv = divToRemove.parentNode;
-    parentDiv.removeChild(divToRemove);
-    */
+    //actual game is managed in CF Backend (state machine)
     const lobby = document.getElementById("lobby");
     lobby.className = "hidden";
 
-    const game = document.getElementById("game");
-    game.className = "visible";
+    const board = document.getElementById("board");
+    board.className = "visible";
 
     $.ajax({
         method: "GET",
         url: "remote/async.cfm?init=true&action=newgame&p1=" + p1 + "&p2=" + p2
       })
         .done(function( msg ) {
-          alert( msg );
+            // New Struct Exists, save local identifier for future moves
+            let go = JSON.parse(msg); 
+            const game = document.getElementById("game");
+            game.innerHTML = go.id;              
+            alert( go.id );
         });
 
 }
