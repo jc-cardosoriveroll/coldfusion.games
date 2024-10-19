@@ -121,8 +121,8 @@ function updateUI(game)
 
 function insertImage(pos,image)
 {
-    const cell = document.getElementById(pos);
-    const image = document.createElement('img');
+    cell = document.getElementById(pos);
+    image = document.createElement('img');
     image.src = "/images/" + image + ".png";
     cell.appendChild(image);
 }
