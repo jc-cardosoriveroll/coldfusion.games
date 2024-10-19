@@ -37,6 +37,7 @@ function parseMessage(message){
                         break;
 
                         case "nextturn" :
+                            $.unblockUI();                               
                             alert("your turn");
                         break;
                     }
