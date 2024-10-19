@@ -1,5 +1,5 @@
-window.gameid = document.getElementById("gameid").value;
-window.clientid = document.getElementById("clientid").value;
+window.game = document.getElementById("game").value;
+window.clientid = document.getElementById("clientid").value; 
 
 
 function parseMessage(message){
@@ -33,6 +33,7 @@ function parseMessage(message){
                 {
                     switch (message.data){
                         case "newgame" : 
+                            // let the other player know I have joined and want to play
                             newgame(window.clientid,message.publisherid);
                         break;
 
@@ -57,7 +58,8 @@ function newgame(p1,p2){
         .done(function( msg ) {
             // New Struct Exists, save local identifier for future moves
             go = JSON.parse(msg); 
-            window.gameid = go.game.id;             
+            window.game = JSON.stringify(go.game);             
+            console.log(window.game);
         });
 }
 
@@ -65,12 +67,11 @@ function newgame(p1,p2){
 function pick(cell)
 {
     $.ajax({
-        method: "GET",
+        method: "POST",
         url: "remote/async.cfm?action=pickcell&id=" + window.gameid + "&cell=" + cell + "&p=" + window.clientid
       })
         .done(function( msg ) {
-            var go = JSON.parse(msg).game; 
-            updateUI(go);
+            go = JSON.parse(msg); 
             ws.publish("websocket",go.state);
             $.blockUI();
         });
@@ -88,7 +89,7 @@ function enableUI(){
     $.unblockUI();    
 }
 
-function updateUI(game)
+function updateUI()
 {
     $.ajax({
         method: "GET",

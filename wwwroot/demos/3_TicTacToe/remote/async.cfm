@@ -3,25 +3,20 @@
 <cfparam name="url.action" default="">
 
 
+<cfset game = createobject("component","game").init()>
+
 <cfswitch expression="#url.action#">
     <cfcase value="newgame">
-        <cfparam name="url.p1">
-        <cfparam name="url.p2">
-        <cfset session.game = createobject("component","game").init(p1=url.p1,p2=url.p2)>
+        <cfparam name="p1">
+        <cfparam name="p2">
+        <cfset result = game.newgame(p1=p1,p2=p2)>        
     </cfcase>
     <cfcase value="pickcell">
-        <cfparam name="url.id">
-        <cfparam name="url.p">
-        <cfparam name="url.cell">
-        <cfset result = session.game.pickcell(id=url.id,p=url.p,cell=url.cell)>
-        <cfswitch expression="#result.game.state#">
-            <cfcase value="reset">
-                <cfset session.game = createobject("component","game").init(p1=url.p1,p2=url.p2)>
-            </cfcase>
-            <cfcase value="endgame">
-
-            </cfcase>
-        </cfswitch>
+        <cfparam name="game">
+        <cfparam name="id">
+        <cfparam name="p">
+        <cfparam name="cell">
+        <cfset result = game.pickcell(id=id,p=p,cell=cell,game=deserializeJSON(game))>
     </cfcase>
     <cfcase value="getGame">
         <!--- doesn't require action, it just returns session.game --->

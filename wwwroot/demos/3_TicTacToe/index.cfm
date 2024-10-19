@@ -24,9 +24,10 @@
           <script src="scripts/script.js?uuid=#createUUID()#"></script>
         </head>
         <body>
-          <!--- Main Content --->
-          <input type="hidden" id="clientid" value="0" class="hidden">
-          <input type="hidden" id="gameid" value="0" class="hidden">
+          <!--- This field will contain the game in JSON.stringify --->
+          <input type="hidden" id="game" value="" class="hidden">
+          <!--- This field will contain the current clientid from websocket ---> 
+          <input type="hidden" id="clientid" value="" class="hidden">
 
           <div class="card">
             <div class="card-body">

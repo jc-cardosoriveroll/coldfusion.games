@@ -1,10 +1,14 @@
 <cfcomponent>
 
 	<cffunction name="init">
+		<cfreturn this>
+	</cffunction>
+
+	<cffunction name="newgame">
 		<cfargument name="p1" hint="clientId for Player1 from websocket">
 		<cfargument name="p2" hint="clientId for Player2 from websocket">
 
-		<cfset this.game =
+		<cfset local.game =
 			{
 				"id" : createUUID(),
 				"p1" : arguments.p1,
@@ -22,11 +26,12 @@
 				"p33" : "0",
 				"state" : "newgame"
 			}>
-
-		<cfreturn this>
+		<cfreturn local.game>
 	</cffunction>
 
+
 	<cffunction name="pickcell" hint="will modify and return this.game object">
+		<cfargument name="game" hint="current game object (sent across websocket)">
 		<cfargument name="id" hint="id of game to make sure we only modify corresponding">
 		<cfargument name="p" hint="id of the player that made the move">
 		<cfargument name="cell" hint="position that was chosed by p">
