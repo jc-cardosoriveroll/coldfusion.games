@@ -53,7 +53,7 @@ function newgame(p1,p2){
 
     $.ajax({
         method: "POST",
-        url: "remote/async.cfm?action=newgame&p1=" + p1 & "&p2=" + p2,
+        url: "remote/async.cfm?action=newgame",
         data: { p1: p1, p2: p2 },
       })
         .done(function( msg ) {
