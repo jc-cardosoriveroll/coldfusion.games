@@ -34,7 +34,7 @@
 		<!--- Some validations to drive game, this is the core engine --->
 
 		<!--- 1) game does not exist (reset game)--->
-		<cfif (this.p1 neq arguments.p) and (this.p2 neq arguments.p)>
+		<cfif (this.game.p1 neq arguments.p) and (this.game.p2 neq arguments.p)>
 			<cfset this.state = "reset">
 			<cfreturn this> 
 		</cfif>
@@ -55,7 +55,7 @@
 	<cffunction name="isTurn" access="private">
 		<cfargument name="p">
 
-		<cfif this.turn eq arguments.p>
+		<cfif this.game.turn eq arguments.p>
 			<cfreturn true>
 		</cfif>
 		<cfreturn false>
