@@ -40,7 +40,6 @@ function parseMessage(message){
             if ((window.clientid !== message.publisherid) && message.publisherid !== "0")
             {
                 $.unblockUI();
-                enableUI();
                 updateUI();
 
                 /* expect message.data = {"action" : "X", "game" : game} */
@@ -58,6 +57,10 @@ function parseMessage(message){
                     break;
                 }
             }
+        }
+        else
+        {
+            enableUI();
         }
     }
 }
