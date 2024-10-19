@@ -74,10 +74,10 @@ function pick(cell)
             // move based on status (same game obj)
             // after turn simply sendMsg for turn
             console.log(msg);
-            /*
             var go = JSON.parse(msg).game; 
-            ws.publish("websocket","nextturn");
-            */
+            ws.publish("websocket",go.state);
+            // this would be a nice time to block UI (until ball is returned)
+            $.blockUI();
         });
 }
 
