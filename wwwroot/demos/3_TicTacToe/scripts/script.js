@@ -51,10 +51,10 @@ function newgame(p1,p2){
       })
         .done(function( msg ) {
             // New Struct Exists, save local identifier for future moves
-            let go = JSON.parse(msg); 
+            let go = JSON.parse(msg).game; 
             const game = document.getElementById("game");
-            //game.innerHTML = go.id;              
-            alert( JSON.stringify(go) );
+            game.innerHTML = go.id;              
+            alert( go.id );
         });
 
 }
