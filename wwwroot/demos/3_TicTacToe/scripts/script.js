@@ -51,8 +51,13 @@ function newgame(p1,p2){
     const game = document.getElementById("game");
     game.className = "visible";
 
-    $.get( "remote/async.cfm?action=newgame&p1=" + p1 & "&p2=" + p2, function( data ) {
-        alert(data);
-        //ws.publish("websocket",data);
-    }); 
+    $.ajax({
+        method: "POST",
+        url: "remote/async.cfm?action=newgame&p1=" + p1 & "&p2=" + p2,
+        data: { p1: p1, p2: p2 },
+      })
+        .done(function( msg ) {
+          alert( msg );
+        });
+
 }
