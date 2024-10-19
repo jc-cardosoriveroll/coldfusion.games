@@ -13,7 +13,7 @@
 				"p1" : arguments.p1,
 				"p2" : arguments.p2,
 				"turn" : "p1",
-				"step" : 0
+				"step" : 0,
 				"pxy" :
 					[
 						{"p11" : "0"}
