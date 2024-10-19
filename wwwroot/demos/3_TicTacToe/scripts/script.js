@@ -63,9 +63,10 @@ function newgame(p1,p2){
 }
 
 
-$( ".pick" ).click(function(){
-    alert("clicked cell");
-});
+function pick(cell)
+{
+    alert("clicked cell" + cell);
+}
 
 
 function centerDiv(div) {

@@ -39,19 +39,19 @@
                   <div id="board" class="hidden">
                       <table>
                         <tr>
-                          <td class="cell br"><button id="p11" class="pick">here</button></td>
-                          <td class="cell br"><button id="p12" class="pick">here</button></td>
-                          <td class="cell b"><button id="p13" class="pick">here</button></td>
+                          <td class="cell br"><button onclick="pick(p11);">here</button></td>
+                          <td class="cell br"><button onclick="pick(p12);">here</button></td>
+                          <td class="cell b"><button onclick="pick(p13);">here</button></td>
                         </tr>
                         <tr>
-                          <td class="cell br"><button id="p21" class="pick">here</button></td>
-                          <td class="cell br"><button id="p22" class="pick">here</button></td>
-                          <td class="cell b"><button id="p23" class="pick">here</button></td>
+                          <td class="cell br"><button onclick="pick(p21);">here</button></td>
+                          <td class="cell br"><button onclick="pick(p22);">here</button></td>
+                          <td class="cell b"><button onclick="pick(p23);">here</button></td>
                         </tr>
                         <tr>
-                          <td class="cell r"><button id="p31" class="pick">here</button></td>
-                          <td class="cell r"><button id="p32" class="pick">here</button></td>
-                          <td class="cell"><button id="p33" class="pick">here</button></td>
+                          <td class="cell r"><button onclick="pick(p31);">here</button></td>
+                          <td class="cell r"><button onclick="pick(p32);">here</button></td>
+                          <td class="cell"><button onclick="pick(p33);">here</button></td>
                         </tr>
                       </table>
                   </div>
