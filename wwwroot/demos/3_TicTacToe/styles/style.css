@@ -6,7 +6,7 @@
 
 /* game container style */
 #container { text-align: center; }
-#game {margin-left: 100px; margin-top: -150px; text-align:center;}
+#game {margin-left: 100px; margin-top: -130px; text-align:center;}
 
 /* actual grid for game */
 .board {  width: 300; height: 300px;}
@@ -17,7 +17,10 @@
 .b { border-bottom: 1px solid black; width: 100px; height: 100px;}
 .r { border-right: 1px solid black; width: 100px; height: 100px;}
 
-
+/* fonts */
+.pre { font-size: 60px; color: white;}
+.x {font-color: red; font-size: 60px;}
+.o {font-color: blue; font-size: 60px;}
 
 
 /* card container in center screen */
