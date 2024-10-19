@@ -44,6 +44,7 @@ function newgame(p1,p2){
     //actual game is managed in CF Backend (state machine)
     const lobby = document.getElementById("lobby");
     lobby.className = "hidden";
+    lobby.remove();
 
     const board = document.getElementById("board");
     board.className = "visible";
