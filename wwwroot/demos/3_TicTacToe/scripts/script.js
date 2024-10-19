@@ -20,6 +20,7 @@ function parseMessage(message){
                 case "subscribeTo" : 
                     //now that I subscribed, broadcast "newgame" to join available game..
                     ws.publish("websocket","newgame");
+
                 break;
             }
         } 
@@ -31,7 +32,10 @@ function parseMessage(message){
                     if (message.publisherid !== window.clientid && 
                         message.publisherid !== "0" &&
                         window.clientid !== "")
-                    { newgame(window.clientid,message.publisherid); }
+                    { 
+                        newgame(window.clientid,message.publisherid);
+                        $.blockUI();
+                    }
                 break;
 
                 case "nextturn" :
@@ -43,15 +47,7 @@ function parseMessage(message){
 }
 
 function newgame(p1,p2){
-    //actual game is managed in CF Backend (state machine)
-    const lobby = document.getElementById("lobby");
-    lobby.className = "hidden";
-    lobby.remove();
-
-    const board = document.getElementById("board");
-    board.className = "visible";
-    centerDiv("board");
-
+    enableUI();
     $.ajax({
         method: "GET",
         url: "remote/async.cfm?init=true&action=newgame&p1=" + p1 + "&p2=" + p2
@@ -71,15 +67,24 @@ function pick(cell)
         url: "remote/async.cfm?action=pickcell&id=" + window.gameid + "&cell=" + cell + "&p=" + window.clientid
       })
         .done(function( msg ) {
-            // move based on status (same game obj)
-            // after turn simply sendMsg for turn
-            console.log(msg);
             var go = JSON.parse(msg).game; 
             ws.publish("websocket",go.state);
-            // this would be a nice time to block UI (until ball is returned)
             $.blockUI();
         });
 }
+
+function enableUI(){
+    var lobby = document.getElementById("lobby");
+    lobby.className = "hidden";
+    lobby.remove();
+
+    var board = document.getElementById("board");
+    board.className = "visible";
+    centerDiv("board");
+
+    $.unblockUI();    
+}
+
 
 
 function centerDiv(div) {
