@@ -40,7 +40,7 @@
 		</cfif>
 
 		<!--- 2) It is not the player's turn --->
-		<cfif not(ifTurn(p))><cfreturn this></cfif>		
+		<cfif not(isTurn(p))><cfreturn this></cfif>		
 
 		<!--- Great! All checks passed - Set the cell(s) value --->
 		<cfset this.game["state"] = "nextturn">
