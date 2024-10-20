@@ -38,9 +38,12 @@ function parseMessage(message){
                 switch (message.data.action){
                     case "play" : 
                         window.game = message.data.game;
-                        
+
                         for (const elem of window.game.history) {
-                            console.log(JSON.stringify(elem));
+                            if (elem.pos == window.game.guest){
+                                alert(elem.pos + " is O");}
+                            else {
+                                alert(elem.pos + " is X");}
                         };
 
                         if (message.publisherid !== window.clientid)
