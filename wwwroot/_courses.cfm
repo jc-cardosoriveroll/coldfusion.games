@@ -17,6 +17,7 @@
                         <li class=""><a href="##!" data-mixitup-control="" data-filter=".Easy" class="">Easy</a></li>
                         <li class=""><a href="##!" data-mixitup-control="" data-filter=".Medium" class="">Medium</a></li>
                         <li class=""><a href="##!" data-mixitup-control="" data-filter=".Hard" class="">Hard</a></li>
+                        <li class=""><a href="##!" data-mixitup-control="" data-filter=".All" class="">All</a></li>
                     </ul>
                 </div>
 			</div>
@@ -24,7 +25,7 @@
                 <!--- Loop Courses --->
                 <cfloop from="1" to="#arraylen(items)#" index="c">
                     <cfset item = items[c]>
-                    <div class="col-lg-4 col-md-6 mix #item.level#">
+                    <div class="col-lg-4 col-md-6 mix #item.level# All">
                         <div class="course-single-box wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
                             <div class="course-thumb">
                                 <img src="#item.cover#" alt="#item.name#">
