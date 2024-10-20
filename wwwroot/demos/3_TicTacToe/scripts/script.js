@@ -38,9 +38,8 @@ function parseMessage(message){
                 switch (message.data.action){
                     case "play" : 
                         window.game = message.data.game;
-                        updateUI();                        
+                        alert(JSON.stringify(message.data.game.history));                       
                         if (message.publisherid !== window.clientid)
-                           
                             {  $.unblockUI(); }
                         else 
                             { $.blockUI(); }
@@ -59,21 +58,6 @@ function pick(pos){
     // broadcast nextturn
     msg = {"action" : "play", "game" : window.game};
     ws.publish("websocket",msg);
-}
-
-function updateUI(){
-    for (let i = 0; i < window.game.history; i++) {
-        //move = window.game.history[i];
-        console.log(i);
-        /*
-       
-        cell = document.getElementById(move.pos);
-        if (window.clientid == window.game.guest){
-            cell.text = "X";}
-        else if(window.clientid !== window.game.guest){
-            cell.text = "O";}
-        */
-    }   
 }
 
 
