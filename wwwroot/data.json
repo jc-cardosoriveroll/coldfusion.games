@@ -11,7 +11,7 @@
     {   
             "id"    : 2
         , "name"    : "Hangman"
-        , "level"   : "Easy"
+        , "level"   : "Medium"
         , "demo"    : "/demos/2_Hangman"
         , "cover"   : "/covers/2_Hangman.jpg"
         , "guide"   : "/guides/2_Hangman.html"
