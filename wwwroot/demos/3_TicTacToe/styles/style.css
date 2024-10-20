@@ -9,8 +9,8 @@
 #board {text-align: center;}
 
 /* actual grid for game */
-.board {  width: 300; height: 300px; margin-top : -600px; margin-left: 300px; z-index: 999; overflow: visible;}
-.table { width: 300; height: 300px;}
+.board {  width: 300; height: 300px;}
+.table { width: 300; height: 300px; margin-top: 50px; margin-right: 50px; margin-left: 50px;}
  
 /* styles to draw table grid for game */
 .br { border-bottom: 1px solid black; border-right: 1px solid black; width: 100px; height: 100px;}
