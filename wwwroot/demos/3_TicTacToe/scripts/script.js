@@ -31,7 +31,7 @@ function parseMessage(message){
                 case "subscribeTo" : 
                     //now that I subscribed, broadcast "newgame" to join available game..
                     window.game.host = window.clientid;
-                    msg = {"action" : "newgame", "game" : window.game};
+                    msg = {"action" : "play", "game" : window.game};
                     ws.publish("websocket",msg);
                     $.blockUI();
                 break;
@@ -43,19 +43,17 @@ function parseMessage(message){
 
                 /* expect message.data = {"action" : "X", "game" : game} */
                 switch (message.data.action){
-                    case "newgame" : 
+                    case "play" : 
                         if (message.publisherid !== window.clientid)
-                            { $.unblockUI(); enableUI();}
+                            { 
+                                window.game = message.data.game;
+                                $.unblockUI(); 
+                                enableUI();
+                            }
                         else 
                             { $.blockUI(); }
                     break;
 
-                    case "nextturn" :
-                        if (message.publisherid !== window.clientid)
-                            { $.unblockUI(); enableUI();}
-                        else 
-                            { $.blockUI(); }
-                    break;
                 }
         }
     }
@@ -67,7 +65,7 @@ function pick(pos){
     let newmove = {"clientid" : window.clientid, "pos" : pos};
     window.game.history.push({newmove});
     // broadcast nextturn
-    msg = {"action" : "nextturn", "game" : window.game};
+    msg = {"action" : "play", "game" : window.game};
     ws.publish("websocket",msg);
 }
 
