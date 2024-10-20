@@ -11,6 +11,11 @@ function parseMessage(message){
     // Always log to console raw check
     console.log(message);
 
+    // Get ClientID to identify Self
+    if (typeof message.clientid !== 'undefined') {
+        window.clientid = message.clientid;  
+    }
+
     // Manage Messages (core)    
     if (typeof message.type !== 'undefined'){
 
