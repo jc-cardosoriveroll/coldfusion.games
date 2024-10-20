@@ -63,8 +63,8 @@ function pick(pos){
 }
 
 function updateUI(){
+    alert("update");
     for (let i = 0; i < window.game.history; i++) {
-        alert(JSON.stringify(window.game.history[i]));
         /*
         move = game.history[i];
         cell = document.getElementById(move.pos);
