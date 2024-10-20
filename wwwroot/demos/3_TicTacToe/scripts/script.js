@@ -58,7 +58,7 @@ function parseMessage(message){
 function pick(pos){
     // add to history array    
     let newmove = {"clientid" : window.clientid, "pos" : pos};
-    window.game.history.push({newmove});
+    window.game.history.push(newmove);
     // update UI
     updateUI();
     // broadcast nextturn
