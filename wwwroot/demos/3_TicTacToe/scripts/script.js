@@ -62,13 +62,28 @@ function parseMessage(message){
                                 (t.p11 == t.p22 && t.p22 == t.p33 && t.p33 !== 0) ||
                                 (t.p13 == t.p22 && t.p22 == t.p31 && t.p31 !== 0) 
                             )
-                        { alert("we have a winner"); }
+                        { 
+                            // winner is the last move that triggered 
+                            winner = window.game.history[window.game.history.length].clientid;
+                            msg = {"action" : "endgame", "game" : window.game, "winner" : winner};
+                            ws.publish("websocket",msg);
+                        }
+
+                        // EVALUATE DRAW 
+                        if (window.game.history.length == 9){
+                            msg = {"action" : "endgame", "game" : window.game, "winner" : 0};
+                            ws.publish("websocket",msg);
+                        }
 
                         // ENABLE UI BASED ON TURN
                         if (message.publisherid !== window.clientid)
                             {  $.unblockUI(); }
                         else 
                             { $.blockUI(); }
+                    break;
+
+                    case "endgame" :
+                        alert("game over!");
                     break;
 
                 }
