@@ -37,7 +37,7 @@
                   </div>
 
                   <div id="board" class="hidden">
-                      <table>
+                      <table class="table">
                         <tr>
                           <td class="cell br" id="p11"><button onclick="pick('p11');">here</button></td>
                           <td class="cell br" id="p12"><button onclick="pick('p12');">here</button></td>
