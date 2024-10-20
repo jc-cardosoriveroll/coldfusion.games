@@ -40,7 +40,7 @@ function parseMessage(message){
                 switch (message.data.action){
                     case "play" : 
                         window.game = message.data.game;
-                        updateUI();
+                        alert(JSON.stringify(window.game));
                         if (message.publisherid !== window.clientid)
                             { $.unblockUI(); }
                         else 
