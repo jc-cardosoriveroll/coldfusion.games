@@ -9,7 +9,7 @@ window.game =
 
 function parseMessage(message){
     // Always log to console raw check
-    console.log(message);
+    //console.log(message);
 
     // Get ClientID to identify Self
     if (typeof message.clientid !== 'undefined') {
@@ -60,20 +60,21 @@ function pick(pos){
     let newmove = {"clientid" : window.clientid, "pos" : pos};
     window.game.history.push(newmove);
     // update UI
-    updateUI(window.game);
+    updateUI();
     // broadcast nextturn
     msg = {"action" : "play", "game" : window.game};
     ws.publish("websocket",msg);
 }
 
-function updateUI(game){
-    for (let i = 0; i < game.history; i++) {
+function updateUI(){
+    for (let i = 0; i < window.game.history; i++) {
         move = game.history[i];
         cell = document.getElementById(move.pos);
         if (move.clientid == window.game.guest){
-            cell.innerHTML = "X";}
+            cell.text = "X";}
         else if(move.clientid !== window.game.guest){
-            cell.innerHTML = "O";}
+            cell.text = "O";}
+        console.log(move);
     }   
 }
 
@@ -85,16 +86,4 @@ function enableUI(){
    // show board
    var board = document.getElementById("board");
    board.className = "visible";    
-}
-
-
-function insertImage(pos,image){
-    //clear before cleaning.
-    while (pos.firstChild) {
-        pos.removeChild(pos.firstChild);
-      }
-    cell = document.getElementById(pos);
-    image = document.createElement('img');
-    image.src = "images/" + image + ".png";
-    cell.appendChild(image);
 }
