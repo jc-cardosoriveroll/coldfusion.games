@@ -38,7 +38,11 @@ function parseMessage(message){
                 switch (message.data.action){
                     case "play" : 
                         window.game = message.data.game;
-                        alert(JSON.stringify(message.data.game.history));                       
+                        
+                        for (const elem of window.game.history) {
+                            console.log(JSON.stringify(elem));
+                        };
+
                         if (message.publisherid !== window.clientid)
                             {  $.unblockUI(); }
                         else 
