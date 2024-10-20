@@ -70,10 +70,10 @@ function pick(pos){
 
 
 function enableUI(){
-    // hide lobby
+    // destroy lobby
     var lobby = document.getElementById("lobby");
-    lobby.className = "hidden";
-   // show board
-   var board = document.getElementById("board");
-   board.className = "visible";    
+    lobby.remove();
+    // show board
+    var board = document.getElementById("board");
+    board.className = "visible";    
 }
