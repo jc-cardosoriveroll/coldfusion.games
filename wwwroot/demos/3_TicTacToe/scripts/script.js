@@ -42,6 +42,7 @@ function parseMessage(message){
                         if (message.publisherid !== window.clientid)
                             { 
                                 window.game = message.data.game;
+                                window.game.guest = message.publisherid;
                                 $.unblockUI(); 
                                 enableUI();
                             }
