@@ -45,7 +45,7 @@ function parseMessage(message){
                 switch (message.data.action){
                     case "newgame" : 
                         if (message.publisherid !== window.clientid)
-                            { $.unblockUI(); }
+                            { $.unblockUI(); enableUI();}
                         else 
                             { $.blockUI(); }
                     break;
