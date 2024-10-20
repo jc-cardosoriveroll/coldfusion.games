@@ -51,7 +51,7 @@ function parseMessage(message){
                         // EVALUATE WIN
                         let temp = {"p11" : 0, "p12" : 0, "p13" : 0, "p21" : 0, "p22" : 0, "p23" : 0, "p31" : 0, "p32" : 0, "p33" : 0};
                         for (const elem of window.game.history) { 
-                            modifyData(temp, elem.pos, elem.clientid); };
+                            temp[elem.pos] = temp.clientid };
                         console.log(temp);
 
                         // ENABLE UI BASED ON TURN
