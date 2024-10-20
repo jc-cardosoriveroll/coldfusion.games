@@ -9,7 +9,7 @@
 #board {text-align: center;}
 
 /* actual grid for game */
-.board {  width: 300; height: 300px; margin-top : -300px; margin-left: 300px;}
+.board {  width: 300; height: 300px; margin-top : -500px; margin-left: 300px;}
 .table { width: 300; height: 300px;}
  
 /* styles to draw table grid for game */
