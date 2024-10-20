@@ -49,10 +49,22 @@ function parseMessage(message){
                         };
 
                         // EVALUATE WIN
-                        let temp = {"p11" : 0, "p12" : 0, "p13" : 0, "p21" : 0, "p22" : 0, "p23" : 0, "p31" : 0, "p32" : 0, "p33" : 0};
+                        let t = {"p11" : 0, "p12" : 0, "p13" : 0, "p21" : 0, "p22" : 0, "p23" : 0, "p31" : 0, "p32" : 0, "p33" : 0};
                         for (const elem of window.game.history) { 
-                            temp[elem.pos] = elem.clientid };
-                        console.log(temp);
+                            t[elem.pos] = elem.clientid };
+                        
+                        if (    (t.p11 == t.p12 && t.p12 == t.p13) ||
+                                (t.p21 == t.p22 && t.p22 == t.p23) ||
+                                (t.p31 == t.p32 && t.p32 == t.p33) ||
+                                (t.p11 == t.p21 && t.p21 == t.p31) ||
+                                (t.p12 == t.p22 && t.p22 == t.p32) ||
+                                (t.p13 == t.p23 && t.p23 == t.p33) ||
+                                (t.p11 == t.p22 && t.p22 == t.p33) ||
+                                (t.p13 == t.p22 && t.p22 == t.p31) 
+                            )
+                        {
+                            alert("we have a winner");
+                        }
 
                         // ENABLE UI BASED ON TURN
                         if (message.publisherid !== window.clientid)
