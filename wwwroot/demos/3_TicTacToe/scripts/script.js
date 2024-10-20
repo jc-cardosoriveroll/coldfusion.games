@@ -28,6 +28,7 @@ function parseMessage(message){
                     msg = {"action" : "play", "game" : window.game};
                     ws.publish("websocket",msg);
                     $.blockUI();
+                    alert(window.clientid);
                 break;
             }
         } 
