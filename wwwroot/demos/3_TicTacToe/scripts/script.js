@@ -83,13 +83,16 @@ function parseMessage(message){
                     break;
 
                     case "endgame" :
-                        if (message.data.winner == "0")
-                            alert("game over! - it's a tie");
-                        else if (message.data.winner == window.clientid)
-                            alert("game over, you win!");
-                        else
-                            alert("game over, you lose!");
-                        location.reload();
+                        if (message.publisherid !== window.clientid)
+                        {
+                            if (message.data.winner == "0")
+                                alert("game over! - it's a tie");
+                            else if (message.data.winner == window.clientid)
+                                alert("game over, you win!");
+                            else
+                                alert("game over, you lose!");
+                            location.reload();
+                        }
                     break;
 
                 }
