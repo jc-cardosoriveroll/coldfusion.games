@@ -72,11 +72,13 @@ function updateUI(){
         move = window.game.history[i];
         if (move.clientid == client.window.game.host){
             cell = document.getElementById(move.pos);
+            while (cell.firstChild) {cell.removeChild(cell.firstChild);}            
             image = document.createElement('img');
             image.src = "images/X.png";
             cell.appendChild(image);}
         else if(move.clientid == client.window.game.guest){
             cell = document.getElementById(move.pos);
+            while (cell.firstChild) {cell.removeChild(cell.firstChild);}            
             image = document.createElement('img');
             image.src = "images/O.png";
             cell.appendChild(image);}
