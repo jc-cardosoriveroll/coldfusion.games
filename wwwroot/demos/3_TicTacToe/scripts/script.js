@@ -61,22 +61,22 @@ function pick(pos){
     let newmove = {"clientid" : window.clientid, "pos" : pos};
     window.game.history.push(newmove);
     // update UI
-    updateUI();
+    updateUI(window.game);
     // broadcast nextturn
     msg = {"action" : "play", "game" : window.game};
     ws.publish("websocket",msg);
 }
 
-function updateUI(){
-    for (let i = 0; i < window.game.history; i++) {
-        move = window.game.history[i];
-        if (move.clientid == client.window.game.host){
+function updateUI(game){
+    for (let i = 0; i < game.history; i++) {
+        move = game.history[i];
+        if (window.clientid == game.host){
             cell = document.getElementById(move.pos);
             while (cell.firstChild) {cell.removeChild(cell.firstChild);}            
             image = document.createElement('img');
             image.src = "images/X.png";
             cell.appendChild(image);}
-        else if(move.clientid == client.window.game.guest){
+        else if(window.clientid == game.guest){
             cell = document.getElementById(move.pos);
             while (cell.firstChild) {cell.removeChild(cell.firstChild);}            
             image = document.createElement('img');
