@@ -42,9 +42,9 @@ function parseMessage(message){
                         for (const elem of window.game.history) {
                             cell = window.document.getElementById(elem.pos);
                             if (elem.clientid == window.game.guest){
-                                cell.innerHTML = "O";}
+                                cell.innerHTML = "<img src='images/O.png' />";}
                             else {
-                                cell.innerHTML = "X";}
+                                cell.innerHTML = "<img src='images/X.png' />";}
                         };
 
                         if (message.publisherid !== window.clientid)
