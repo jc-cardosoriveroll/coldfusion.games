@@ -7,7 +7,7 @@ window.game =   {
 
 function parseMessage(message){
     // Always log to console raw check
-    console.log(message);
+    //console.log(message);
 
     // Get ClientID to identify Self
     if (typeof message.clientid !== 'undefined') {
@@ -34,11 +34,12 @@ function parseMessage(message){
         // Data Events (only attend messages from "other" publishers)
         if (message.type == 'data' && typeof message.data !== 'undefined') {
 
-                /* expect message.data = {"action" : "X", "game" : game} */
                 switch (message.data.action){
                     case "play" : 
+                        // UPDATE DATA
                         window.game = message.data.game;
 
+                        // DRAW BOARD
                         for (const elem of window.game.history) {
                             cell = window.document.getElementById(elem.pos);
                             if (elem.clientid == window.game.guest){
@@ -47,6 +48,12 @@ function parseMessage(message){
                                 cell.innerHTML = "<img src='images/X.png' />";}
                         };
 
+                        // EVALUATE WIN
+                        let temp = {"p11" : 0, "p12" : 0, "p13" : 0, "p21" : 0, "p22" : 0, "p23" : 0, "p31" : 0, "p32" : 0, "p33" : 0};
+                        for (const elem of window.game.history) { temp[elem.pos] = temp[elem.clientid]; };
+                        console.log(JSON.stringify(temp));
+
+                        // ENABLE UI BASED ON TURN
                         if (message.publisherid !== window.clientid)
                             {  $.unblockUI(); }
                         else 
