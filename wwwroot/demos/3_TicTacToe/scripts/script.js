@@ -70,9 +70,9 @@ function updateUI(game){
     for (let i = 0; i < game.history; i++) {
         move = game.history[i];
         cell = document.getElementById(move.pos);
-        if (move.clientid == window.clientid){
+        if (move.clientid == window.game.guest){
             cell.innerHTML = "X";}
-        else if(move.clientid !== window.clientid){
+        else if(move.clientid !== window.game.guest){
             cell.innerHTML = "O";}
     }   
 }
