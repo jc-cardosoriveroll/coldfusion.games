@@ -66,13 +66,12 @@ function pick(pos){
 }
 
 function updateUI(){
-    alert(JSON.stringify(window.game));
     for (let i = 0; i < window.game.history; i++) {
         move = game.history[i];
         cell = document.getElementById(move.pos);
-        if (move.clientid == window.game.guest){
+        if (window.clientid == window.game.guest){
             cell.text = "X";}
-        else if(move.clientid !== window.game.guest){
+        else if(window.clientid !== window.game.guest){
             cell.text = "O";}
     }   
 }
