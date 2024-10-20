@@ -1,11 +1,9 @@
 // global variables 
 window.clientid = 0; 
-window.game = 
-                {
+window.game =   {
                     "guest" : "0",
                     "history" : [],
                 };
-                /* history: [{clientid : "xxx", p : "11"}] */
 
 function parseMessage(message){
     // Always log to console raw check
@@ -40,9 +38,10 @@ function parseMessage(message){
                 switch (message.data.action){
                     case "play" : 
                         window.game = message.data.game;
+                        updateUI();                        
                         if (message.publisherid !== window.clientid)
                            
-                            {  $.unblockUI(); updateUI();}
+                            {  $.unblockUI(); }
                         else 
                             { $.blockUI(); }
                     break;
