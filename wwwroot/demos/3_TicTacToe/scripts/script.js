@@ -4,7 +4,7 @@ window.game =   { "guest" : "0", "history" : [] };
 
 function parseMessage(message){
     // Always log to console raw check
-    //console.log(message);
+    console.log(message);
 
     // Get ClientID to identify Self
     if (typeof message.clientid !== 'undefined') {
