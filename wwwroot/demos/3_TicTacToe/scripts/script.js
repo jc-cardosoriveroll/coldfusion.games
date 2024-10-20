@@ -40,10 +40,11 @@ function parseMessage(message){
                         window.game = message.data.game;
 
                         for (const elem of window.game.history) {
-                            if (elem.pos == window.game.guest){
-                                alert(elem.pos + " is O");}
+                            cell = window.document.getElementById(elem.pos);
+                            if (elem.clientid == window.game.guest){
+                                cell.innerHTML = "X";}
                             else {
-                                alert(elem.pos + " is X");}
+                                cell.innerHTML = "O";}
                         };
 
                         if (message.publisherid !== window.clientid)
