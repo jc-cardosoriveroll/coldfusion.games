@@ -2,10 +2,16 @@
 window.clientid = 0; 
 window.game = 
                 {
-                    "client1" : "0", "client2" : "0",
+                    "host" : "0",
+                    "guest" : "0",
                     "history" : [],
                 };
                 /* history: [{clientid : "xxx", p : "11"}] */
+
+//$.blockUI();
+//enableUI();
+//$.unblockUI();
+
 
 function parseMessage(message){
     // Always log to console raw check
@@ -24,26 +30,28 @@ function parseMessage(message){
             switch (message.reqType){
                 case "subscribeTo" : 
                     //now that I subscribed, broadcast "newgame" to join available game..
-                    window.game.client1 = window.clientid;
+                    window.game.host = window.clientid;
                     msg = {"action" : "newgame", "game" : window.game};
                     ws.publish("websocket",msg);
-                    $.blockUI();
-                    enableUI();
                 break;
             }
         } 
 
         // Data Events (only attend messages from "other" publishers)
         if (message.type == 'data' && typeof message.data !== 'undefined') {
-                $.unblockUI();
 
                 /* expect message.data = {"action" : "X", "game" : game} */
                 switch (message.data.action){
                     case "newgame" : 
-                        // let the other player know that I have joined and will play
-                        window.game.client2 = window.clientid;
+                        if (message.publisherid !== window.clientid)
+                        {
+                            alert("you can play!");
+                        }
+                        /*
+                        window.game.guest = window.clientid;
                         msg = {"action" : "nextturn", "game" : window.game};
                         ws.publish("websocket",msg);                                                    
+                        */
                     break;
 
                     case "nextturn" :
@@ -74,7 +82,6 @@ function pick(pos){
     let newmove = {"clientid" : window.clientid, "pos" : pos};
     window.game.history.push({newmove});
 }
-
 
 function enableUI(){
     var lobby = document.getElementById("lobby");
