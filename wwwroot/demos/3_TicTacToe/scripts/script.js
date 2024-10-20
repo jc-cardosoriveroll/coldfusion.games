@@ -52,7 +52,7 @@ function parseMessage(message){
 
                     case "nextturn" :
                         if (message.publisherid !== window.clientid)
-                            { $.unblockUI(); }
+                            { $.unblockUI(); enableUI();}
                         else 
                             { $.blockUI(); }
                     break;
