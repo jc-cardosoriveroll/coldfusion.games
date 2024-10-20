@@ -40,9 +40,9 @@ function parseMessage(message){
                 switch (message.data.action){
                     case "play" : 
                         window.game = message.data.game;
-                        updateUI();
                         if (message.publisherid !== window.clientid)
-                            { $.unblockUI(); }
+                           
+                            {  $.unblockUI(); updateUI();}
                         else 
                             { $.blockUI(); }
                     break;
@@ -64,8 +64,8 @@ function pick(pos){
 
 function updateUI(){
     for (let i = 0; i < window.game.history; i++) {
-        move = window.game.history[i];
-        console.log(JSON.stringify(move));
+        //move = window.game.history[i];
+        console.log(i);
         /*
        
         cell = document.getElementById(move.pos);
