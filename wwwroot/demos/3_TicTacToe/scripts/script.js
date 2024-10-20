@@ -10,7 +10,7 @@ window.game =
 
 //$.blockUI();
 //enableUI();
-//$.unblockUI();
+
 
 
 function parseMessage(message){
@@ -33,6 +33,7 @@ function parseMessage(message){
                     window.game.host = window.clientid;
                     msg = {"action" : "newgame", "game" : window.game};
                     ws.publish("websocket",msg);
+                    $.blockUI();
                 break;
             }
         } 
@@ -44,74 +45,57 @@ function parseMessage(message){
                 switch (message.data.action){
                     case "newgame" : 
                         if (message.publisherid !== window.clientid)
-                        {
-                            alert("you can play!");
-                        }
-                        /*
-                        window.game.guest = window.clientid;
-                        msg = {"action" : "nextturn", "game" : window.game};
-                        ws.publish("websocket",msg);                                                    
-                        */
+                            { $.unblockUI(); }
+                        else 
+                            { $.blockUI(); }
                     break;
 
                     case "nextturn" :
-                        if (window.game.history.length == 0)
-                        {
-                            if (window.game.clientid == window.clientid)
-                            {
-                                alert("start game");
-                            }
-                            else
-                            {
-                                alert("not your turn");
-                            }
-                        }
-                        else
-                        {
-                            lastmove = window.game.history[window.game.history.length - 1];
-                            alert("last move:" & JSON.stringify(lastmove));
-                        }
-                        //msg = {"action" : "nextturn", "game" : window.game};
+                        if (message.publisherid !== window.clientid)
+                            { $.unblockUI(); }
+                        else 
+                            { $.blockUI(); }
                     break;
                 }
         }
     }
 }
 
+
 function pick(pos){
+    // add to history array    
     let newmove = {"clientid" : window.clientid, "pos" : pos};
     window.game.history.push({newmove});
+    // broadcast nextturn
+    msg = {"action" : "nextturn", "game" : window.game};
+    ws.publish("websocket",msg);
 }
 
+
+
 function enableUI(){
+    // hide lobby
     var lobby = document.getElementById("lobby");
     lobby.className = "hidden";
-    lobby.remove();
-
-    var board = document.getElementById("board");
-    board.className = "visible";
-    centerDiv("board");
+    //center board
+    const parentContainer = board.parentElement;
+    const parentWidth = parentContainer.offsetWidth; const parentHeight = parentContainer.offsetHeight;
+    const divWidth = board.offsetWidth; const divHeight = board.offsetHeight;
+    const centerX = (parentWidth - divWidth) / 2; const centerY = (parentHeight - divHeight) / 2;
+    board.style.position = 'absolute'; board.style.left = centerX + 'px'; board.style.top = centerY + 'px';
+   // show board
+   var board = document.getElementById("board");
+   board.className = "visible";    
 }
 
 
 function insertImage(pos,image){
+    //clear before cleaning.
+    while (pos.firstChild) {
+        pos.removeChild(pos.firstChild);
+      }
     cell = document.getElementById(pos);
     image = document.createElement('img');
     image.src = "images/" + image + ".png";
     cell.appendChild(image);
 }
-
-function deleteButton(divElement) {
-    while (divElement.firstChild) {
-      divElement.removeChild(divElement.firstChild);
-    }
-  }
-
-function centerDiv(div) {
-    const divElement = document.getElementById(div); // Replace 'myDiv' with the actual ID of your <div>
-    const parentContainer = divElement.parentElement;
-    const parentWidth = parentContainer.offsetWidth; const parentHeight = parentContainer.offsetHeight;
-    const divWidth = divElement.offsetWidth; const divHeight = divElement.offsetHeight;
-    const centerX = (parentWidth - divWidth) / 2; const centerY = (parentHeight - divHeight) / 2;
-    divElement.style.position = 'absolute'; divElement.style.left = centerX + 'px'; divElement.style.top = centerY + 'px';
-  }
