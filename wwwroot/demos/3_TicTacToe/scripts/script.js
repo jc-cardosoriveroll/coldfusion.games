@@ -69,6 +69,7 @@ function updateUI(){
     for (let i = 0; i < window.game.history; i++) {
         move = game.history[i];
         cell = document.getElementById(move.pos);
+        alert(move.pos);
         if (window.clientid == window.game.guest){
             cell.text = "X";}
         else if(window.clientid !== window.game.guest){
