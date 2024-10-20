@@ -64,7 +64,7 @@ function parseMessage(message){
                             )
                         { 
                             // winner is the last move that triggered 
-                            winner = window.game.history[window.game.history.length].clientid;
+                            winner = window.game.history[window.game.history.length-1].clientid;
                             msg = {"action" : "endgame", "game" : window.game, "winner" : winner};
                             ws.publish("websocket",msg);
                         }
