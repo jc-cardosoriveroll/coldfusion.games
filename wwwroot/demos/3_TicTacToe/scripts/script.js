@@ -44,6 +44,7 @@ function parseMessage(message){
                                 window.game = message.data.game;
                                 $.unblockUI(); 
                                 enableUI();
+                                updateUI();
                             }
                         else 
                             { $.blockUI(); }
@@ -59,8 +60,6 @@ function pick(pos){
     // add to history array    
     let newmove = {"clientid" : window.clientid, "pos" : pos};
     window.game.history.push(newmove);
-    // update UI
-    updateUI();
     // broadcast nextturn
     msg = {"action" : "play", "game" : window.game};
     ws.publish("websocket",msg);
@@ -74,7 +73,6 @@ function updateUI(){
             cell.text = "X";}
         else if(move.clientid !== window.game.guest){
             cell.text = "O";}
-        console.log(move);
     }   
 }
 
