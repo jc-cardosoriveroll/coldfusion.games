@@ -16,7 +16,7 @@
 .br { border-bottom: 1px solid black; border-right: 1px solid black; width: 100px; height: 100px;}
 .b { border-bottom: 1px solid black; width: 100px; height: 100px;}
 .r { border-right: 1px solid black; width: 100px; height: 100px;}
-
+.cell {width: 100px; height: 100px;}
 
 /* card container in center screen */
 .card {
