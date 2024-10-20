@@ -40,20 +40,12 @@
     <!--- "Fires at first part of page processing." --->
 	<cffunction name="OnRequestStart" access="public" returntype="boolean" output="false">
 		<cfargument name="TargetPage" type="string" required="true"/>
-
+		<!--- Force Restart --->
 		<cfif structKeyExists(url,"init")>
-			onApplicationStart()>
+			<cfset onApplicationStart()>
 			<cfif structkeyExists(session,"game")>
 				<cfset structDelete(session,"game")>
 			</cfif>
-            <!--- tell everyone to reconnect --->
-			<!---
-			<cfloop collection="#wsGetAllChannels()#" item="key">
-				<cfset wsPublish(key,"FORCE-RECONNECT")>
-			</cfloop>
-			<cfset onApplicationStop()>
-			<cflocation url="/" addtoken="false">
-			--->
 		</cfif>
 
 		<cfreturn true />

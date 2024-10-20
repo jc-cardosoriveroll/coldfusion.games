@@ -1,9 +1,6 @@
 // global variables 
 window.clientid = 0; 
-window.game =   {
-                    "guest" : "0",
-                    "history" : [],
-                };
+window.game =   { "guest" : "0", "history" : [] };
 
 function parseMessage(message){
     // Always log to console raw check
@@ -77,7 +74,7 @@ function parseMessage(message){
 
                         // ENABLE UI BASED ON TURN
                         if (message.publisherid !== window.clientid)
-                            {  $.unblockUI(); }
+                            { $.unblockUI(); }
                         else 
                             { $.blockUI(); }
                     break;
@@ -91,10 +88,10 @@ function parseMessage(message){
                                 alert("game over, you win!");
                             else
                                 alert("game over, you lose!");
-                            location.reload();
+
+                            setTimeout(function() {location.reload();}, 3000);                                                            
                         }
                     break;
-
                 }
         }
     }
