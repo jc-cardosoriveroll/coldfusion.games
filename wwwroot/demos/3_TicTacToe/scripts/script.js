@@ -72,11 +72,13 @@ function updateUI(){
         if (move.clientid == client.window.game.host){
             cell = document.getElementById(move.pos);
             image = document.createElement('img');
-            image.src = "images/X.png";}
+            image.src = "images/X.png";
+            cell.appendChild(image);}
         else if(move.clientid == client.window.game.guest){
             cell = document.getElementById(move.pos);
             image = document.createElement('img');
-            image.src = "images/O.png";}
+            image.src = "images/O.png";
+            cell.appendChild(image);}
     }   
 }
 
