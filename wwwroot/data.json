@@ -20,7 +20,7 @@
     {   
             "id"    : 3
         , "name"    : "Tic Tac Toe"
-        , "level"   : "Medium"
+        , "level"   : "Hard"
         , "demo"    : "/demos/3_TicTacToe"
         , "cover"   : "/covers/3_TicTacToe.jpg"
         , "guide"   : "/guides/3_TicTacToe.html"
