@@ -77,12 +77,6 @@ function enableUI(){
     // hide lobby
     var lobby = document.getElementById("lobby");
     lobby.className = "hidden";
-    //center board
-    const parentContainer = board.parentElement;
-    const parentWidth = parentContainer.offsetWidth; const parentHeight = parentContainer.offsetHeight;
-    const divWidth = board.offsetWidth; const divHeight = board.offsetHeight;
-    const centerX = (parentWidth - divWidth) / 2; const centerY = (parentHeight - divHeight) / 2;
-    board.style.position = 'absolute'; board.style.left = centerX + 'px'; board.style.top = centerY + 'px';
    // show board
    var board = document.getElementById("board");
    board.className = "visible";    
