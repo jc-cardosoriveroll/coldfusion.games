@@ -3,7 +3,6 @@ window.clientid = 0;
 window.game = 
                 {
                     "host" : "0",
-                    "guest" : "0",
                     "history" : [],
                 };
                 /* history: [{clientid : "xxx", p : "11"}] */
@@ -42,7 +41,6 @@ function parseMessage(message){
                         if (message.publisherid !== window.clientid)
                             { 
                                 window.game = message.data.game;
-                                window.game.guest = message.publisherid;
                                 $.unblockUI(); 
                                 enableUI();
                             }
@@ -70,18 +68,11 @@ function pick(pos){
 function updateUI(game){
     for (let i = 0; i < game.history; i++) {
         move = game.history[i];
-        if (window.clientid == game.host){
-            cell = document.getElementById(move.pos);
-            while (cell.firstChild) {cell.removeChild(cell.firstChild);}            
-            image = document.createElement('img');
-            image.src = "images/X.png";
-            cell.appendChild(image);}
-        else if(window.clientid == game.guest){
-            cell = document.getElementById(move.pos);
-            while (cell.firstChild) {cell.removeChild(cell.firstChild);}            
-            image = document.createElement('img');
-            image.src = "images/O.png";
-            cell.appendChild(image);}
+        cell = document.getElementById(move.pos);
+        if (move.clientid == window.clientid){
+            cell.innerHTML = "X";}
+        else if(move.clientid !== window.clientid){
+            cell.innerHTML = "O";}
     }   
 }
 
