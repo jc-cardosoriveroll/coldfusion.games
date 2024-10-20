@@ -67,6 +67,7 @@ function pick(pos){
 
 function updateUI(){
     for (let i = 0; i < window.game.history; i++) {
+        console.log(i);
         move = game.history[i];
         cell = document.getElementById(move.pos);
         if (move.clientid == window.game.guest){
