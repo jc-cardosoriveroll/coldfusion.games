@@ -27,8 +27,8 @@ function parseMessage(message){
                     window.game.guest = window.clientid;
                     msg = {"action" : "play", "game" : window.game};
                     ws.publish("websocket",msg);
+                    enableUI();
                     $.blockUI();
-                    alert(window.clientid);
                 break;
             }
         } 
@@ -39,13 +39,10 @@ function parseMessage(message){
                 /* expect message.data = {"action" : "X", "game" : game} */
                 switch (message.data.action){
                     case "play" : 
+                        window.game = message.data.game;
+                        updateUI();
                         if (message.publisherid !== window.clientid)
-                            { 
-                                window.game = message.data.game;
-                                $.unblockUI(); 
-                                enableUI();
-                                updateUI();
-                            }
+                            { $.unblockUI(); }
                         else 
                             { $.blockUI(); }
                     break;
