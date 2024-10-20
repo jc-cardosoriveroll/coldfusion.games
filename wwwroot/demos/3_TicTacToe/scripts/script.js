@@ -8,11 +8,6 @@ window.game =
                 };
                 /* history: [{clientid : "xxx", p : "11"}] */
 
-//$.blockUI();
-//enableUI();
-
-
-
 function parseMessage(message){
     // Always log to console raw check
     console.log(message);
@@ -64,11 +59,26 @@ function pick(pos){
     // add to history array    
     let newmove = {"clientid" : window.clientid, "pos" : pos};
     window.game.history.push({newmove});
+    // update UI
+    updateUI();
     // broadcast nextturn
     msg = {"action" : "play", "game" : window.game};
     ws.publish("websocket",msg);
 }
 
+function updateUI(){
+    for (let i = 0; i < window.game.history; i++) {
+        move = window.game.history[i];
+        if (move.clientid == client.window.game.host){
+            cell = document.getElementById(move.pos);
+            image = document.createElement('img');
+            image.src = "images/X.png";}
+        else if(move.clientid == client.window.game.guest){
+            cell = document.getElementById(move.pos);
+            image = document.createElement('img');
+            image.src = "images/O.png";}
+    }   
+}
 
 
 function enableUI(){
