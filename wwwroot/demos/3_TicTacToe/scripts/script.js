@@ -2,7 +2,7 @@
 window.clientid = 0; 
 window.game = 
                 {
-                    "host" : "0",
+                    "guest" : "0",
                     "history" : [],
                 };
                 /* history: [{clientid : "xxx", p : "11"}] */
@@ -24,7 +24,7 @@ function parseMessage(message){
             switch (message.reqType){
                 case "subscribeTo" : 
                     //now that I subscribed, broadcast "newgame" to join available game..
-                    window.game.host = window.clientid;
+                    window.game.guest = window.clientid;
                     msg = {"action" : "play", "game" : window.game};
                     ws.publish("websocket",msg);
                     $.blockUI();
