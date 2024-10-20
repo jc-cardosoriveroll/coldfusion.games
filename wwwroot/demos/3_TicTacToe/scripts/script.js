@@ -64,9 +64,10 @@ function pick(pos){
 
 function updateUI(){
     for (let i = 0; i < window.game.history; i++) {
-        alert(i);
+        move = window.game.history[i];
+        alert(move.pos);
         /*
-        move = game.history[i];
+       
         cell = document.getElementById(move.pos);
         if (window.clientid == window.game.guest){
             cell.text = "X";}
