@@ -13,7 +13,7 @@
 					<div class="sidebar-info-contents">
 						<div class="content-inner">
 							<div class="sidebar-logo">
-								<a href="index.html"><img src="/boiler/estudy/assets/images/logo.png" alt="logo"></a>
+								<a href="index.html"><img src="/_boiler/estudy/assets/images/logo.png" alt="logo"></a>
 							</div>
 							<div class="sidebar-widget-menu">
 								<ul>

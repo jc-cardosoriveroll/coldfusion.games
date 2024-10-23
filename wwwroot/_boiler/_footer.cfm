@@ -5,16 +5,16 @@
 	<div class="footer-area">
 		<div class="container">
 			<div class="footer-shape1 bounce-animate-slow">
-				<img src="/boiler/estudy/assets/images/footer/footer-shape-1.png" alt="">
+				<img src="/_boiler/estudy/assets/images/footer/footer-shape-1.png" alt="">
 			</div>
 			<div class="footer-shape2 bounce-animate-slow">
-				<img src="/boiler/estudy/assets/images/footer/footer-shape-2.png" alt="">
+				<img src="/_boiler/estudy/assets/images/footer/footer-shape-2.png" alt="">
 			</div>
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-wiget wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
 						<div class="footer-wiget-logo">
-							<img src="/boiler/estudy/assets/images/footer-logo.png" alt="">
+							<img src="/_boiler/estudy/assets/images/footer-logo.png" alt="">
 						</div>
 						<div class="footer-wiget-text">
 							<h4>Get a full cRontrol of debts in the dsu digital world simpl labore et dolore ma</h4>
@@ -99,12 +99,12 @@
 						</div>
 						<div class="footer-widget-photo">
 							<ul>
-								<li><img src="/boiler/estudy/assets/images/footer/footer1.png" alt=""></li>
-								<li><img src="/boiler/estudy/assets/images/footer/footer2.png" alt=""></li>
-								<li><img src="/boiler/estudy/assets/images/footer/footer3.png" alt=""></li>
-								<li><img src="/boiler/estudy/assets/images/footer/footer4.png" alt=""></li>
-								<li><img src="/boiler/estudy/assets/images/footer/footer5.png" alt=""></li>
-								<li><img src="/boiler/estudy/assets/images/footer/footer6.png" alt=""></li>
+								<li><img src="/_boiler/estudy/assets/images/footer/footer1.png" alt=""></li>
+								<li><img src="/_boiler/estudy/assets/images/footer/footer2.png" alt=""></li>
+								<li><img src="/_boiler/estudy/assets/images/footer/footer3.png" alt=""></li>
+								<li><img src="/_boiler/estudy/assets/images/footer/footer4.png" alt=""></li>
+								<li><img src="/_boiler/estudy/assets/images/footer/footer5.png" alt=""></li>
+								<li><img src="/_boiler/estudy/assets/images/footer/footer6.png" alt=""></li>
 							</ul>
 						</div>
 					</div>
