@@ -26,11 +26,11 @@
 		</div>
 	</header>
 
-	<!-- estudy Mobile Menu Area -->
+	<!-- /boiler/estudy Mobile Menu Area -->
 	<div class="mobile-menu-area sticky-menu" id="navbar">
 		<div class="mobile-menu">
 			<div class="mobile-logo">
-				<a href="index.html"><img src="estudy/assets/images/logo.png" alt=""></a>
+				<a href="index.html"><img src="/boiler/estudy/assets/images/logo.png" alt=""></a>
 			</div>
 			<div class="side-menu-info">
 				<div class="sidebar-menu">
