@@ -3,7 +3,7 @@
 <cfcomponent displayname="Application" output="true" >
 
     <!--- Set up the application. --->    
-	<cfset THIS.Name = "app001" />
+	<cfset THIS.Name = "udemy" />
 	<cfset THIS.ApplicationTimeout = CreateTimeSpan( 1, 0, 0, 0 ) />
 	<cfset THIS.SessionManagement = true />
 	<cfset THIS.SetClientCookies = true />
@@ -32,6 +32,11 @@
     <!--- "Fires at first part of page processing." --->
 	<cffunction name="OnRequestStart" access="public" returntype="boolean" output="false">
 		<cfargument name="TargetPage" type="string" required="true"/>
+
+        <cfif isdefined("url.init")>
+            <cfset onApplicationStart()>
+        </cfif>
+
 		<cfreturn true />
 	</cffunction>
 
