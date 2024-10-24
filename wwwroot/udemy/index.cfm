@@ -17,11 +17,10 @@
             <!--- MAIN --->
             <cfif not(isdefined("session.game"))>
                 <!---new game options--->
-                <ol>
-                    <li><a href="index.cfm?difficulty=1">Easy (0-9)</a></li>
-                    <li><a href="index.cfm?difficulty=2">Medium (0-49)</a></li>
-                    <li><a href="index.cfm?difficulty=3">Hard (0-99)</a></li>
-                </ol>
+                <h1>New Game</h1>
+                <br><a href="index.cfm?difficulty=1" class="btn btn-success">Easy (0-9)</a></li>
+                <br><a href="index.cfm?difficulty=2" class="btn btn-warning">Medium (0-49)</a></li>
+                <br><a href="index.cfm?difficulty=3" class="btn btn-danger">Hard (0-99)</a></li>
             <cfelse>
                 <!--- keep playing--->
                 <cfdump var="#session.game#">
