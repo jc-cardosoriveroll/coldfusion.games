@@ -1,5 +1,11 @@
+<!--- Select difficulty for new game --->
 <cfif isdefined("url.difficulty")>
     <cfset session.game = Application.game.newGame(difficulty=url.difficulty)>
+</cfif>
+
+<!--- Evalute player's guess --->
+<cfif isdefined("url.guess") and isdefined("session.game")>
+    <cfset session.game = Application.game.evalGuess(game=session.game,guess=url.guess)>
 </cfif>
 
 
