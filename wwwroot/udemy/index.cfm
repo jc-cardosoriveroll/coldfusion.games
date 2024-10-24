@@ -44,7 +44,6 @@
                                 </div>
                             </div>
 
-                            <cfdump var="#session.game#">
                             <a href="index.cfm?newGame">New Game</a>
 
                         </cfif>            
