@@ -1,0 +1,76 @@
+.levels {
+    width: 250px;
+}
+
+/* container that shows all numbers */
+.unit {
+    width: 50px;
+    text-align: center;
+}
+
+/* numbers that have been picked and are wrong */
+.history {
+    color: gray;
+    font-weight: lighter;
+}
+
+/* numbers that have not been picked and are eligible */
+.active {
+    color: #000;
+    font-weight : bold;
+}
+
+/* number that was selected (after finding it) */
+.bingo {
+    color: red;
+    font-weight : bolder;
+    background-color: yellow;
+}
+
+/* label with hints of higher/lower */
+.hint {
+    text-align: center;
+}
+
+/* card container in center screen */
+.card {
+    width: 500px; /* Adjust width as needed */
+    height: 400px; /* Adjust height as needed */
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Optional: Rounded corners */
+    overflow: hidden; /* Prevent content from overflowing */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* body layout inside card */
+  .card-body {
+    position: relative;
+    padding: 0px; /* Adjust padding as needed */
+  }
+  
+  /* absolute centering */
+  .card-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    border-radius: 10px; /* Optional: Rounded corners */
+    overflow: hidden;
+    background-color: #f0f0f0; /* Optional: Background color */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .love {
+    text-align: center;
+    font-style: italic;
+    background-color: #fffbbf;
+    color: crimson;
+    font-weight : bolder;
+  }
