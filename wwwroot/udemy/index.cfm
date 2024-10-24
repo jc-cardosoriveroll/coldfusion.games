@@ -1,7 +1,13 @@
+<!--- New normal game --->
 <cfif isdefined("url.difficulty")>
     <cfset session.game = Application.game.newGame(difficulty=url.difficulty)>
 </cfif>
 
+<!--- New forced game (delete existing) --->
+<cfif isdefined("url.newGame") and isdefined("session.game")>
+    <cfset structdelete(session,"game")>
+    <cflocation url="index.cfm" addtoken="false">
+</cfif>
 
 <cfoutput>
     <!DOCTYPE html>
@@ -24,6 +30,8 @@
             <cfelse>
                 <!--- keep playing--->
                 <cfdump var="#session.game#">
+                <a href="index.cfm?newGame">New Game</a>
+
             </cfif>            
 
             <!--- Bootstrap/Jquery Framework --->
