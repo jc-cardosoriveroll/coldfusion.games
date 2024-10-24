@@ -1,4 +1,36 @@
-/* STYLESHEET */
+.levels {
+    width: 250px;
+}
+
+/* container that shows all numbers */
+.unit {
+    width: 50px;
+    text-align: center;
+}
+
+/* numbers that have been picked and are wrong */
+.history {
+    color: gray;
+    font-weight: lighter;
+}
+
+/* numbers that have not been picked and are eligible */
+.active {
+    color: #000;
+    font-weight : bold;
+}
+
+/* number that was selected (after finding it) */
+.bingo {
+    color: red;
+    font-weight : bolder;
+    background-color: yellow;
+}
+
+/* label with hints of higher/lower */
+.hint {
+    text-align: center;
+}
 
 /* card container in center screen */
 .card {
@@ -35,27 +67,10 @@
     text-align: center;
   }
 
-
-  .unit {
-    width: 50px;
+  .love {
     text-align: center;
-}
-
-/* numbers that have been picked and are wrong */
-.history {
-    color: gray;
-    font-weight: lighter;
-}
-
-/* numbers that have not been picked and are eligible */
-.active {
-    color: #000;
-    font-weight : bold;
-}
-
-/* number that was selected (after finding it) */
-.bingo {
-    color: red;
+    font-style: italic;
+    background-color: #fffbbf;
+    color: crimson;
     font-weight : bolder;
-    background-color: yellow;
-}
+  }

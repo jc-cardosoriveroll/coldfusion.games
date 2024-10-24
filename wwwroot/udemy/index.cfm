@@ -33,23 +33,23 @@
                             <br><a href="index.cfm?difficulty=3" class="btn btn-danger">Hard (0-99)</a></li>
                         <cfelse>
                             <!--- keep playing--->
-
-                            <div class="unit">
-                                <cfloop from="0" to="#session.game.maxNumber#" index="n">
-                                    <cfif arrayfind(session.game.history,n)>
-                                        <cfif n eq session.game.secretNumber>
-                                            <span class="bingo">#n#</span>
+                            <div class="row">
+                                <div class="unit">
+                                    <cfloop from="0" to="#session.game.maxNumber#" index="n">
+                                        <cfif arrayfind(session.game.history,n)>
+                                            <cfif n eq session.game.secretNumber>
+                                                <span class="bingo">#n#</span>
+                                            <cfelse>
+                                                <span class="history">#n#</span>
+                                            </cfif>
                                         <cfelse>
-                                            <span class="history">#n#</span>
+                                            <span class="active">
+                                                <a href="index.cfm?guess=#n#">#n#</a>
+                                            </span>
                                         </cfif>
-                                    <cfelse>
-                                        <span class="active">
-                                            <a href="index.cfm?guess=#n#">#n#</a>
-                                        </span>
-                                    </cfif>
-                                </cfloop>
+                                    </cfloop>
+                                </div>
                             </div>
-
 
                             <a href="index.cfm?newGame">New Game</a>
 
