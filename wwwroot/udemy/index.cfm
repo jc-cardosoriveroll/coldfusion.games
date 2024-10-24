@@ -33,6 +33,17 @@
                             <br><a href="index.cfm?difficulty=3" class="btn btn-danger">Hard (0-99)</a></li>
                         <cfelse>
                             <!--- keep playing--->
+
+                            <div class="row">
+                                <div class="col-12">
+
+                                    <cfloop from="0" to="#session.game.maxNumber#" index="n">
+                                        <span>#n#</span>
+                                    </cfloop>
+
+                                </div>
+                            </div>
+
                             <cfdump var="#session.game#">
                             <a href="index.cfm?newGame">New Game</a>
 
