@@ -1,6 +1,6 @@
 
 <!--- "Handle the application." --->
-<cfcomponent displayname="Application" output="true" >
+<cfcomponent displayname="Application" output="true" > 
 
     <!--- Set up the application. --->    
 	<cfset THIS.Name = "udemy" />

@@ -1,4 +1,2 @@
-HOLA MUNDO!
-<cfdump var="#now()#">
-
-<cfdump var="#application#">
+<cfset newGame = Application.game.newGame(difficulty=3)>
+<cfdump var="#newGame#">
