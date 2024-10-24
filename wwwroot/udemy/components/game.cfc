@@ -23,7 +23,7 @@
             </cfcase>
             <cfdefaultcase>
                 <cfset local.game["maxNumber"] = 9>
-            </cdefaultcase>
+            </cfdefaultcase>
         </cfswitch>
         <cfset local.game["secretNumber"] = randrange(0,local.game.maxNumber)>
 
