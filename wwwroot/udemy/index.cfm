@@ -34,15 +34,18 @@
                         <cfelse>
                             <!--- keep playing--->
 
-                            <div class="row">
-                                <div class="col-12">
-
-                                    <cfloop from="0" to="#session.game.maxNumber#" index="n">
-                                        <span>#n#</span>
-                                    </cfloop>
-
-                                </div>
+                            <div class="unit">
+                                <cfloop from="0" to="#session.game.maxNumber#" index="n">
+                                    <cfif arrayfind(session.game.history,n)>
+                                        <cfif n eq session.game.secretNumber>
+                                            <span class="bingo">#n#</span>
+                                        <cfelse>
+                                            <span class="history">#n#</span>
+                                        </cfif>
+                                    </cfif>
+                                </cfloop>
                             </div>
+
 
                             <a href="index.cfm?newGame">New Game</a>
 

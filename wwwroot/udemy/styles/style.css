@@ -34,3 +34,28 @@
     align-items: center;
     text-align: center;
   }
+
+
+  .unit {
+    width: 50px;
+    text-align: center;
+}
+
+/* numbers that have been picked and are wrong */
+.history {
+    color: gray;
+    font-weight: lighter;
+}
+
+/* numbers that have not been picked and are eligible */
+.active {
+    color: #000;
+    font-weight : bold;
+}
+
+/* number that was selected (after finding it) */
+.bingo {
+    color: red;
+    font-weight : bolder;
+    background-color: yellow;
+}
