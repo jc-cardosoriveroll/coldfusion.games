@@ -11,7 +11,7 @@
                                 "currentState" : "Start Guessing...",
                                 "difficulty" : arguments.difficulty,
                                 "history" : [],
-                                "isDone" : false;
+                                "isDone" : false
                             }>
 
         <!--- Randomize Number --->
