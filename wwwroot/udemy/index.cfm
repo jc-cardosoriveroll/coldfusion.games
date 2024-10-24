@@ -1,3 +1,8 @@
+<cfif isdefined("url.difficulty")>
+    <cfset session.game = Application.game.newGame(difficulty=url.difficulty)>
+</cfif>
+
+
 <cfif not(isdefined("session.game"))>
     <!---new game options--->
     <ol>
@@ -7,5 +12,6 @@
     </ol>
 <cfelse>
     <!--- keep playing--->
-    Start New Game...
+    <cfdump var="#session.game#">
 </cfif>
+
