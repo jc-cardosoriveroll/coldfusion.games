@@ -17,8 +17,10 @@
 <!--- User gives up --->
 <cfif isdefined("url.giveUp") and isdefined("session.game")>
     <cfoutput><script>alert("the number was: #session.game.secretNumber#");</script></cfoutput>
-    <cfset structDelete(session,"game")>    
+    <cfset structDelete(session,"game")> 
+    <!---   
     <cflocation url="index.cfm?uuid=#createUUID()#" addtoken="false">
+    --->
 </cfif>
 
 
