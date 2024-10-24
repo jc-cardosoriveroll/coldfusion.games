@@ -42,6 +42,10 @@
                                         <cfelse>
                                             <span class="history">#n#</span>
                                         </cfif>
+                                    <cfelse>
+                                        <span class="active">
+                                            <a href="index.cfm?guess=#n#">#n#</a>
+                                        </span>
                                     </cfif>
                                 </cfloop>
                             </div>
