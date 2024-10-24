@@ -3,9 +3,22 @@
     <cfset session.game = Application.game.newGame(difficulty=url.difficulty)>
 </cfif>
 
-<!--- Evalute player's guess --->
+<!--- Evaluate player's guess --->
 <cfif isdefined("url.guess") and isdefined("session.game")>
     <cfset session.game = Application.game.evalGuess(game=session.game,guess=url.guess)>
+</cfif>
+
+<!--- User wants a new game --->
+<cfif isdefined("url.newGame") and isdefined("session.game")>
+    <cfset structDelete(session,"game")>    
+    <cflocation url="index.cfm?uuid=#createUUID()#" addtoken="false">
+</cfif>
+
+<!--- User gives up --->
+<cfif isdefined("url.giveUp") and isdefined("session.game")>
+    <cfoutput><script>alert("the number was: #session.game.secretNumber#");</script></cfoutput>
+    <cfset structDelete(session,"game")>    
+    <cflocation url="index.cfm?uuid=#createUUID()#" addtoken="false">
 </cfif>
 
 
