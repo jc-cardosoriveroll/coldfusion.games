@@ -1,5 +1,6 @@
 <cfif isdefined("url.difficulty")>
     <cfset session.game = Application.game.newGame(difficulty=url.difficulty)>
+    <cflocation url="index.cfm" addtoken="false">
 </cfif>
 
 
