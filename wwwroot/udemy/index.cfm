@@ -1,5 +1,10 @@
-<cfset application.game.init()>
-<cfset letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]>
+<cfif isdefined("form.category") and isdefined("form.level")>
+    <cfset Application.game.init(category=form.category,level=form.level)>
+</cfif>
+
+<!---- Get Additional Data --->
+<cfset cats = application.game.getAllCategories()>
+<cfset letters = application.game.getAllLetters()>
 
 <!----------------- MAIN CONTENT ---------------->
 <cfoutput>
@@ -44,6 +49,38 @@
                       </li>
                     </cfloop>
                   </ul>
+
+                  <!--- Select Level/Category --->
+                  <div class="setup">
+                    <form method="post" action="index.cfm" name="settings">
+                      <div class="row">
+                        <div class="col-2">&nbsp;</div>
+                        <div class="col-3">
+                          <h5>Level:</h5>
+                          <select name="level" class="form-control">
+                            <option value="1" <cfif application.game.data.level eq 1> selected </cfif>>Easy</option>
+                            <option value="2" <cfif application.game.data.level eq 2> selected </cfif>>Medium</option>
+                            <option value="3" <cfif application.game.data.level eq 3> selected </cfif>>Hard</option>
+                          </select>
+                        </div>
+                        <div class="col-3">
+                          <h5>Category:</h5>
+                          <select name="category" class="form-control">
+                              <cfloop from="1" to="#arraylen(cats)#" index="c">
+                                  <option value="#cats[c]#" <cfif application.game.data.category eq cats[c]> selected </cfif> >
+                                      #cats[c]#
+                                  </option>
+                              </cfloop>
+                          </select>
+                        </div>
+                        <div class="col-2">
+                          <h5>&nbsp;</h5>
+                          <input type="submit" value="NEW GAME" class="btn btn-primary">
+                        </div>
+                        <div class="col-2">&nbsp;</div>
+                    </form>
+                  </div>
+
 
 
                 </div> <!--- container --->

@@ -44,6 +44,32 @@
         <cfreturn />
     </cffunction>
 
+    <cffunction name="getAllLetters" access="public" returntype="array" hint="returns alphabet">
+        <cfreturn ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]>
+    </cffunction>
+
+    <!------------- PUBLIC CATALOGS -------------------->
+    <cffunction name="getAllCategories" access="public" returntype="any" hint="returns unique categories from json">
+        <cfargument name="qry" default="#jsontoqry()#">
+
+        <!--- return categories --->
+        <cfquery name="local.qry" dbtype="query">
+            select c
+            from arguments.qry 
+            order by c
+        </cfquery>
+
+        <cfset local.result = []>
+        <cfloop query="local.qry">
+            <cfif not(arrayfind(local.result,c))>
+                <cfset arrayappend(local.result,c)>
+            </cfif>
+        </cfloop>
+
+        <cfreturn local.result>
+    </cffunction>
+
+
 
     <!----------------- HELPER FUNCTIONS --------------->
     <cffunction name="getWord" access="private" hint="gets a word from query">
