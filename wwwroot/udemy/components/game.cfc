@@ -8,9 +8,9 @@
         <cfset this["data"] = {
                 "category" : arguments.category,
                 "level" : arguments.level,
-                "miss" : []
-                "hits" : []
-                "show" : []
+                "miss" : [],
+                "hits" : [],
+                "show" : [],
                 "word" : "HELLOWORLD",
                 "gameOver" : false,
                 "wonOrLost" : "None",
