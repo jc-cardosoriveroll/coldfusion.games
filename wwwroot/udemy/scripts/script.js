@@ -25,6 +25,12 @@ $(document).ready(function() {
             game.data.show.forEach(showLetter); 
             $("#hang").attr("src",game.data.hangImg);
 
+            /* simple game status Feedback & Reset */
+            if (game.data.gameOver) {  
+                if (confirm("You: " + game.data.wonOrLost + " word was: " + game.data.word + " - Play again?") == true) 
+                    {location.href = "index.cfm?init"; }}
+
+
         });
 
 
