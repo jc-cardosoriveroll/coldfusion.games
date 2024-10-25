@@ -25,6 +25,29 @@
         <cfreturn this>
     </cffunction>
 
+    <!--------------- PLAYGAME FUNCTIONS ---------------->
+    <cffunction name="playGame" access="remote" hint="updates this with eval values">
+        <cfargument name="letter" hint="new letter">
+
+        <!---
+        <!--- Update "this" with letter history --->
+        <cfset evalHitMiss(letter=arguments.letter)>
+
+        <!--- Update "this" with position display --->
+        <cfset evalShow()>
+
+        <!--- Update "this" with status/gameOver --->
+        <cfset evalStatus()>
+
+        <!--- Update "this" with hangImage --->
+        <cfset evalHangImg()>        
+        --->
+
+        <cfreturn />
+    </cffunction>
+
+
+
     <!----------------- HELPER FUNCTIONS --------------->
     <cffunction name="getWord" access="private" hint="gets a word from query">
         <cfargument name="level" default="#this.data.level#">
