@@ -20,10 +20,22 @@ $(document).ready(function() {
             console.log(data);
             var game = $.parseJSON(data);
             console.log(game);
+
+            /* now update visual elements  */
+            game.data.show.forEach(showLetter); 
+            $("#hang").attr("src",game.data.hangImg);
+
         });
 
 
-        
+        /* function to display each letter at each position */
+        function showLetter(value, index, array) {
+            var pos = index + 1;    /* +1 because index starts in 0 */
+            $("#p" + pos).attr("src", value); 
+        }
+
+
+
 
     });
 

@@ -32,10 +32,12 @@
         <!---
         <!--- Update "this" with letter history --->
         <cfset evalHitMiss(letter=arguments.letter)>
+        --->
 
         <!--- Update "this" with position display --->
         <cfset evalShow()>
 
+        <!---
         <!--- Update "this" with status/gameOver --->
         <cfset evalStatus()>
 
@@ -45,6 +47,7 @@
 
         <cfreturn />
     </cffunction>
+
 
 
 
@@ -90,6 +93,20 @@
         <cfreturn local.words>
     </cffunction>
 
+    <cffunction name="evalShow" access="private" hint="updates with display images">
+        <cfset local.show = []>
+
+        <cfset this.data.hits[1] = "A">
+        <cfloop from="1" to="#len(this.data.word)#" index="local.w">
+            <cfset local.thisLetter = mid(this.data.word,local.w,1)>
+            <cfset local.show[local.w] =  "images/0_hires.png"> <!--- default null --->
+            <cfif arrayfindnocase(this.data.hits,local.thisLetter)>
+                <cfset local.show[local.w] = "images/" & local.thisLetter & "_hires.png">
+            </cfif>
+        </cfloop>
+        <cfset this.data.show = local.show>
+        
+    </cffunction>
 
 
 </cfcomponent>
