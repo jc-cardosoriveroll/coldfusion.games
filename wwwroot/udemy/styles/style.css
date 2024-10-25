@@ -1,0 +1,92 @@
+/* Main container that holds game */
+.container 
+{
+    width: 100%;
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* Div inside container that displays the hangman image */
+.image 
+{
+    height: 160px;
+}
+
+/* Div inside container that has the actual word */
+.letters
+{
+    height: 60px;
+    margin-top: 15px;
+}
+
+/* Style for actual letter unit */
+.letter
+{
+    border-bottom: 5px black solid;
+}
+
+/* Div that contains level & category */
+.setup
+{
+    margin-top: 50px;
+}
+
+/* Option Letter List */
+ul {
+    list-style: none;
+    margin-top: 15px;
+  }
+
+/* Option letter list item */
+li {
+    display: inline-block;
+    margin-right: 10px; 
+  }
+
+body {
+    background-color: #f0f0f0;
+}
+
+/* card container in center screen */
+.card {
+    width: 800px; /* Adjust width as needed */
+    height: 500px; /* Adjust height as needed */
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Optional: Rounded corners */
+    overflow: hidden; /* Prevent content from overflowing */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* body layout inside card */
+  .card-body {
+    position: relative;
+    padding: 0px; /* Adjust padding as needed */
+  }
+  
+  /* absolute centering */
+  .card-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    border-radius: 10px; /* Optional: Rounded corners */
+    overflow: hidden;
+    background-color: #ffffff; /* Optional: Background color */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .love {
+    text-align: center;
+    font-style: italic;
+    background-color: #fffbbf;
+    color: crimson;
+    font-weight : bolder;
+  }
+
