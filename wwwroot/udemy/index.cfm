@@ -1,3 +1,6 @@
+<cfset Application.game.init()>
+
+
 
 <!----------------- MAIN CONTENT ---------------->
 <cfoutput>
@@ -23,8 +26,7 @@
                 <div class="container">
 
 
-
-
+                  <cfdump var="#application.game#">
 
                 </div> <!--- container --->
 
