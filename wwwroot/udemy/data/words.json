@@ -29,5 +29,13 @@
     {"level" : 1, "category" : "Countries", "word" : "Italy"},
     {"level" : 2, "category" : "Countries", "word" : "Argentina"},
     {"level" : 1, "category" : "Countries", "word" : "Chile"},
-    {"level" : 3, "category" : "Countries", "word" : "SaudiArabia"}
+    {"level" : 3, "category" : "Countries", "word" : "SaudiArabia"},
+    {"level" : 1, "category" : "Names", "word" : "John"},
+    {"level" : 1, "category" : "Names", "word" : "Joe"},
+    {"level" : 1, "category" : "Names", "word" : "Olivia"},
+    {"level" : 2, "category" : "Names", "word" : "Natalia"},
+    {"level" : 1, "category" : "Names", "word" : "Edith"},
+    {"level" : 2, "category" : "Names", "word" : "Wicca"},
+    {"level" : 3, "category" : "Names", "word" : "Francis"}
+
 ]
