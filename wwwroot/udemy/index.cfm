@@ -1,5 +1,6 @@
 <cfset Application.game.init()>
 
+<cfset letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N"]>
 
 
 <!----------------- MAIN CONTENT ---------------->
@@ -25,8 +26,25 @@
 
                 <div class="container">
 
+                  <div class="image">
+                    <img src="#application.game.data.hangImg#" width="115" height="160" id="hang">
+                  </div>
+                  <div class="letters">
+                    <cfloop from="1" to="#len(application.game.data.word)#" index="w">
+                        <img src="images/0_hiRes.png" height="60" width="60" class="letter" id="p#w#">
+                    </cfloop>
+                  </div>
 
-                  <cfdump var="#application.game#">
+                  <ul>
+                    <cfloop from="1" to="#arraylen(letters)#" index="l">
+                      <li>
+                          <a class="pick" letter="#letters[l]#">
+                            <img src="images/#letters[l].png#">
+                          </a>
+                      </li>
+                    </cfloop>
+                  </ul>
+
 
                 </div> <!--- container --->
 
