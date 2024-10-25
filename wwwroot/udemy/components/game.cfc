@@ -11,7 +11,7 @@
                 "miss" : [],
                 "hits" : [],
                 "show" : [],
-                "word" : "HELLOWORLD",
+                "word" : "HELLO",
                 "gameOver" : false,
                 "wonOrLost" : "None",
                 "hangImg" : "images/step0.png"
