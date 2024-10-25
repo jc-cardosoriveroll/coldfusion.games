@@ -1,3 +1,5 @@
+<cfset application.game.data.word = "Australia">
+<cfset letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]>
 
 
 <!----------------- MAIN CONTENT ---------------->
@@ -23,6 +25,26 @@
 
                 <div class="container">
 
+                  <div class="image">
+                    <img src="images/step0.png" width="115" height="160" id="hang"> <!--- keep size consistent --->
+                  </div>
+
+                  <div class="letters">
+                    <cfloop from="1" to="#len(application.game.data.word)#" index="w">
+                      <!--- JS will change the image async through ID (default: 0 for empty) --->
+                      <img src="images/0_hiRes.png" height="60" width="60" class="letter" id="p#w#">
+                    </cfloop>
+                  </div>
+
+                  <ul>
+                    <cfloop from="1" to="#arraylen(letters)#" index="l">
+                      <li>
+                        <a class="pick" letter="#letters[l]#">
+                            <img src="images/#letters[l]#.png" />
+                        </a>
+                      </li>
+                    </cfloop>
+                  </ul>
 
 
                 </div> <!--- container --->
