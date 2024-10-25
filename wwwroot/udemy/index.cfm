@@ -39,7 +39,7 @@
                     <cfloop from="1" to="#arraylen(letters)#" index="l">
                       <li>
                           <a class="pick" letter="#letters[l]#">
-                            <img src="images/#letters[l].png#">
+                            <img src="images/#letters[l]#.png">
                           </a>
                       </li>
                     </cfloop>
