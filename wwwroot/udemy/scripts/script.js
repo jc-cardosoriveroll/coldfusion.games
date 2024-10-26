@@ -29,6 +29,36 @@ function parseMessage(message){
             }
         } 
 
+
+        // Data Events (only attend messages from "other" publishers)
+        if (message.type == 'data' && typeof message.data !== 'undefined') {
+
+            switch (message.data.action){
+                case "play" : 
+                    // UPDATE DATA
+                    window.game = message.data.game;
+
+                    // DRAW BOARD
+                    for (const elem of window.game.history) {
+                        cell = window.document.getElementById(elem.pos);
+                        if (elem.clientid == window.game.guest){
+                            cell.innerHTML = "<img src='images/O.png' />";}
+                        else {
+                            cell.innerHTML = "<img src='images/X.png' />";}
+                    };
+
+                    // ENABLE UI BASED ON TURN
+                    if (message.publisherid !== window.clientid)
+                        { $.unblockUI(); }
+                    else 
+                        { $.blockUI(); }
+
+                break;
+
+            }
+        }
+
+
     };
 
 
@@ -43,4 +73,14 @@ function enableUI(){
     // show board
     var board = document.getElementById("board");
     board.className = "visible";    
+}
+
+
+function pick(pos){
+    // add to history array    
+    let newmove = {"clientid" : window.clientid, "pos" : pos};
+    window.game.history.push(newmove);
+    // broadcast nextturn
+    msg = {"action" : "play", "game" : window.game};
+    ws.publish("websocket2",msg);
 }
