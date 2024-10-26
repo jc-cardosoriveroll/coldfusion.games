@@ -4,7 +4,7 @@
           onClose   ="parseMessage"
           onError   ="parseMessage"
            onOpen   ="parseMessage"
-            secure  = false />
+            secure  = false /> 
 
 
   <!----------------- MAIN CONTENT ---------------->
