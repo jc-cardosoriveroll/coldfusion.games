@@ -4,7 +4,7 @@
 <cfcomponent displayname="Application" output="true" >
 
     <!--- Set up the application. --->    
-	<cfset THIS.Name = "app003" />
+	<cfset THIS.Name = "udemy" />
 	<cfset THIS.ApplicationTimeout = CreateTimeSpan( 1, 0, 0, 0 ) />
 	<cfset THIS.SessionManagement = true />
 	<cfset THIS.SetClientCookies = true />
@@ -43,9 +43,6 @@
 		<!--- Force Restart --->
 		<cfif structKeyExists(url,"init")>
 			<cfset onApplicationStart()>
-			<cfif structkeyExists(session,"game")>
-				<cfset structDelete(session,"game")>
-			</cfif>
 		</cfif>
 
 		<cfreturn true />

@@ -1,3 +1,11 @@
+<cfwebsocket name   ="ws"
+        subscribeTo	="websocket" 
+        onMessage 	="parseMessage"
+          onClose   ="parseMessage"
+          onError   ="parseMessage"
+           onOpen   ="parseMessage"
+            secure  = false />
+
 
   <!----------------- MAIN CONTENT ---------------->
   <cfoutput>
