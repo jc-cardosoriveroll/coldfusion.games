@@ -47,6 +47,34 @@ function parseMessage(message){
                             cell.innerHTML = "<img src='images/X.png' />";}
                     };
 
+
+                    // EVALUATE WIN
+                    let t = {"p11" : 0, "p12" : 0, "p13" : 0, "p21" : 0, "p22" : 0, "p23" : 0, "p31" : 0, "p32" : 0, "p33" : 0};
+                    for (const elem of window.game.history) { 
+                        t[elem.pos] = elem.clientid };
+                    // all rows, all cols, 2 diagonals //
+                    if (    (t.p11 == t.p12 && t.p12 == t.p13 && t.p13 !== 0) ||
+                            (t.p21 == t.p22 && t.p22 == t.p23 && t.p23 !== 0) ||
+                            (t.p31 == t.p32 && t.p32 == t.p33 && t.p33 !== 0) ||
+                            (t.p11 == t.p21 && t.p21 == t.p31 && t.p31 !== 0) ||
+                            (t.p12 == t.p22 && t.p22 == t.p32 && t.p32 !== 0) ||
+                            (t.p13 == t.p23 && t.p23 == t.p33 && t.p33 !== 0) ||
+                            (t.p11 == t.p22 && t.p22 == t.p33 && t.p33 !== 0) ||
+                            (t.p13 == t.p22 && t.p22 == t.p31 && t.p31 !== 0) 
+                        )
+                    { 
+                        // winner is the last move that triggered 
+                        winner = window.game.history[window.game.history.length-1].clientid;
+                        msg = {"action" : "endgame", "game" : window.game, "winner" : winner};
+                        ws.publish("websocket",msg);
+                    }
+
+                    // EVALUATE DRAW 
+                    if (window.game.history.length == 9){
+                        msg = {"action" : "endgame", "game" : window.game, "winner" : 0};
+                        ws.publish("websocket",msg);
+                    }
+
                     // ENABLE UI BASED ON TURN
                     if (message.publisherid !== window.clientid)
                         { $.unblockUI(); }
@@ -54,6 +82,20 @@ function parseMessage(message){
                         { $.blockUI(); }
 
                 break;
+
+                case "endgame" :
+                    if (message.publisherid !== window.clientid)
+                    {
+                        if (message.data.winner == "0")
+                            alert("game over! - it's a tie");
+                        else if (message.data.winner == window.clientid)
+                            alert("game over, you win!");
+                        else
+                            alert("game over, you lose!");
+
+                        setTimeout(function() {location.reload();}, 3000);                                                            
+                    }
+                break;                
 
             }
         }
