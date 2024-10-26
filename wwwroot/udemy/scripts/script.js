@@ -66,13 +66,13 @@ function parseMessage(message){
                         // winner is the last move that triggered 
                         winner = window.game.history[window.game.history.length-1].clientid;
                         msg = {"action" : "endgame", "game" : window.game, "winner" : winner};
-                        ws.publish("websocket",msg);
+                        ws.publish("websocket2",msg);
                     }
 
                     // EVALUATE DRAW 
                     if (window.game.history.length == 9){
                         msg = {"action" : "endgame", "game" : window.game, "winner" : 0};
-                        ws.publish("websocket",msg);
+                        ws.publish("websocket2",msg);
                     }
 
                     // ENABLE UI BASED ON TURN
