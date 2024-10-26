@@ -1,5 +1,5 @@
 <cfwebsocket name   ="ws"
-        subscribeTo	="websocket" 
+        subscribeTo	="websocket2" 
         onMessage 	="parseMessage"
           onClose   ="parseMessage"
           onError   ="parseMessage"

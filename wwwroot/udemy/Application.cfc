@@ -4,7 +4,7 @@
 <cfcomponent displayname="Application" output="true" >
 
     <!--- Set up the application. --->    
-	<cfset THIS.Name = "udemy" />
+	<cfset THIS.Name = "udemy2" />
 	<cfset THIS.ApplicationTimeout = CreateTimeSpan( 1, 0, 0, 0 ) />
 	<cfset THIS.SessionManagement = true />
 	<cfset THIS.SetClientCookies = true />
@@ -12,7 +12,7 @@
 
 	<!--- Websocket specific (websocket: lobby, games: actual game) --->
     <cfset this.wschannels = [ 
-		{ 	name: "websocket",  cfclistener: "components.listeners" }  
+		{ 	name: "websocket2",  cfclistener: "components.listeners" }  
 	]>
 
     <!--- Define the page request properties. --->    
