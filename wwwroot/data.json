@@ -5,8 +5,8 @@
         , "level"   : "Easy"
         , "demo"    : "/demos/1_NumberGuess"
         , "cover"   : "/covers/1_NumberGuess.jpg"
-        , "guide"   : "/guides/number_guess.html"
-        , "udemy"   : "https://udemy.com"
+        , "guide"   : "https://www.udemy.com/course/domina-coldfusion-con-apps-y-juegos-pack-1/"
+        , "udemy"   : "https://www.udemy.com/course/domina-coldfusion-con-apps-y-juegos-pack-1/"
     },
     {   
             "id"    : 2
@@ -14,8 +14,8 @@
         , "level"   : "Medium"
         , "demo"    : "/demos/2_Hangman"
         , "cover"   : "/covers/2_Hangman.jpg"
-        , "guide"   : "/guides/2_Hangman.html"
-        , "udemy"   : "https://udemy.com"
+        , "guide"   : "https://www.udemy.com/course/domina-coldfusion-con-apps-y-juegos-pack-1/"
+        , "udemy"   : "https://www.udemy.com/course/domina-coldfusion-con-apps-y-juegos-pack-1/"
     },
     {   
             "id"    : 3
@@ -23,8 +23,8 @@
         , "level"   : "Hard"
         , "demo"    : "/demos/3_TicTacToe"
         , "cover"   : "/covers/3_TicTacToe.jpg"
-        , "guide"   : "/guides/3_TicTacToe.html"
-        , "udemy"   : "https://udemy.com"
+        , "guide"   : "https://www.udemy.com/course/domina-coldfusion-con-apps-y-juegos-pack-1/"
+        , "udemy"   : "https://www.udemy.com/course/domina-coldfusion-con-apps-y-juegos-pack-1/"
     }
 
 ]
